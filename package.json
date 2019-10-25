@@ -1,0 +1,22 @@
+{
+  "name": "cjproject",
+  "version": "1.0.0",
+  "description": "cjproject",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sourcemap": "^1.0.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-svg-sprites": "^4.1.2",
+    "node-sass": "^4.13.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
