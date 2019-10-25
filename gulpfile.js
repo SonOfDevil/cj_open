@@ -11,9 +11,9 @@ var svgSprite = require("gulp-svg-sprites");
 sass.compiler = require('node-sass');
 
 var config = {
-  src: './app/design/frontend/cj/default/web/css/**/*.scss',
-  dest_app: './app/design/frontend/cj/default/web/css/',
-  dest: './pub/static/frontend/cj/default/en_US/css/'
+  src: './project/scss/**/*.scss',
+  // dest_app: './app/design/frontend/cj/default/web/css/',
+  dest: './project/css/'
 };
 
 // Error message
@@ -41,12 +41,12 @@ var onError = function (err) {
 
 // SVG Sprites
 gulp.task('sprites', function () {
-  return gulp.src('./app/design/frontend/cj/default/web/images/svg/*.svg')
+  return gulp.src('./project/images/svg/*.svg')
     .pipe(svgSprite({
       templates: {
         scss: true
       },
-      cssFile: "css/partials/_sprite.scss",
+      cssFile: "scss/partials/_sprite.scss",
       svg: {
         sprite: "images/svg.svg"
       },
@@ -54,7 +54,7 @@ gulp.task('sprites', function () {
         sprite: "css/index.html"
       }
     }))
-    .pipe(gulp.dest("./app/design/frontend/cj/default/web"));
+    .pipe(gulp.dest("./project"));
 });
 
 gulp.task('sass', function () {

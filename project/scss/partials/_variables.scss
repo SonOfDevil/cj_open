@@ -1,0 +1,82 @@
+/** image  ******************************************************/
+// $img-root:'/static/frontend/cj/publisher/en_US/images';
+$img-root:'../images';  //demo에서 사용하는 값으로 통합
+
+/** color ******************************************************/
+$color-strong           : #202020;
+$color-strong-little    : #303030;
+$color-txt-default      : #606060;
+$color-none-strong      : #909090;
+$color-none-strong-info : #c0c0c0;
+$color-price            : #d5d5d5;
+$color-txt-disable      : #e0e0e0;
+
+$color-default-form     : #ddd;
+$color-disable-form     : #E0E0E0;
+$color-none-strong-line : #f0f0f0;
+$color-default-line     : #ddd;
+
+$color-bg-default       : #f9f9f9;
+$color-bg-darkgray      : #f0f0f0;
+$color-white            : #fff;
+$color-point            : #ff3700;
+$color-disable-link     : #b0b0b0;
+$color-bg-error         : #f2f2f2;
+
+/** size  ******************************************************/
+$screen-large           : 1280px;
+$screen-full            : 100%;
+$screen-auto            : auto;
+
+$height-default-form    : 48px;
+$height-default-form-mo : 44px;
+
+// button size
+$btn-default            : 44px;
+$btn-l                  : 52px;
+$btn-m                  : 32px;
+$btn-s                  : 28px;
+
+$btn-default-pc         : 48px;
+$btn-l-pc               : 56px;
+$btn-m-pc               : 40px;
+$chk-size               : 20px;
+$chk-size-pc            : 24px;
+
+$brd-strong             : 3px;
+
+/** font  ******************************************************/
+$txt-size-default       : 16px;
+$txt-size-xxs           : 1.0rem;   //10px;
+$txt-size-xs            : 1.2rem;   //12px;
+$txt-size-s             : 1.4rem;   //14px;
+$txt-size-m             : 2.0rem;   //20px;
+$txt-size-l             : 2.4rem;   //24px;
+$txt-size-xl            : 3.6rem;   //36px;
+$txt-size-xxl           : 4.8rem;   //48px;
+
+//mobile txt
+$txt-size-default-m     : 14px;
+$txt-size-xxs-m         : 1rem;     //10px;
+$txt-size-xs-m          : 1.1rem;   //11px;
+$txt-size-s-m           : 1.2rem;   //12px;
+$txt-size-m-m           : 1.6rem;   //16px;
+$txt-size-xl-m          : 2.4rem;   //24px;
+$txt-size-xxl-m         : 3.2rem;   //32px;
+
+$line-height-default    : 1.5;
+
+/** gutter & padding  ******************************************/
+$gutter-txt             : 12px;     //글자들 사이 여백 간격
+$gutter-btn             : 8px;      //버튼 사이 여백
+$gutter-side-mobile     : 20px;
+$gutter-popup-pc        : 32px;
+$gutter-m               : 20px;
+$gutter-pc              : 40px;
+
+// main container padding
+$column-main-top        : 24px;
+$column-main-bottom     : 100px;
+$column-main-top-pc     : 48px;
+$column-main-bottom-pc  : 200px;
+

@@ -1,0 +1,98 @@
+// @extend %는 컴파일시 보이지 않음. .은 보임
+//2019.05.10 현재 아래값은 임시 속성임. 디자인 나온 후 값 수정필요
+%default-form {
+    border: 1px solid $color-default-form;
+    padding: 12px;
+    height:$height-default-form;
+}
+
+%evt-hover-form {
+    background-color: white;
+    border-style:solid;
+    border-color: $color-strong;
+    z-index: 10;
+}
+// 기본 마우스 오버 이벤트 속성 선언하여 공통 사용
+// &:hover {
+//     @extend %evt-hover-form;
+// }
+
+
+
+%evt-hover-strong {
+    @extend %evt-hover-form;
+    border-width:3px;
+    color:$color-strong;
+    @include mq('mo', min){        
+        border-width:$brd-strong;
+    }
+    
+}
+// 마우스 오버 시 border 강조되는 이벤트 사용
+// &:hover {
+//     @extend %evt-hover-strong;
+// }
+
+%clear-display-position{
+    position:relative;
+    width:auto;
+    height:auto;
+    margin:0;
+}
+
+// magento 에서 숨김요소로 사용된 값 clear
+// @extend %clear-display-position;
+
+%box-topline{    
+    border-top:1px solid $color-default-line;       //mc
+    margin-top:20px;
+    // padding-top:24px;
+    @include mq('mo', min){
+        // padding-top:40px;
+        margin-top:40px;                             //mc
+    }
+}
+%box-underline{    
+    border-bottom:1px solid $color-default-line;       //mc
+    margin-bottom:20px;
+    padding-bottom:24px;
+    @include mq('mo', min){
+        padding-bottom:40px;
+        margin-bottom:40px;                             //mc
+    }
+}
+//block 요소의 하위에 라인 생기는 경우. 상품상세에서 사용
+//@extend %box-underline
+
+%m-center-block{
+    @include mq('mo'){
+        margin-left:$gutter-side-mobile;
+        margin-right:$gutter-side-mobile;
+    }
+    
+}
+//모바일에서 좌우 여백 있는 경우
+//@extend %m-center-block;
+
+%link-color-inherit{
+    a:link, 
+    a:hover,
+    a:visited{
+    color:inherit;
+    }
+}
+// 링크 글자색
+// @extend %link-color-inherit;
+
+%full-action-btn {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 0 -3px;
+
+    > [class*='action'] {
+      width: 100%;
+      margin: 0 3px;
+    }
+}
+// @extend %full-action-btn;

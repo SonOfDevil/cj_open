@@ -6,8 +6,9 @@
   "dependencies": {
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.1",
-    "gulp-sourcemap": "^1.0.1",
     "gulp-sass": "^4.0.2",
+    "gulp-sourcemap": "^1.0.1",
+    "gulp-sourcemaps": "^2.6.5",
     "gulp-svg-sprites": "^4.1.2",
     "node-sass": "^4.13.0"
   },

@@ -1,0 +1,37 @@
+$flex_variations: ("default": true,
+"center": true,
+"flex-end": true,
+"flex-start": true,
+"space-between":true,   //190514 seon : add
+);
+
+@mixin flexbox($position, $variation: 'default') {
+    @if map_has_key($flex_variations, $variation) {
+        display: flex;
+        flex-wrap: wrap;
+
+        @if $position=='h' {
+            justify-content: unquote($variation);
+        }
+
+        @else if $position=='v' {
+            align-content: unquote($variation);
+            align-items: unquote($variation);
+        }
+
+        @else if $position=='t' {
+            justify-content: unquote($variation);
+            align-content: unquote($variation);
+            align-items: unquote($variation);
+        }
+        @else if $position=='space-between'{
+            justify-content: space-between;
+            align-items:center;
+        }
+    }
+}
+
+// v=vertical, h=horizontal, t=total
+// .banner-wrapper {
+//     @include flexbox('space-between');
+// }

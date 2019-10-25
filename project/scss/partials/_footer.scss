@@ -1,0 +1,260 @@
+/* footer */
+.page-footer{
+    margin-top: 0;
+
+    @include mq('mo', min){
+        padding-bottom: 0;
+        background-color: $color-bg-default;
+    }
+}
+.footer.content{
+    padding: 30px 20px;
+    border-top: none;
+    background-color: $color-bg-default;
+
+    ul{
+        padding-right: 0;
+    }
+
+    @include mq('mo', min){
+        display: flex;
+        flex-wrap: wrap;
+        min-width: 1280px;
+        padding: 48px 0;
+    }
+    
+    .links{
+        margin-bottom: 35px;
+        font-size: 0;
+
+        >li{
+            display: inline-block;
+            width: 50%;
+            margin: 0;
+            padding: 0;
+            border-top: none;
+            background: none;
+            font-size: $txt-size-s-m;
+
+            a{
+                padding: 10px 0;
+                @include ff(bold);
+                color: $color-strong;
+
+                &:hover,&:active,&:visited{
+                    color: $color-strong;
+                    text-decoration: none;
+                }
+            }
+        }
+        @include mq('mo', min){
+            flex-basis: 960px;
+            margin-bottom: 0;
+            padding-right: 0;
+
+            li{
+                width: 25%;
+                margin-bottom: 24px;
+                font-size: $txt-size-s;
+            }
+        }   
+    }
+
+    @include mq('mo', min){
+        .footer-option{
+            flex-basis: 290px;
+            margin-left: auto;
+        }
+    }
+
+    .option-select{
+        width: 100%;
+        margin-bottom: 28px;
+    
+        .country-switcher{
+            position: relative;
+
+            &::before{
+                content: '';
+                @include absolute(top 3px right 0);
+                @include btn-svg(24px, 24px, icon-select-arrow, 'false', 'false', 24px, 24px);
+                @include transition(transform 250ms ease);
+            }
+            label{display: none;}
+            select{
+                position: relative;
+                width: 100%;
+                border: none;
+                border-bottom: 2px solid $color-strong-little;
+                background-color: transparent;
+                background-image: none;
+                font-size: $txt-size-s-m;
+                @include ff(bold);
+                color: $color-strong-little;
+            }
+            &.active{
+                &::before{
+                    transform: rotateZ(180deg);
+                }
+            }
+        }
+        @include mq('mo', min){
+            margin-top: -10px;
+            margin-bottom: 32px;
+            
+            .country-switcher{
+                &::before{
+                    top: 4px;
+                }
+                select{
+                    height: 40px;
+                    font-size: $txt-size-s;
+                }
+            }
+        }
+    }
+    .sns-lst{
+        margin-bottom: 28px;
+
+        ul{
+            font-size: 0;
+        }
+        li{
+            display: inline-block;
+
+            &:not(:first-child){
+                margin-left: 20px;
+            }
+            a{
+                &::before{
+                    content: '';
+                    @include bg(29px, 29px, '/svg/icon-facebook.svg', 32px, 32px);
+                }
+                &.facebook{&::before{background-image: url(#{$img-root}/svg/sns/icon-f-sns-facebook.svg);}}
+                &.instagram{&::before{background-image: url(#{$img-root}/svg/sns/icon-f-sns-instagram.svg);}}
+                &.twitter{&::before{background-image: url(#{$img-root}/svg/sns/icon-f-sns-twitter.svg);}}
+                &.pinterest{&::before{background-image: url(#{$img-root}/svg/sns/icon-f-sns-pinterest.svg);}}
+                &.googleplus{&::before{background-image: url(#{$img-root}/svg/sns/icon-f-sns-googleplus.svg);}}
+            }
+        }
+        @include mq('mo', min){
+            margin-bottom: 32px;
+
+            ul{
+                padding-right: 0;
+            }
+            li{
+                &:not(:first-child){
+                    margin-left: 11px;
+                }
+            }
+        }
+    }
+    .block.newsletter{
+        margin-bottom: 10px;
+
+        input{
+            height: 40px;
+            padding-left: 12px;
+            border:2px solid $color-strong;
+            font-size: $txt-size-s-m;
+            @include ff(bold);
+        }
+        .field{
+            .control{
+                &::before{
+                    content: none;
+                }
+            }
+        }
+        .action{
+            width: 80px;
+            height: 40px;
+            padding: 0;
+            font-size: $txt-size-s-m;
+        }
+        @include mq('mo', min){
+            float: none;
+            width: $screen-auto;
+            margin: 0;
+
+            input{
+                height: 48px;
+                padding-left: 10px;
+                font-size: $txt-size-s;
+            }
+            .action{
+                width: 84px;
+                height: 48px;
+                font-size: $txt-size-s;
+            }
+        }
+    }
+}
+.company-info{
+    background-color: $color-bg-darkgray;
+
+    .info-content{
+        padding: 40px 20px 80px;
+    }
+
+    .logo{
+        float: none;
+        margin: 0 0 20px;
+        vertical-align: top;
+
+        img{
+            width: 120px;
+            height: 15px;
+        }
+    }
+    .txt{
+        margin-bottom: 16px;
+        font-size: $txt-size-xs-m;
+        color: $color-txt-default;
+
+        a{
+            @include ff(bold);
+            color: $color-txt-default;
+        }
+        span{
+            margin: 0 2px;
+        }
+    }
+    @include mq('mo', min){
+        min-width: 1280px;
+        
+        .info-content{
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1280px;
+            min-width: 1280px;
+            margin: 0 auto;
+            padding: 48px 0;
+        }
+        .logo{
+            margin-right: 70px;
+
+            img{
+                width: 180px;
+                height: 22px;
+            }
+        }
+        .txt{
+            max-width: 630px;
+            margin-bottom: 12px;
+            font-size: $txt-size-xs;
+        }
+    }
+}
+.copyright{
+    padding: 0;
+    background-color: $color-bg-darkgray;
+    text-align: left;
+    font-size: $txt-size-xs-m;
+    color: $color-txt-default;
+
+    @include mq('mo', min){
+        font-size: $txt-size-xs;
+    }
+}
