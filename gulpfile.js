@@ -5,7 +5,10 @@ var sass = require('gulp-sass');
 var plumber = require('gulp-plumber');
 var notify = require('gulp-notify');
 var sourcemaps = require('gulp-sourcemaps');
-var svgSprite = require("gulp-svg-sprites");
+var svgSprite = require('gulp-svg-sprites');
+var fileinclude = require('gulp-file-include');
+var markdown = require('markdown');
+
 // var spritesmith = require('gulp.spritesmith');
 
 sass.compiler = require('node-sass');
@@ -68,15 +71,20 @@ gulp.task('sass', function () {
     .pipe(gulp.dest([config.dest]));
 });
 
-// app에 css file 생성
-gulp.task('sass-app', function () {
-  return gulp.src([config.src])
-    .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
-    .pipe(gulp.dest([config.dest_app]))
+// file include
+gulp.task('fileinclude', function (done) {
+  // gulp.src(['./project/src/sub/index.html', './project/src/sub/*.html'], {
+  gulp.src(['./project/src/index.html', './project/src/*.html'])
+    .pipe(fileinclude({
+      filters: {
+        markdown: markdown.parse
+      }
+    }))
+    .pipe(gulp.dest('./project/'));
+    done();
 });
-
 
 gulp.task('watch', function () {
   // gulp.watch('./app/design/frontend/Emthemes/laparis/web/css/sass/**/*.scss', gulp.series('sass'));
-  gulp.watch([config.src], gulp.series('sass'));
+  gulp.watch([config.src, './project/src/*.html'], gulp.series('sass', 'fileinclude'));
 });
