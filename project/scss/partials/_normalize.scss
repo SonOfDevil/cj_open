@@ -113,33 +113,24 @@ fieldset, .fieldset{ //mc
   letter-spacing: 0;
 }
 
-.blind,
-legend:not(.legend-show) {
-  overflow: hidden;
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  clip: rect(1px, 1px, 1px, 1px);
-}
-
 body,
 textarea,
 input,
 select,
 button {
-  font-family: 'rt', 'ns', sans-serif;
+  font-family: 'cr', Arial, sans-serif;
   font-weight: normal;
-  color: $color-strong;
-  line-height: $line-height-default;
+  color: $color-txt-default;
+  // line-height: $line-height-default;
   //line break
   word-break:keep-all;
   word-wrap: break-word;
   text-overflow:clip;
 
   font-size: $txt-size-default-m;
-  @include mq('mo', min){
-    font-size: $txt-size-default;
-  }
+  // @include mq('mo', min){
+  //   font-size: $txt-size-default;
+  // }
 }
 
 *,
@@ -150,289 +141,6 @@ button {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-// magento style reset
-input:not([disabled]):focus,
-textarea:not([disabled]):focus,
-select:not([disabled]):focus {
-  box-shadow: none;
-  border-color:$color-strong;
-}
-
-// IOS select zoom 증상 테스트
-// @media screen and (-webkit-min-device-pixel-ratio: 0) {
-//   select:focus, textarea:focus, input:focus {
-//     font-size: $txt-size-default-m;
-//     @include mq('mo', min){
-//       font-size: $txt-size-default;
-//     }
-//   }
-// }
-
-// custom radio/checkbox style
-label[class*='cst-'],
-.form-cols > label,
-.form-rows > label{
-  input[type="checkbox"],
-  input[type="radio"] {
-    // position: absolute;
-    // left: -999em;
-    visibility: hidden;
-    display: block;
-    width:0;
-    height:0;
-    margin:0;
-  }
-  > span{
-    // cursor: pointer;
-    position: relative;
-    display: inline-block;
-    padding-left:28px;
-    min-height:$chk-size;
-    min-width: $chk-size;
-    @include mq('mo', min){
-      padding-left:34px;
-      min-height:$chk-size-pc;
-      min-width: $chk-size-pc;
-    }
-  }
-
-  input[type="checkbox"] + span:before,
-  input[type="radio"] + span:before {
-    position:absolute;
-    top:0;
-    left:0;
-    content: ' ';
-    display: inline-block;
-    background-size: cover;
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    vertical-align: top;
-    width:$chk-size;
-    height:$chk-size;
-    @include mq('mo', min){
-      width:$chk-size-pc;
-      height:$chk-size-pc;
-    }
-  }
-
-  input[type='checkbox']{
-    & + span:before{
-      background-image: url(#{$img-root}/svg/icon-checkbox.svg);
-    }
-    &:hover + span:before{
-      background-image: url(#{$img-root}/svg/icon-checkbox-hover.svg);
-    }
-    &:checked + span:before{
-      background-image: url(#{$img-root}/svg/icon-checkbox-checked.svg);
-    }
-    &:disabled + span:before{
-      background-image: url(#{$img-root}/svg/icon-checkbox-disabled.svg);
-    }
-    &:checked:disabled + span:before{
-      background-image: url(#{$img-root}/svg/icon-checkbox-disabled-checked.svg);
-    }
-  }
-  input[type='radio']{
-    & + span:before{
-      background-image: url(#{$img-root}/svg/icon-radiobox.svg);
-    }
-    &:hover + span:before{
-      background-image: url(#{$img-root}/svg/icon-radiobox-hover.svg);
-    }
-    &:checked + span:before{
-      background-image: url(#{$img-root}/svg/icon-radiobox-checked.svg);
-    }
-    &:disabled + span:before{
-      background-image: url(#{$img-root}/svg/icon-radiobox-disabled.svg);
-    }
-    &:checked:disabled + span:before{
-      background-image: url(#{$img-root}/svg/icon-radiobox-disabled-checked.svg);
-    }
-  }
-}
-
-// rows
-.form{
-  &-cols,
-  &-rows{
-    > label{
-      display: inline-block;
-      height:$chk-size;
-      line-height: $chk-size;
-      // background-color: yellow;
-      @include mq('mo', min){
-        height:$chk-size-pc;
-        line-height: $chk-size-pc;
-      }
-      input[type='checkbox'],
-      input[type='radio']{
-        margin-right:8px;
-      }
-      span{
-        vertical-align: top;
-      }
-    }
-    > label:not(:first-of-type){
-      margin-left:24px;
-    }
-  }
-  &-rows{
-    label{
-      display: block;
-    }
-    label:not(:first-of-type){
-      margin-left:0;
-      margin-top:12px;
-    }
-  }
-}
-
-// input & textarea
-input[type="text"],
-input[type="password"],
-input[type="url"],
-input[type="tel"],
-input[type="search"],
-input[type="number"],
-input[type="datetime"],
-input[type="email"],
-textarea {
-  border-radius: 0;                             //mc
-  background-clip: inherit;                         //background:none 쓰면 아이폰에서 그림자 나타남.
-  border: 1px solid $color-default-form;   // $color-default-form
-  padding: 12px;
-  @include ff();
-  @include clear-font-size($txt-size-default-m);
-  @include mq('mo', min) {
-    @include clear-font-size($txt-size-default);
-  }
-  @include input-placeholder{
-    color: $color-none-strong-info;
-  }
-  &:disabled {
-    background-color: $color-bg-default;
-    color: $color-none-strong;
-    opacity: 1; //mc
-  }
-  &::-ms-clear{
-    display:none;
-    width: 0;
-    height: 0;
-  }
-}
-
-//input height
-input:not([type='checkbox']):not([type='radio']) {
-  height: $height-default-form-mo;
-
-  @include mq('mo', min) {
-    height: $height-default-form;
-  }
-}
-
-.input-msg{
-  position:relative;
-  .stat-msg{display:none;}
-  &.active-error{
-    .ipt-error,
-    .ipt-error:hover{
-      border-color:$color-point !important;
-    }
-    .stat-msg{
-      display:inline-block;
-      width: 100%;
-      // position:absolute;
-      // bottom:-1.25em;
-      // left:0;
-      // z-index:2;
-      margin: 6px 0 2px;
-      color:$color-point;
-      font-size:$txt-size-s-m;
-      @include mq('mo', min){
-        margin:10px 0 4px;
-        font-size: $txt-size-s;
-      }
-    }
-    .txt-link{
-      display: inline-block;
-      margin: 8px 0 10px;
-      font-size: $txt-size-s-m;
-      @include ff(bold);
-      color: $color-point;
-      text-decoration: underline;
-      @include mq('mo', min){
-        margin-bottom: 16px;
-        font-size: $txt-size-s;
-      }
-    }
-  }
-}
-
-// 보여지지 않는 라벨에는 .blind 추가하여 처리
-label:not([class='blind']) + input:not([type='checkbox']):not([type='radio']){
-  // background-color:violet;
-  margin-top:8px;
-  @include mq('mo', min){
-    margin-top:12px;
-  }
-}
-
-/* Change Autocomplete styles in Chrome firefox */
-input, textarea, select{
-  &:-webkit-autofill{
-    &,
-    &:hover,
-    &:focus,
-    &:active{
-      -webkit-text-fill-color: $color-strong;
-      -webkit-box-shadow: 0 0 0px 1000px #fff inset;
-      background-color: white;
-    }
-  }
-  filter:none;
-}
-// :-moz-autofill, :-moz-autofill-preview {
-//     filter:none;
-// }
-
-
-// input:-webkit-autofill,
-// input:-webkit-autofill:hover,
-// input:-webkit-autofill:focus,
-// textarea:-webkit-autofill,
-// textarea:-webkit-autofill:hover,
-// textarea:-webkit-autofill:focus,
-// select:-webkit-autofill,
-// select:-webkit-autofill:hover,
-// select:-webkit-autofill:focus {
-//   -webkit-text-fill-color: $color-strong;
-//   -webkit-box-shadow: 0 0 0px 1000px #fff inset;
-// }
-
-//input type file
-.input-file{
-  @include relative;
-  display: inline-block;
-  cursor: pointer;
-  overflow: hidden;
-
-  label{
-    cursor: pointer;
-    text-decoration: underline;
-    color: $color-strong;
-    @include ff(bold);
-  }
-  input[type='file']{
-    border:1px solid red;
-    @include absolute(left 0 bottom 0);
-    width:1px;
-    height:1px;
-    opacity: 0;
-    z-index: -1;
-    // clip:rect(0,0,0,0);
-  }
 }
 
 h1,
@@ -476,24 +184,3 @@ strong{
   float: right
 }
 
-
-
-// test
-// @viewport{
-//   orientation: portrait;
-// }
-// @media screen and (orientation: landscape) {
-//   html {
-//     /* Rotate the content container */
-//     transform: rotate(-90deg);
-//     transform-origin: left top;
-//     /* Set content width to viewport height */
-//     width: 100vh;
-//     /* Set content height to viewport width */
-//     height: 100vw;
-//     overflow-x: hidden;
-//     position: absolute;
-//     top: 100%;
-//     left: 0;
-//   }
-// }

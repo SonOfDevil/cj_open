@@ -86,5 +86,5 @@ gulp.task('fileinclude', function (done) {
 
 gulp.task('watch', function () {
   // gulp.watch('./app/design/frontend/Emthemes/laparis/web/css/sass/**/*.scss', gulp.series('sass'));
-  gulp.watch([config.src, './project/src/*.html'], gulp.series('sass', 'fileinclude'));
+  gulp.watch([config.src, './project/src/*.html', './project/src/sub/*.html'], gulp.series('sass', 'fileinclude'));
 });

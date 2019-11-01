@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="O'PEN(오펜) - 작가 응시" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <!-- <link rel="stylesheet" type="text/css" href="./css/customs.css"> -->
+  <!-- <link rel="stylesheet" type="text/css" href="./scss/fullpage.css" />
+  <link rel="stylesheet" type="text/css" href="./scss/examples.css" /> -->
+
+
+  <!-- 아래 선은 `scrollOverflow:true` 옵션을 쓰시는 경우에만 넣으셔야 합니다. -->
+  <script type="text/javascript" src="./js/scrolloverflow.min.js"></script>
+
+  <script type="text/javascript" src="./js/fullpage.js"></script>
+  <script type="text/javascript" src="./scss/examples.js"></script>
+
+
+
+  <link rel="stylesheet" type="text/css" href="./scss/fullpage.css" />
+  <link rel="stylesheet" type="text/css" href="./scss/examples.css" />
+  <link rel="stylesheet" type="text/css" href="./css/customs.css">
+  <script type="text/javascript" src="./js/fullpage.js"></script>
+  <script type="text/javascript" src="./js/examples.js"></script>
+  <script type="text/javascript">
+    window.onload = function () {
+      var myFullpage = new fullpage('#fullpage', {
+
+
+
+        // //스크롤
+        anchors: ['firstPage', 'lastPage'],
+        css3: true,
+        scrollingSpeed: 500,
+        autoScrolling: true,
+        fitToSection: true,
+        fitToSectionDelay: 1000,
+        loopBottom: true,
+        loopHorizontal: true,
+        continuousHorizontal: true,
+        interlockedSlides: true,
+        dragAndMove: true,
+        resetSliders: true,
+        fadingEffect: true,
+        touchSensitivity: 15,
+        // scrollBar: true,
+        // easing: 'easeInOutCubic',
+        // easingcss3: 'ease',
+        // loopTop: true,
+        // continuousVertical: false,
+        // scrollHorizontally: false,
+        // offsetSections: false,
+        // normalScrollElements: '#element1, .element2',
+        // scrollOverflow: false,
+        // scrollOverflowReset: false,
+        // scrollOverflowOptions: null,
+        // bigSectionsDestination: null,
+
+        // //접근성
+        keyboardScrolling: true,
+        animateAnchor: true,
+        recordHistory: true,
+
+        // //디자인
+        sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE'],
+        responsiveWidth: 0,
+        responsiveHeight: 0,
+        responsiveSlides: true,
+        verticalCentered: true,
+        // controlArrows: true,
+        // paddingTop: '10em',
+        // paddingBottom: '10px',
+        // fixedElements: '#header, .footer',
+        // parallax: true,
+        // parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
+        // cards: true,
+        // cardsOptions: {perspective: 100, fadeContent: true, fadeBackground: true},
+
+
+
+
+      });
+
+    }
+  </script>
+</head>
+<body>
+<div id="fullpage">
+  <div class="section " id="section0">
+    <h1>fullPage.js</h1>
+    <p>Configure the scrolling speed!</p>
+    <img src="imgs/fullPage.png" alt="fullPage" />
+  </div>
+  <div class="section" id="section1">
+    <div class="slide">
+      <div class="intro">
+        <img src="imgs/1.png" alt="Cool" />
+        <h1>Slow scrolling speed</h1>
+        <p>In case we want to make a site for old people, for example :)</p>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="intro">
+        <img src="imgs/2.png" alt="Compatible" />
+        <h1>Landscape too</h1>
+        <p>Also applied to landscape slides. Great uh?</p>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="intro">
+        <img src="imgs/3.png" alt="Compatible" />
+        <h1>Landscape too</h1>
+        <p>Also applied to landscape slides. Great uh?</p>
+      </div>
+    </div>
+  </div>
+  <div class="section fp-auto-height" id="section2">
+    <!-- <div class="intro">
+      <h1>Slooooooww</h1>
+      <p>Now you can try other demos!</p>
+    </div> -->
+    @@include('./sub/footer.html')
+  </div>
+</div>
+</body>
+</html>

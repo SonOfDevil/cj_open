@@ -1,5 +1,5 @@
 // @extend %는 컴파일시 보이지 않음. .은 보임
-//2019.05.10 현재 아래값은 임시 속성임. 디자인 나온 후 값 수정필요
+
 %default-form {
     border: 1px solid $color-default-form;
     padding: 12px;
@@ -23,10 +23,10 @@
     @extend %evt-hover-form;
     border-width:3px;
     color:$color-strong;
-    @include mq('mo', min){        
+    @include mq('mo', min){
         border-width:$brd-strong;
     }
-    
+
 }
 // 마우스 오버 시 border 강조되는 이벤트 사용
 // &:hover {
@@ -43,7 +43,7 @@
 // magento 에서 숨김요소로 사용된 값 clear
 // @extend %clear-display-position;
 
-%box-topline{    
+%box-topline{
     border-top:1px solid $color-default-line;       //mc
     margin-top:20px;
     // padding-top:24px;
@@ -52,7 +52,7 @@
         margin-top:40px;                             //mc
     }
 }
-%box-underline{    
+%box-underline{
     border-bottom:1px solid $color-default-line;       //mc
     margin-bottom:20px;
     padding-bottom:24px;
@@ -69,13 +69,13 @@
         margin-left:$gutter-side-mobile;
         margin-right:$gutter-side-mobile;
     }
-    
+
 }
 //모바일에서 좌우 여백 있는 경우
 //@extend %m-center-block;
 
 %link-color-inherit{
-    a:link, 
+    a:link,
     a:hover,
     a:visited{
     color:inherit;

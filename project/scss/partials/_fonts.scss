@@ -1,0 +1,108 @@
+/* font */
+// $path-font: "/static/frontend/cj/publisher/en_US/fonts/";
+
+@font-face {
+  font-family: 'cr';
+  src: url('../CJ-ONLYONE-NEW-title-OTF-Medium.eot');
+  src: url('../CJ-ONLYONE-NEW-title-OTF-Medium.eot?#iefix') format("embedded-opentype"),
+       url('../CJ-ONLYONE-NEW-title-OTF-Medium.woff2') format("woff2"),
+       url('../CJ-ONLYONE-NEW-title-OTF-Medium.woff') format("woff"),
+       url('../CJ-ONLYONE-NEW-title-OTF-Medium.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'cm';
+  src: url('../fonts/CJ-ONLYONE-NEW-title-Medium.eot');
+  src: url('../fonts/CJ-ONLYONE-NEW-title-Medium.eot?#iefix') format("embedded-opentype"),
+       url('../fonts/CJ-ONLYONE-NEW-title-Medium.woff2') format("woff2"),
+       url('../fonts/CJ-ONLYONE-NEW-title-Medium.woff') format("woff"),
+       url('../fonts/CJ-ONLYONE-NEW-title-Medium.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'cb';
+  src: url('../fonts/CJ-ONLYONE-NEW-title-OTF-Bold.eot');
+  src: url('../fonts/CJ-ONLYONE-NEW-title-OTF-Bold.eot?#iefix') format("embedded-opentype"),
+       url('../fonts/CJ-ONLYONE-NEW-title-OTF-Bold.woff2') format("woff2"),
+       url('../fonts/CJ-ONLYONE-NEW-title-OTF-Bold.woff') format("woff"),
+       url('../fonts/CJ-ONLYONE-NEW-title-OTF-Bold.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+// Futura
+@font-face {
+  font-family: 'fr';
+  src: url('../fonts/futur.eot');
+  src: url('../fonts/futur.eot?#iefix') format("embedded-opentype"),
+       url('../fonts/futur.woff2') format("woff2"),
+       url('../fonts/futur.woff') format("woff"),
+       url('../fonts/futur.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'fb';
+  src: url('../fonts/futura heavy font.eot');
+  src: url('../fonts/futura heavy font.eot?#iefix') format("embedded-opentype"),
+       url('../fonts/futura heavy font.woff2') format("woff2"),
+       url('../fonts/futura heavy font.woff') format("woff"),
+       url('../fonts/futura heavy font.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Noto Sans
+@font-face {
+  font-family: 'nr';
+  src: url('../fonts/NotoSansCJKsc-Regular.eot');
+  src: url('../fonts/NotoSansCJKsc-Regular.eot?#iefix') format("embedded-opentype"),
+       url('../fonts/NotoSansCJKsc-Regular.woff2') format("woff2"),
+       url('../fonts/NotoSansCJKsc-Regular.woff') format("woff"),
+       url('../fonts/NotoSansCJKsc-Regular.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'nn';
+  src: url('../fonts/NotoSansCJKsc-Medium.eot');
+  src: url('../fonts/NotoSansCJKsc-Medium.eot?#iefix') format("embedded-opentype"),
+       url('../fonts/NotoSansCJKsc-Medium.woff2') format("woff2"),
+       url('../fonts/NotoSansCJKsc-Medium.woff') format("woff"),
+       url('../fonts/NotoSansCJKsc-Medium.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'nb';
+  src: url('../fonts/NotoSansCJKsc-Bold.eot');
+  src: url('../fonts/NotoSansCJKsc-Bold.eot?#iefix') format("embedded-opentype"),
+       url('../fonts/NotoSansCJKsc-Bold.woff2') format("woff2"),
+       url('../fonts/NotoSansCJKsc-Bold.woff') format("woff"),
+       url('../fonts/NotoSansCJKsc-Bold.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'nt';
+  src: url('../fonts/NotoSansCJKsc-Thin.eot');
+  src: url('../fonts/NotoSansCJKsc-Thin.eot?#iefix') format("embedded-opentype"),
+       url('../fonts/NotoSansCJKsc-Thin.woff2') format("woff2"),
+       url('../fonts/NotoSansCJKsc-Thin.woff') format("woff"),
+       url('../fonts/NotoSansCJKsc-Thin.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'nblack';
+  src: url('../fonts/NotoSansCJKsc-Black.eot');
+  src: url('../fonts/NotoSansCJKsc-Black.eot?#iefix') format("embedded-opentype"),
+       url('../fonts/NotoSansCJKsc-Black.woff2') format("woff2"),
+       url('../fonts/NotoSansCJKsc-Black.woff') format("woff"),
+       url('../fonts/NotoSansCJKsc-Black.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
