@@ -4,11 +4,12 @@
     position: relative;
     width: 100%;
     min-width: 980px;
-    font-family: 'cr';
+    font-family: 'cr', 'MalgunGothic';
+    ;
     z-index: 21;
     background: #ffffff;
     * {
-        font-family: cr;
+        font-family: 'cr', 'MalgunGothic';
     }
     .footer_tving_notice_wrap {
         border-top: 1px solid #eeeeee;
@@ -207,7 +208,7 @@
                     color: $color-txt-dark;
                     text-decoration: none;
                     line-height: 20px;
-                    font-family: 'cm', Arial, sans-serif;
+                    font-family: 'cm', 'MalgunGothic';
                     &.btn_footer_tving_menu_privacy {
                         // color: $color-white;
                         font-weight: bold;
@@ -224,7 +225,7 @@
         display: flex;
         width: 1200px;
         margin: 24px auto 0;
-        .footer_tving_logo {
+        .footer_enm_logo {
             margin-right: 30px;
             a {
                 position: relative;
@@ -234,7 +235,7 @@
                 font-size: 0;
                 line-height: 0;
                 text-indent: -99999px;
-                background: url(../images/bg_footer_tving_logo.png) no-repeat center center;
+                background: url(../images/bg_footer_enm_logo.png) no-repeat center center;
                 display: block;
             }
         }

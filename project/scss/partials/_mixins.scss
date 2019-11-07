@@ -387,13 +387,35 @@ $breakpoints: ("mo": 767px);
 
 
 // font
-@mixin ff($font-weight: normal) {
-  @if $font-weight==bold {
-    font-family: 'rb', 'nb', sans-serif;
-    font-weight: normal;
+@mixin ff($font-family: cr) {
+  @if $font-family == cr {
+    font-family: 'cr','MalgunGothic';
   }
-  @else {
-    font-family: 'rt', 'ns', sans-serif;
+  @else if $font-family == cb {
+    font-family: 'cb','MalgunGothic';
+    font-weight: bold;
+  }
+  @else if $font-family == cl {
+    font-family: 'cl','MalgunGothic';
+  }
+  @else if $font-family == cm {
+    font-family: 'cm','MalgunGothic';
+  }
+  @else if $font-family == fr {
+    font-family: 'fr','MalgunGothic';
+  }
+  @else if $font-family == nr {
+    font-family: 'nr','MalgunGothic';
+  }
+  @else if $font-family == nm {
+    font-family: 'nm','MalgunGothic';
+  }
+  @else if $font-family == nl {
+    font-family: 'nl','MalgunGothic';
+  }
+  @else if $font-family == nb {
+    font-family: 'nb','MalgunGothic';
+    font-weight: bold;
   }
 }
 

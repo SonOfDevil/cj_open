@@ -96,3 +96,36 @@
     }
 }
 // @extend %full-action-btn;
+
+%arrow {
+    position: absolute;
+    top: 50px;
+    width: 28px;
+    height: 2px;
+    background-color: #fff;
+    // box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+    // animation: arrow 700ms linear infinite;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 40%;
+        height: 2px;
+        top: -3px;
+        right: -3px;
+        background-color: #fff;
+        transform: rotate(45deg);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 40%;
+        height: 2px;
+        top: 3px;
+        right: -3px;
+        background-color: #fff;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+        transform: rotate(-45deg);
+    }
+}
