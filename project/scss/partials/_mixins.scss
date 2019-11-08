@@ -417,6 +417,9 @@ $breakpoints: ("mo": 767px);
     font-family: 'nb','MalgunGothic';
     font-weight: bold;
   }
+  @else if $font-family == nl {
+    font-family: 'nl','MalgunGothic';
+  }
 }
 
 @mixin clear-font-size($font-size:$txt-size-default) {

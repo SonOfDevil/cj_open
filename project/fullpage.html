@@ -32,7 +32,7 @@
 
 
         // //스크롤
-        anchors: ['firstPage', 'lastPage'],
+        anchors: ['slide-main', 'slide-sub', 'open-story','about-open','footer'],
         css3: true,
         licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
         scrollingSpeed: 500,
@@ -66,7 +66,7 @@
         recordHistory: true,
 
         // //디자인
-        sectionsColor: ['', '', '#7BAABE'],
+        // sectionsColor: ['', '', '#7BAABE', '', ''],
         responsiveWidth: 0,
         responsiveHeight: 0,
         responsiveSlides: true,
@@ -111,7 +111,10 @@
     <div class="section main-slider" id="section0">
       <div class="main-gnb">
   <div class="gnb-wrap">
-    <div class="header_open_logo"><a href="http://www.cjenm.com"><img src="./images/logo_open.png" alt="O'pen logo"></a></div>
+    <div class="header_open_logo" title="O'pen logo">
+      <a href="http://www.cjenm.com">
+      </a>
+    </div>
     <nav class="main-menu">
       <ul class="menu">
         <li><a href="#">오펜</a></li>
@@ -190,9 +193,8 @@
           </div>
           <div class="slide-content">
             <div class="slide-wrap-01">
-              <img class="slide-img-01" src="./images/slide-img-01.png" alt="o'pen slide01 배경 이미지" class="slide-img-01">
-              <img class="slide-img-02" src="./images/slide-img-02.png" alt="o'pen slide01 logo 이미지"
-                class="slide-img-02">
+              <img class="slide-img-01" src="./images/slide-img-01.png" alt="o'pen slide01 배경 이미지">
+              <img class="slide-img-02" src="./images/slide-img-02.png" alt="o'pen slide01 logo 이미지">
               <div class="slide-txt-wrap">
                 <p>O’PEN (오펜)은 작가(Pen)을 꿈꾸는 이들이게</p>
                 <p><span>열려있는(Open) 창작 공간</span>과,</p>
@@ -305,11 +307,90 @@
       </div>
 
     </div>
-    <div class="section fp-auto-height" id="section2">
-      <div class="content-wrap">asdfsdf</div>
+
+
+    <div class="section" id="section2">
+      <div class="bg-layer">
+
+        <div class="content-wrap">
+          <div class="view-wrap">
+            <p class="tit">2020</p>
+            <p class="tit-sub">건강한 컨텐츠<br>생태계를 선도합니다.</p>
+            <p class="corp">오펜<br>STORY</p>
+          </div>
+          <div class="desc-wrap">
+            <h2 class="tit">Whatever You Imagine.</h2>
+            <p class="tit-sub">당신을 응원합니다.</p>
+            <p class="desc-tit">콘텐츠 기획개발부터, 비즈매칭까지!</p>
+            <p class="desc-txt">오펜은 일련의 과정을 통합적으로 지원하며<br>
+              업계와 다양한 교류기회를 통해<br>
+              건강한 컨텐츠 생태계를 선도합니다.</p>
+            <a href="#" class="btn">VIEW MORE<span class="arrow"></span></a>
+          </div>
+        </div>
+      </div>
+
     </div>
     <div class="section fp-auto-height" id="section3">
-        <div class="content-wrap">asdfsdf</div>
+        <div class="content-wrap">
+          <div class="about-wrap">
+            <div class="desc-wrap">
+              <h2 class="tit">ABOUT <span class="tit-sub">오펜</span></h2>
+            </div>
+            <ul class="about-list">
+              <li>
+                <a href="#">
+                  <div class="list-border">
+                  </div>
+                  <img class="list-img" src="./images/section04-img-01.png" alt="o'pen is - cj enm의 신인 창작자 발굴, 육성사업. 오펜을 소개합니다.">
+                  <div class="list-txt">
+                    <p class="tit">O'PEN is</p>
+                    <p class="desc">CJ ENM의 신인 창작자 발굴, 육성사업.<br>
+                    오펜을 소개합니다.</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="list-border">
+                  </div>
+                  <img class="list-img" src="./images/section04-img-02.png" alt="오펜공간 - 창작자를 꿈꾸는 이들에게 열려있는 창작환경과 공간을 제공합니다.">
+                  <div class="list-txt">
+                    <p class="tit">오펜공간</p>
+                    <p class="desc">창작자를 꿈꾸는 이들에게<br>열려있는 창작환경과 공간을 제공합니다.</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="list-border">
+                  </div>
+                  <img class="list-img" src="./images/section04-img-03.png" alt="보도자료 언론매체로 보는
+  오펜의 성과와 이야기입니다.">
+                  <div class="list-txt">
+                    <p class="tit">보도자료</p>
+                    <p class="desc">언론매체로 보는<br>오펜의 성과와 이야기입니다.</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <div class="notice-wrap">
+              <div class="notice">
+                <div class="notice-list">
+                  <span class="notice-tit">공지사항</span>
+                  <span class="notice-txt">ENM '오펜' 3기 출범...신인 작가 30명 (글 김윤지)</span>
+                  <span class="notice-date">2019.06.20</span>
+                </div>
+
+                <ul class="notice-arrow">
+                  <li class="arrow up"><a href="#"><i class="arrow up"></i></a></li>
+                  <li class="arrow down">                <a href="#"><i class="arrow down"></i></a></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
     </div>
     <div class="section fp-auto-height" id="section4">
       <div id="footer_tving" class="footer_tving">
