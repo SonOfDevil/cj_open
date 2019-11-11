@@ -92,7 +92,7 @@
     var SLIDES_ARROW_NEXT_SEL = SLIDES_ARROW_SEL + SLIDES_NEXT_SEL;
 
     function initialise(containerSelector, options) {
-        var isOK = options && new RegExp('([\\d\\w]{8}-){3}[\\d\\w]{8}|^(?=.*?[A-Y])(?=.*?[a-y])(?=.*?[0-8])(?=.*?[#?!@$%^&*-]).{8,}$').test(options['li'+'cen'+'seK' + 'e' + 'y']) || document.domain.indexOf('al'+'varotri' +'go' + '.' + 'com') > -1;
+        var isOK = options;
 
         // cache common elements
         var $htmlBody = $('html, body');
@@ -641,8 +641,8 @@
 
             //using jQuery initialization? Creating the $.fn.fullpage object
             if(options.$){
-                Object.keys(FP).forEach(function (key) {    
-                    options.$.fn.fullpage[key] = FP[key];   
+                Object.keys(FP).forEach(function (key) {
+                    options.$.fn.fullpage[key] = FP[key];
                 });
             }
 
@@ -803,7 +803,7 @@
         }
 
         /**
-        * Checks the viewport a few times on a define interval of time to 
+        * Checks the viewport a few times on a define interval of time to
         * see if it has changed in any of those. If that's the case, it resizes.
         */
         function doubleCheckHeight(){
@@ -1323,12 +1323,12 @@
             var top = rect.top;
             var bottom = rect.bottom;
 
-            //sometimes there's a 1px offset on the bottom of the screen even when the 
+            //sometimes there's a 1px offset on the bottom of the screen even when the
             //section's height is the window.innerHeight one. I guess because pixels won't allow decimals.
-            //using this prevents from lazyLoading the section that is not yet visible 
+            //using this prevents from lazyLoading the section that is not yet visible
             //(only 1 pixel offset is)
             var pixelOffset = 2;
-            
+
             var isTopInView = top + pixelOffset < windowsHeight && top > 0;
             var isBottomInView = bottom > pixelOffset && bottom < windowsHeight;
 
@@ -2007,7 +2007,7 @@
 
         /**
         * Makes sure lazyload is done for other sections in the viewport that are not the
-        * active one. 
+        * active one.
         */
         function lazyLoadOthers(){
             var hasAutoHeightSections = $(AUTO_HEIGHT_SEL)[0] || isResponsiveMode() && $(AUTO_HEIGHT_RESPONSIVE_SEL)[0];
@@ -2618,15 +2618,15 @@
 
         /*
         * Resize event handler.
-        */        
+        */
         function resizeHandler(){
             clearTimeout(resizeId);
 
             //in order to call the functions only when the resize is finished
-            //http://stackoverflow.com/questions/4298612/jquery-how-to-call-resize-event-only-once-its-finished-resizing    
+            //http://stackoverflow.com/questions/4298612/jquery-how-to-call-resize-event-only-once-its-finished-resizing
             resizeId = setTimeout(function(){
 
-                //issue #3336 
+                //issue #3336
                 //(some apps or browsers, like Chrome/Firefox for Mobile take time to report the real height)
                 //so we check it 3 times with intervals in that case
                 for(var i = 0; i< 4; i++){
@@ -3251,7 +3251,7 @@
             addClass(container, DESTROYED);
 
             [
-                afterSlideLoadsId, 
+                afterSlideLoadsId,
                 afterSectionLoadsId,
                 resizeId,
                 scrollId,
@@ -3398,7 +3398,7 @@
         * Displays warnings
         */
         function displayWarnings(){
-            var l = options['li' + 'c' + 'enseK' + 'e' + 'y'];
+            var l = options['licenseKey'];
             var msgStyle = 'font-size: 15px;background:yellow;'
 
             if(!isOK){
@@ -4184,3 +4184,83 @@ if(window.jQuery && window.fullpage){
         };
     })(window.jQuery, window.fullpage);
 }
+
+
+var myFullpage = new fullpage('#fullpage', {
+
+  // //스크롤
+  anchors: ['slide-main', 'slide-sub', 'open-story', 'about-open', 'footer'],
+  css3: true,
+  scrollingSpeed: 500,
+  autoScrolling: true,
+  fitToSection: true,
+  fitToSectionDelay: 1000,
+  loopBottom: true,
+  loopHorizontal: true,
+  continuousHorizontal: true,
+  interlockedSlides: true,
+  dragAndMove: true,
+  resetSliders: true,
+  fadingEffect: true,
+  touchSensitivity: 15,
+  // scrollBar: true,
+  // easing: 'easeInOutCubic',
+  // easingcss3: 'ease',
+  // loopTop: true,
+  // continuousVertical: false,
+  // scrollHorizontally: false,
+  // offsetSections: false,
+  // normalScrollElements: '#element1, .element2',
+  scrollOverflow: true,
+  scrollOverflowReset: false,
+  scrollOverflowOptions: null,
+  bigSectionsDestination: null,
+
+  // //접근성
+  keyboardScrolling: true,
+  animateAnchor: true,
+  recordHistory: true,
+
+  // //디자인
+  // sectionsColor: ['', '', '#7BAABE', '', ''],
+  responsiveWidth: 0,
+  responsiveHeight: 0,
+  responsiveSlides: true,
+  verticalCentered: true,
+  controlArrows: true,
+  // paddingTop: '10em',
+  // paddingBottom: '10px',
+  // fixedElements: '#header, .footer',
+  // parallax: true,
+  // parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
+  cards: true,
+  cardsOptions: {
+    perspective: 100,
+    fadeContent: true,
+    fadeBackground: true
+  },
+  fadingEffect: true,
+  // fadingEffect: 'slides'
+  fadingEffect: true,
+  // slidesNavigation: true,
+  // navigation: true,
+  // navigationPosition: 'bottom',
+  // navigationTooltips: ['firstSlide', 'secondSlide', 'asdf'],
+  // showActiveTooltip: true,
+  slidesNavigation: true,
+  slidesNavPosition: 'bottom',
+  afterSlideLoad: function (section, origin, destination, direction) {
+    var loadedSlide = this;
+
+    //first slide of the second section
+    if (section.anchor == 'secondPage' && destination.index == 1) {
+      alert("First slide loaded");
+    }
+
+    //second slide of the second section (supposing #secondSlide is the
+    //anchor for the second slide)
+    if (section.index == 1 && destination.anchor == 'secondSlide') {
+      alert("Second slide loaded");
+    }
+  }
+});

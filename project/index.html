@@ -8,33 +8,20 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 
-  <!-- <link rel="stylesheet" type="text/css" href="./css/customs.css"> -->
-  <!-- <link rel="stylesheet" type="text/css" href="./scss/fullpage.css" />
-  <link rel="stylesheet" type="text/css" href="./scss/examples.css" /> -->
-  <!-- <script type="text/javascript" src="./js/examples.js"></script> -->
-
 
   <!-- 아래 선은 `scrollOverflow:true` 옵션을 쓰시는 경우에만 넣으셔야 합니다. -->
-  <!-- <script type="text/javascript" src="./js/scrolloverflow.min.js"></script> -->
 
-  <script type="text/javascript" src="./js/fullpage.js"></script>
-  <!-- <script type="text/javascript" src="./scss/examples.js"></script> -->
-
-
-
-  <!-- <link rel="stylesheet" type="text/css" href="./scss/fullpage.css" /> -->
-  <!-- <link rel="stylesheet" type="text/css" href="./scss/examples.css" /> -->
   <link rel="stylesheet" type="text/css" href="./css/customs.css">
-  <script type="text/javascript">
+  <script async type="text/javascript" src="./js/fullpage.js"></script>
+  <script async type="text/javascript" src="./js/scrolloverflow.min.js"></script>
+  <!-- <script defer type="text/javascript" src="./js/test.js"></script> -->
+  <!-- <script type="text/javascript">
     window.onload = function () {
       var myFullpage = new fullpage('#fullpage', {
-
-
 
         // //스크롤
         anchors: ['slide-main', 'slide-sub', 'open-story', 'about-open', 'footer'],
         css3: true,
-        licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
         scrollingSpeed: 500,
         autoScrolling: true,
         fitToSection: true,
@@ -55,10 +42,10 @@
         // scrollHorizontally: false,
         // offsetSections: false,
         // normalScrollElements: '#element1, .element2',
-        // scrollOverflow: true,
-        // scrollOverflowReset: false,
-        // scrollOverflowOptions: null,
-        // bigSectionsDestination: null,
+        scrollOverflow: true,
+        scrollOverflowReset: false,
+        scrollOverflowOptions: null,
+        bigSectionsDestination: null,
 
         // //접근성
         keyboardScrolling: true,
@@ -93,22 +80,28 @@
         // showActiveTooltip: true,
         slidesNavigation: true,
         slidesNavPosition: 'bottom',
+        afterSlideLoad: function( section, origin, destination, direction){
+        var loadedSlide = this;
 
+        //first slide of the second section
+        if(section.anchor == 'secondPage' && destination.index == 1){
+        alert("First slide loaded");
+        }
 
-
-
-
-
-
+        //second slide of the second section (supposing #secondSlide is the
+        //anchor for the second slide)
+        if(section.index == 1 && destination.anchor == 'secondSlide'){
+        alert("Second slide loaded");
+        }
+        }
       });
-
     }
-  </script>
+  </script> -->
 </head>
 
 <body>
   <div id="fullpage">
-    <div class="section main-slider" id="section0">
+    <div class="section active main-slider" id="section0">
       <div class="main-gnb">
   <div class="gnb-wrap">
     <div class="header_open_logo" title="O'pen logo">
@@ -171,8 +164,7 @@
     </ul>
   </div>
 </div>
-      <!-- <h1>fullPage.js</h1> -->
-      <!-- <div class="asdf" style="background:#121e28">asdf</div> -->
+
       <div class="slide" id="slide1-1">
         <div class="intro">
           <div class="slide-desc">
@@ -204,7 +196,7 @@
 
         </div>
       </div>
-      <div class="slide active" id="slide1-2">
+      <div class="slide" id="slide1-2">
         <div class="intro">
           <div class="slide-desc">
             <div class="desc-wrap">
