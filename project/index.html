@@ -1,15 +1,402 @@
 <!DOCTYPE html>
-<html lang="ko-KR">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="O'PEN(오펜) - 작가 응시" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>오펜(O'PEN)</title>
+  <title>Document</title>
 
+  <!-- <link rel="stylesheet" type="text/css" href="./css/customs.css"> -->
+  <!-- <link rel="stylesheet" type="text/css" href="./scss/fullpage.css" />
+  <link rel="stylesheet" type="text/css" href="./scss/examples.css" /> -->
+  <!-- <script type="text/javascript" src="./js/examples.js"></script> -->
+
+
+  <!-- 아래 선은 `scrollOverflow:true` 옵션을 쓰시는 경우에만 넣으셔야 합니다. -->
+  <!-- <script type="text/javascript" src="./js/scrolloverflow.min.js"></script> -->
+
+  <script type="text/javascript" src="./js/fullpage.js"></script>
+  <!-- <script type="text/javascript" src="./scss/examples.js"></script> -->
+
+
+
+  <!-- <link rel="stylesheet" type="text/css" href="./scss/fullpage.css" /> -->
+  <!-- <link rel="stylesheet" type="text/css" href="./scss/examples.css" /> -->
   <link rel="stylesheet" type="text/css" href="./css/customs.css">
+  <script type="text/javascript">
+    window.onload = function () {
+      var myFullpage = new fullpage('#fullpage', {
+
+
+
+        // //스크롤
+        anchors: ['slide-main', 'slide-sub', 'open-story', 'about-open', 'footer'],
+        css3: true,
+        licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
+        scrollingSpeed: 500,
+        autoScrolling: true,
+        fitToSection: true,
+        fitToSectionDelay: 1000,
+        loopBottom: true,
+        loopHorizontal: true,
+        continuousHorizontal: true,
+        interlockedSlides: true,
+        dragAndMove: true,
+        resetSliders: true,
+        fadingEffect: true,
+        touchSensitivity: 15,
+        // scrollBar: true,
+        // easing: 'easeInOutCubic',
+        // easingcss3: 'ease',
+        // loopTop: true,
+        // continuousVertical: false,
+        // scrollHorizontally: false,
+        // offsetSections: false,
+        // normalScrollElements: '#element1, .element2',
+        // scrollOverflow: true,
+        // scrollOverflowReset: false,
+        // scrollOverflowOptions: null,
+        // bigSectionsDestination: null,
+
+        // //접근성
+        keyboardScrolling: true,
+        animateAnchor: true,
+        recordHistory: true,
+
+        // //디자인
+        // sectionsColor: ['', '', '#7BAABE', '', ''],
+        responsiveWidth: 0,
+        responsiveHeight: 0,
+        responsiveSlides: true,
+        verticalCentered: true,
+        controlArrows: true,
+        // paddingTop: '10em',
+        // paddingBottom: '10px',
+        // fixedElements: '#header, .footer',
+        // parallax: true,
+        // parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
+        cards: true,
+        cardsOptions: {
+          perspective: 100,
+          fadeContent: true,
+          fadeBackground: true
+        },
+        fadingEffect: true,
+        // fadingEffect: 'slides'
+        fadingEffect: true,
+        // slidesNavigation: true,
+        // navigation: true,
+        // navigationPosition: 'bottom',
+        // navigationTooltips: ['firstSlide', 'secondSlide', 'asdf'],
+        // showActiveTooltip: true,
+        slidesNavigation: true,
+        slidesNavPosition: 'bottom',
+
+
+
+
+
+
+
+      });
+
+    }
+  </script>
 </head>
+
 <body>
-<div id="footer_tving" class="footer_tving">
+  <div id="fullpage">
+    <div class="section main-slider" id="section0">
+      <div class="main-gnb">
+  <div class="gnb-wrap">
+    <div class="header_open_logo" title="O'pen logo">
+      <a href="http://www.cjenm.com">
+      </a>
+    </div>
+    <nav class="main-menu">
+      <ul class="menu">
+        <li><a href="#">오펜</a></li>
+        <li><a href="#">공모전</a></li>
+        <li><a href="#">오펜폴리오</a></li>
+        <li><a href="#">게시판</a></li>
+      </ul>
+      <div class="dropdown">
+        <!-- <div class="dropdown-content"> -->
+          <ul class="row">
+            <li><a href="">O'PEN</a></li>
+            <li><a href="">창작지원</a></li>
+            <li><a href="">오펜공간</a></li>
+          </ul>
+          <ul class="row">
+            <li><a href="">모집요강</a></li>
+            <li><a href="">지원하기</a>
+              <ul>
+                <li><a href="">드라마</a></li>
+                <li><a href="">영화</a></li>
+                <li><a href="">시트콤</a></li>
+                <li><a href="">뮤직</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="row">
+            <li><a href="">작품소개</a></li>
+            <li><a href="">작가소개</a></li>
+            <li><a href="">드라마스테이지</a>
+              <ul>
+                <li><a href="">2019</a></li>
+                <li><a href="">2018</a></li>
+              </ul>
+            </li>
+            <li><a href="">보도자료</a></li>
+          </ul>
+          <ul class="row">
+            <li><a href="">공지사항</a></li>
+            <li><a href="">Q&amp;A</a></li>
+            <li><a href="">FAQ</a></li>
+          </ul>
+        <!-- </div> -->
+      </div>
+      <div class="header_nav_bg"></div>
+
+    </nav>
+    <ul class="gnb-txt">
+      <li><a href="#">로그아웃</a></li>
+      <li><a href="#"><span class="user">홍길동</span> 님</a>
+      <ul class="user-sub">
+        <li><a href="#">나의 지원내역</a></li>
+        <li><a href="#">나의 문의내역</a></li>
+      </ul></li>
+    </ul>
+  </div>
+</div>
+      <!-- <h1>fullPage.js</h1> -->
+      <!-- <div class="asdf" style="background:#121e28">asdf</div> -->
+      <div class="slide" id="slide1-1">
+        <div class="intro">
+          <div class="slide-desc">
+            <div class="desc-wrap">
+              <p class="desc-txt">CJ ENM 스토리텔러 발굴&middot;융성 프로젝트</p>
+              <span class="desc-arrow"></span>
+              <h2 class="slide-tit">O’PEN IS</h2>
+              <h2 class="slide-tit-sub">오펜 <span>스</span>토리</h2>
+            </div>
+            <div class="desc-pager-wrap">
+              <ul class="desc-pager">
+                <li class="active">01</li>
+                <li>02</li>
+              </ul>
+            </div>
+
+          </div>
+          <div class="slide-content">
+            <div class="slide-wrap-01">
+              <img class="slide-img-01" src="./images/slide-img-01.png" alt="o'pen slide01 배경 이미지">
+              <img class="slide-img-02" src="./images/slide-img-02.png" alt="o'pen slide01 logo 이미지">
+              <div class="slide-txt-wrap">
+                <p>O’PEN (오펜)은 작가(Pen)을 꿈꾸는 이들이게</p>
+                <p><span>열려있는(Open) 창작 공간</span>과,</p>
+                <p><span>기회(Opportunity)</span>를 제공한다는 의미입니다.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="slide active" id="slide1-2">
+        <div class="intro">
+          <div class="slide-desc">
+            <div class="desc-wrap">
+              <p class="desc-txt">CJ ENM 스토리텔러 발굴&middot;융성 프로젝트</p>
+              <span class="desc-arrow"></span>
+              <h2 class="slide-tit">2020</h2>
+              <h2 class="slide-tit-sub">오펜 <span>공</span>모전</h2>
+            </div>
+            <div class="desc-pager-wrap">
+              <ul class="desc-pager">
+                <li>01</li>
+                <li class="active">02</li>
+              </ul>
+            </div>
+
+          </div>
+          <div class="slide-content">
+            <div class="slide-wrap-02">
+              <div class="slide-txt-wrap">
+                <ul class="txt-list">
+                  <li class="active">
+                    <p class="list-date">드라마 공모전 <span>D-24일</span></p>
+                    <p class="list-tit">01. 오펜 드라마 공모전 2020</p>
+                  </li>
+                  <li>
+                    <p class="list-date">시트콤 공모전 <span>D-40일</span></p>
+                    <p class="list-tit">02. 오펜 시트콤 공모전 2020</p>
+                  </li>
+                  <li>
+                    <p class="list-date">영화시나리오 공모전 <span>D-60일</span></p>
+                    <p class="list-tit">03. 오펜 영화시나리오 공모전 2020</p>
+                  </li>
+                  <li>
+                    <p class="list-date">뮤직 공모전 <span>D-60일</span></p>
+                    <p class="list-tit">04. 오펜 뮤직 공모전 2020</p>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+    <div class="section" id="section1">
+      <div class="slide">
+        <div class="intro">
+
+          <div class="slider02-wrap">
+            <div class="desc-wrap">
+              <h2 class="tit">OPENPOLIO</h2>
+              <p class="tit-sub">오펜의 작품, 오펜폴리오</p>
+              <p class="desc-tit">오펜을 통한 미니시리즈, 드라마OST 데뷔작을 만나보세요!</p>
+              <p class="desc-txt">CJ ENM이 스튜디오 드래곤(드라마제작 자회사), 스톤뮤직, 채널 tvN,<br>
+                OCN, CJ엔터테인먼트과 협력하여 신인 방송/영화 작가 모집,<br>
+                대본/시나리오 기획개발, 영상 제작, 편성 및 비즈매칭까지 전 과정을<br>
+                지원하는 창작자 육성 및 데뷔 지원 사업 입니다.</p>
+              <a href="#" class="btn">VIEW MORE<span class="arrow"></span></a>
+              <div class="img-wrap01 group01">
+                <img class="slide-img-01" src="./images/slide02-img-01.png" alt="어비스 자켓 엘범 이미지"><img
+                  class="slide-img-02" src="./images/slide02-img-02.png" alt="ONEUS - FLY WITH US : 자켓 엘범 이미지">
+              </div>
+              <div class="img-wrap01 group02">
+                <img class="slide-img-03" src="./images/slide02-img-03.png" alt="정인 - 사랑 그 깊은 곳 : 자켓 엘범 이미지"><img
+                  class="slide-img-04" src="./images/slide02-img-04.png" alt="서지인 - 남자친구 : 자켓 엘범 이미지">
+              </div>
+              <span class="bg-txt">MUSIC</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="slide">
+        <div class="intro">
+
+          <div class="slider02-wrap">
+            <div class="desc-wrap">
+              <h2 class="tit">OPENPOLIO</h2>
+              <p class="tit-sub">오펜의 작품, 오펜폴리오</p>
+              <p class="desc-tit">오펜을 통한 미니시리즈, 드라마OST 데뷔작을 만나보세요!</p>
+              <p class="desc-txt">CJ ENM이 스튜디오 드래곤(드라마제작 자회사), 스톤뮤직, 채널 tvN,<br>
+                OCN, CJ엔터테인먼트과 협력하여 신인 방송/영화 작가 모집,<br>
+                대본/시나리오 기획개발, 영상 제작, 편성 및 비즈매칭까지 전 과정을<br>
+                지원하는 창작자 육성 및 데뷔 지원 사업 입니다.</p>
+              <a href="#" class="btn">VIEW MORE<span class="arrow"></span></a>
+              <div class="img-wrap02 group01">
+                <img class="slide-img-01" src="./images/slide02-img-05.png" alt="어비스 자켓 엘범 이미지"><img
+                  class="slide-img-02" src="./images/slide02-img-06.png" alt="ONEUS - FLY WITH US : 자켓 엘범 이미지">
+              </div>
+              <div class="img-wrap02 group02">
+                <img class="slide-img-03" src="./images/slide02-img-07.png" alt="정인 - 사랑 그 깊은 곳 : 자켓 엘범 이미지"><img
+                  class="slide-img-04" src="./images/slide02-img-08.png" alt="서지인 - 남자친구 : 자켓 엘범 이미지">
+              </div>
+              <span class="bg-txt">STORY</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="section" id="section2">
+      <div class="bg-layer">
+
+        <div class="content-wrap">
+          <div class="view-wrap">
+            <p class="tit">2020</p>
+            <p class="tit-sub">건강한 컨텐츠<br>생태계를 선도합니다.</p>
+            <p class="corp">오펜<br>STORY</p>
+          </div>
+          <div class="desc-wrap">
+            <h2 class="tit">Whatever You Imagine.</h2>
+            <p class="tit-sub">당신을 응원합니다.</p>
+            <p class="desc-tit">콘텐츠 기획개발부터, 비즈매칭까지!</p>
+            <p class="desc-txt">오펜은 일련의 과정을 통합적으로 지원하며<br>
+              업계와 다양한 교류기회를 통해<br>
+              건강한 컨텐츠 생태계를 선도합니다.</p>
+            <a href="#" class="btn">VIEW MORE<span class="arrow"></span></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="section fp-auto-height" id="section3">
+      <div class="content-wrap">
+        <div class="about-wrap">
+          <div class="desc-wrap">
+            <h2 class="tit">ABOUT <span class="tit-sub">오펜</span></h2>
+          </div>
+          <ul class="about-list">
+            <li>
+              <a href="#">
+                <div class="list-border">
+                </div>
+                <img class="list-img" src="./images/section04-img-01.png"
+                  alt="o'pen is - cj enm의 신인 창작자 발굴, 육성사업. 오펜을 소개합니다.">
+                <div class="list-txt">
+                  <p class="tit">O'PEN is</p>
+                  <p class="desc">CJ ENM의 신인 창작자 발굴, 육성사업.<br>
+                    오펜을 소개합니다.</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="list-border">
+                </div>
+                <img class="list-img" src="./images/section04-img-02.png"
+                  alt="오펜공간 - 창작자를 꿈꾸는 이들에게 열려있는 창작환경과 공간을 제공합니다.">
+                <div class="list-txt">
+                  <p class="tit">오펜공간</p>
+                  <p class="desc">창작자를 꿈꾸는 이들에게<br>열려있는 창작환경과 공간을 제공합니다.</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="list-border">
+                </div>
+                <img class="list-img" src="./images/section04-img-03.png" alt="보도자료 언론매체로 보는
+  오펜의 성과와 이야기입니다.">
+                <div class="list-txt">
+                  <p class="tit">보도자료</p>
+                  <p class="desc">언론매체로 보는<br>오펜의 성과와 이야기입니다.</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <div class="notice-wrap">
+            <div class="notice">
+              <div class="notice-list">
+                <span class="notice-tit">공지사항</span>
+                <span class="notice-txt">ENM '오펜' 3기 출범...신인 작가 30명 (글 김윤지)</span>
+                <span class="notice-date">2019.06.20</span>
+              </div>
+
+              <ul class="notice-arrow">
+                <li class="arrow up"><a href="#"><i class="arrow up"></i></a></li>
+                <li class="arrow down"> <a href="#"><i class="arrow down"></i></a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="section fp-auto-height" id="section4">
+      <div id="footer_tving" class="footer_tving">
   <!-- <div class="footer_tving_notice_wrap">
     <div class="footer_tving_notice_inner">
       <div class="footer_tving_notice_list">
@@ -179,5 +566,8 @@
   </div>
 </div>
 
+    </div>
+  </div>
 </body>
+
 </html>

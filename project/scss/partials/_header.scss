@@ -8,6 +8,7 @@
   transition: all 0.3s ease-in-out 0s,
   visibility 0s linear 0.3s,
   z-index 0s linear 0.01s;
+
   &:hover{
     background: $color-white;
     .gnb-wrap {
@@ -15,23 +16,22 @@
         .dropdown {
           max-height: 350px;
         }
-
         .header_nav_bg {
           border-top: 1px solid #ddd;
         }
-
         .menu>li a {
           color: $color-black;
         }
-
         &+.gnb-txt li a {
           color: #333;
+          .user::before{
+            background: url('../images/icon-login-on.png') no-repeat;
+          }
         }
       }
       .header_open_logo a{
         background: url('../images/logo_open_on.png') no-repeat;
       }
-
     }
   }
 
@@ -56,7 +56,6 @@
       overflow: hidden;
       margin-left: 125px;
       z-index: 10;
-
 
       &:hover {
         .dropdown {
@@ -83,9 +82,9 @@
 
         >li {
           flex-basis: 180px;
-          &:last-child{
-            flex-basis: 120px;
-          }
+          // &:last-child{
+          //   flex-basis: 120px;
+          // }
 
           a {
             padding: 20px 0;
@@ -101,6 +100,8 @@
         clear: both;
         width: 100%;
         z-index: 10;
+        display: flex;
+        justify-content: space-between;
         overflow: hidden;
         //  작업후 원상복구
         max-height: 0;
@@ -114,8 +115,6 @@
           padding: 50px 0 25px;
           display: block;
           width: 25%;
-          float: left;
-          margin-right: 20px;
 
           >li {
             margin-bottom: 20px;
@@ -134,7 +133,7 @@
                 bottom: -2px;
                 width: 100%;
                 content: ' ';
-                border-bottom: solid 1px #f04b00;
+                border: 1px solid #f04b00;
                 transform: scaleX(0);
                 transition: transform 250ms ease-in-out;
                 transform-origin: 0% 50%;
@@ -190,11 +189,12 @@
     .gnb-txt {
       display: flex;
       padding: 20px 0;
-      width: 123px;
+      // width: 123px;
       justify-content: flex-start;
       flex-direction: row-reverse;
+      height: 130px;
 
-      li {
+      >li {
         font-size: 14px;
         padding-left: 10px;
         position: relative;
@@ -215,10 +215,57 @@
             left: 70px;
           }
         }
+        &:hover .user-sub {
+          display: block;
+        }
+
+        .user-sub {
+          width: 200px;
+          position: absolute;
+          display: none;
+          top: 90px;
+          li{
+            display: block;
+            a{
+              position: relative;
+              @include ff(nm);
+              font-size: 14px;
+              color: #707580;
+              &::before {
+                content: '';
+                position: absolute;
+                display: block;
+                background: url('../images/icon-arrow-trial.png') no-repeat;
+                width: 11px;
+                height: 12px;
+                left: -15px;
+                top: 4px;
+
+              }
+            }
+            &:not(:first-child){
+              margin-top: 30px;
+            }
+          }
+        }
 
         a {
           @include ff(nb);
           color: $color-white;
+          .user {
+            position: relative;
+            &::before {
+              content: '';
+              position: absolute;
+              display: block;
+              background: url('../images/icon-login.png') no-repeat;
+              width: 11px;
+              height: 12px;
+              left: -15px;
+              top: 4px;
+
+            }
+          }
         }
       }
     }
