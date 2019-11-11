@@ -313,7 +313,7 @@ strong {
 }
 
 .main-gnb:hover .gnb-wrap .main-menu + .gnb-txt li a {
-  color: #333;
+  color: #707580;
 }
 
 .main-gnb:hover .gnb-wrap .main-menu + .gnb-txt li a .user::before {
