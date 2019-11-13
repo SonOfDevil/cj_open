@@ -637,8 +637,16 @@ html.fp-enabled,
 
   .fp-slidesNav {
     &.fp-bottom {
-      bottom: calc(50% - 105px);
-      left: calc(50% - 540px);
+      bottom: 50%;
+      left: 50%;
+      width: 1200px;
+      transform: translate(calc(-50% + 70px), calc(-50% + 180px));
+      @media all and (max-width: 1200px){
+        left: 590px;
+      }
+      @media all and (max-height: 960px){
+        top: 460px;
+      }
     }
 
     ul li a span {

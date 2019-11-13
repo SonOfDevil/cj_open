@@ -74,6 +74,12 @@
         }
       }
     }
+    .sub-desc{
+      @include ff(cm);
+      font-size: 18px;
+      color: #333;
+      margin-top: 20px;
+    }
   }
   .txt-wrap{
     position: relative;
@@ -119,6 +125,9 @@
     position: relative;
     &:not(:first-child){
       margin-top: 100px;
+    }
+    &.press{
+      margin-top: 60px;
     }
     h3{
       @include ff(cb);
@@ -285,6 +294,9 @@
       font-size: 20px;
       color: #333;
       line-height: 49px;
+    }
+    .press-wrap{
+      border-top: 1px solid #999;
     }
   }
 }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>O'PEN Page List</title>
+  <style>
+    ul{
+      list-style: none;
+      border: 5px solid deepskyblue;
+      padding: 50px;
+    }
+    ul li{
+      margin-bottom: 10px;
+      display: flex;
+      /* justify-content: space-between; */
+    }
+    ul li a{
+      text-decoration: none;
+      font-weight: bold;
+      color: green;
+      display: block;
+      width: 250px;
+    }
+    ul li a.active{
+      /* color: #feebee; */
+      background: yellow;
+    }
+    ul li a.active::after{
+      content: '(작업중)';
+    }
+    ul li a span{
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li><a href="http://img.lifestyler.co.kr/DevIMG/eventex/open/open2020/03_UI/desktop/index.html"
+        target="_blank">메인</a> <span>- index.html</span></li>
+    <li><a href="http://img.lifestyler.co.kr/DevIMG/eventex/open/open2020/03_UI/desktop/apply.html"
+        target="_blank">지원하기</a> <span>- apply.html</span></li>
+    <li><a href="http://img.lifestyler.co.kr/DevIMG/eventex/open/open2020/03_UI/desktop/apply_done.html"
+        target="_blank">지원하기 완료</a> <span></span>- apply_done.html</span></li>
+    <li><a class="active" href="http://img.lifestyler.co.kr/DevIMG/eventex/open/open2020/03_UI/desktop/press.html"
+        target="_blank">보도자료</a> <span>- press.html</span></li>
+  </ul>
+</body>
+</html>

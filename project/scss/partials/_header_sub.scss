@@ -1,10 +1,23 @@
 .gnb-sub-wrap {
   position: relative;
-  background: url('../images/gnb-sub-bg-02.png') no-repeat;
   background-size: cover;
   background-position: center center;
   height: 460px;
   min-width: 1200px;
+  &.introduction {
+    background: url('../images/gnb-sub-bg-01.png') no-repeat;
+  }
+  &.competition {
+    background: url('../images/gnb-sub-bg-02.png') no-repeat;
+  }
+
+  &.openfolio {
+    background: url('../images/gnb-sub-bg-03.png') no-repeat;
+  }
+  &.board {
+    background: url('../images/gnb-sub-bg-04.png') no-repeat;
+  }
+
 
   h1{
     position: absolute;

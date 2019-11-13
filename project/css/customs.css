@@ -770,11 +770,26 @@ input:not([type='checkbox']):not([type='radio']) {
 
 .gnb-sub-wrap {
   position: relative;
-  background: url("../images/gnb-sub-bg-02.png") no-repeat;
   background-size: cover;
   background-position: center center;
   height: 460px;
   min-width: 1200px;
+}
+
+.gnb-sub-wrap.introduction {
+  background: url("../images/gnb-sub-bg-01.png") no-repeat;
+}
+
+.gnb-sub-wrap.competition {
+  background: url("../images/gnb-sub-bg-02.png") no-repeat;
+}
+
+.gnb-sub-wrap.openfolio {
+  background: url("../images/gnb-sub-bg-03.png") no-repeat;
+}
+
+.gnb-sub-wrap.board {
+  background: url("../images/gnb-sub-bg-04.png") no-repeat;
 }
 
 .gnb-sub-wrap h1 {
@@ -1502,8 +1517,22 @@ html.fp-enabled,
 }
 
 #section1 .fp-slidesNav.fp-bottom {
-  bottom: calc(50% - 105px);
-  left: calc(50% - 540px);
+  bottom: 50%;
+  left: 50%;
+  width: 1200px;
+  transform: translate(calc(-50% + 70px), calc(-50% + 180px));
+}
+
+@media all and (max-width: 1200px) {
+  #section1 .fp-slidesNav.fp-bottom {
+    left: 590px;
+  }
+}
+
+@media all and (max-height: 960px) {
+  #section1 .fp-slidesNav.fp-bottom {
+    top: 460px;
+  }
 }
 
 #section1 .fp-slidesNav ul li a span {
@@ -2207,6 +2236,13 @@ html.fp-enabled,
   color: #ff8c00;
 }
 
+.content .cont-header .sub-desc {
+  font-family: 'cm','MalgunGothic';
+  font-size: 18px;
+  color: #333;
+  margin-top: 20px;
+}
+
 .content .txt-wrap {
   position: relative;
   margin-top: 60px;
@@ -2255,6 +2291,10 @@ html.fp-enabled,
 
 .content section:not(:first-child) {
   margin-top: 100px;
+}
+
+.content section.press {
+  margin-top: 60px;
 }
 
 .content section h3 {
@@ -2480,6 +2520,10 @@ html.fp-enabled,
   font-size: 20px;
   color: #333;
   line-height: 49px;
+}
+
+.content section .press-wrap {
+  border-top: 1px solid #999;
 }
 
 /* Footer */
