@@ -297,6 +297,31 @@
     }
     .press-wrap{
       border-top: 1px solid #999;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .item-wrap{
+        max-width: 285px;
+        margin-top: 40px;
+        .item{
+          border: 1px solid #ddd;
+          display: block;
+          .tit{
+            @include ff(cm);
+            color: #333;
+            margin: 30px 20px 0;
+            // @include truncate(16px, 16px, 2);
+            @include truncate(16px, 1.4 , 2);
+          }
+          .date{
+            @include ff(cr);
+            font-size: 1rpx;
+            color: #666;
+            margin: 20px 30px;
+
+          }
+        }
+      }
     }
   }
 }

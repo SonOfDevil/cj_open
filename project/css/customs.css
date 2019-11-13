@@ -2524,6 +2524,59 @@ html.fp-enabled,
 
 .content section .press-wrap {
   border-top: 1px solid #999;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.content section .press-wrap .item-wrap {
+  max-width: 285px;
+  margin-top: 40px;
+}
+
+.content section .press-wrap .item-wrap .item {
+  border: 1px solid #ddd;
+  display: block;
+}
+
+.content section .press-wrap .item-wrap .item .tit {
+  font-family: 'cm','MalgunGothic';
+  color: #333;
+  margin: 30px 20px 0;
+  display: block;
+  display: -webkit-box;
+  max-width: 100%;
+  max-height: 44.8px;
+  font-size: 16px;
+  line-height: 1.4;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+}
+
+.content section .press-wrap .item-wrap .item .tit:before {
+  _content: '...';
+  _position: absolute;
+  _right: 0;
+  _bottom: 0;
+}
+
+.content section .press-wrap .item-wrap .item .tit:after {
+  _content: '';
+  _position: absolute;
+  _right: 0;
+  _width: 1em;
+  _height: 1em;
+  _margin-top: 0.2em;
+}
+
+.content section .press-wrap .item-wrap .item .date {
+  font-family: 'cr','MalgunGothic';
+  font-size: 1rpx;
+  color: #666;
+  margin: 20px 30px;
 }
 
 /* Footer */
