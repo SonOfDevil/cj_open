@@ -84,53 +84,7 @@ button{
     }
 
     @include mq('mo', min){
-      height: $btn-l-pc;
-    }
-  }
 
-  &.action-m,
-  &.btn-m{
-    height: $btn-m;
-    @include mq('mo', min){
-      height: $btn-m-pc;
-    }
-    &:disabled {
-      background-color: $color-none-strong-info;
-      border-color: $color-none-strong-info;
-      color: white;
-      opacity: 1; //mc
-    }
-  }
-  &.action-s {
-    height: $btn-s;
-
-    @include mq('mo') {
-      font-size: $txt-size-s-m;
-    }
-  }
-
-  //out-of-stock == magento 에서 soldout시 붙는 클래스명
-  // &.out-of-stock,
-  // &:disabled {
-  //   background-color: $color-disable-form;
-  //   border-color: $color-disable-form;
-  //   color: $color-white;
-  // }
-
-  // Middle Size Button
-  &.btn-m {
-    background-color: $color-strong;
-    border-color: $color-strong;
-    color: $color-white;
-    padding: $brd-strong 0px;
-    font-size: 1.4rem;
-    text-transform: uppercase;
-
-    @include mq('mo', min) {
-      padding: 10px 0;
-    }
-  }
-}
 //////////////////////////
 // 메세지형 팝업 예외처리
 //////////////////////////
@@ -175,46 +129,46 @@ a:visited {
   }
 }
 
-.btn {
-  &-brd {
-    @include btn-icon-box($btn-default-pc,$brd-style:'normal',$evt-hover:'true');
-  }
-  // &-fix-size{
-  //   @include btn-icon-box(70px,$brd-style:'none');
-  // }
+// .btn {
+//   &-brd {
+//     @include btn-icon-box($btn-default-pc,$brd-style:'normal',$evt-hover:'true');
+//   }
+//   // &-fix-size{
+//   //   @include btn-icon-box(70px,$brd-style:'none');
+//   // }
 
-  &-view-normal {
-    @include btn-svg(19px, 19px, btn-view-normal, 'true', 'true');
-  }
+//   &-view-normal {
+//     @include btn-svg(19px, 19px, btn-view-normal, 'true', 'true');
+//   }
 
-  &-view-collect {
-    @include btn-svg(19px, 19px, btn-view-collect, 'true', 'true');
-  }
+//   &-view-collect {
+//     @include btn-svg(19px, 19px, btn-view-collect, 'true', 'true');
+//   }
 
-  &-wish {
-    @include btn-svg(28px, 28px, icon-wish, 'false', 'true', $btn-m, $btn-m);
-  }
+//   &-wish {
+//     @include btn-svg(28px, 28px, icon-wish, 'false', 'true', $btn-m, $btn-m);
+//   }
 
-  &-tooltip {
-    @include btn-svg(28px, 28px, icon-tooltip, 'false', 'true', $btn-m, $btn-m);
-  }
+//   &-tooltip {
+//     @include btn-svg(28px, 28px, icon-tooltip, 'false', 'true', $btn-m, $btn-m);
+//   }
 
-  &-share-black {
-    @include btn-svg(28px, 28px, icon-share-black, 'false', 'false', $btn-m, $btn-m);
-  }
-  &-reload {
-    @include btn-svg(22px, 22px, icon-reload, 'false', 'false', 24px, 24px);
-  }
-  &-volume {
-    @include btn-svg(22px, 22px, icon-volume, 'false', 'false', 24px, 24px);
-  }
-  &-add-attach {
-    @include btn-svg(24px, 24px, icon-img-add-s, 'false', 'false');
-    @include btn-icon-box(64px, 64px,50px,50px, $brd-style:'none', $bgcolor:$color-bg-default);
-  }
-  &-search{
-    @include btn-svg(24px, 24px, icon-search, 'false', 'false', 40px, 40px);
-  }
+//   &-share-black {
+//     @include btn-svg(28px, 28px, icon-share-black, 'false', 'false', $btn-m, $btn-m);
+//   }
+//   &-reload {
+//     @include btn-svg(22px, 22px, icon-reload, 'false', 'false', 24px, 24px);
+//   }
+//   &-volume {
+//     @include btn-svg(22px, 22px, icon-volume, 'false', 'false', 24px, 24px);
+//   }
+//   &-add-attach {
+//     @include btn-svg(24px, 24px, icon-img-add-s, 'false', 'false');
+//     @include btn-icon-box(64px, 64px,50px,50px, $brd-style:'none', $bgcolor:$color-bg-default);
+//   }
+//   &-search{
+//     @include btn-svg(24px, 24px, icon-search, 'false', 'false', 40px, 40px);
+//   }
 
   // &-overlay {
   //   @include btn-overlay(black, 0.3);

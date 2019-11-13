@@ -4240,8 +4240,7 @@ var myFullpage = new fullpage('#fullpage', {
     fadeBackground: true
   },
   fadingEffect: true,
-  // fadingEffect: 'slides'
-  fadingEffect: true,
+  fadingEffect: 'slides',
   // slidesNavigation: true,
   // navigation: true,
   // navigationPosition: 'bottom',

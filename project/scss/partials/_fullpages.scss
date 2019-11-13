@@ -490,33 +490,35 @@ html.fp-enabled,
               .slide-txt-wrap {
                 position: absolute;
                 top: 50%;
-                left: calc(50% - 60px);
-                transform: translate(-50%, -50%);
+                left: calc(50% - 300px);
+                transform: translate(0, -50%);
 
                 .txt-list {
                   li {
                     margin-bottom: 60px;
+                    a{
+                      display: block;
+                      &:hover {
+                        margin-bottom: 50px;
 
-                    &.active {
-                      margin-bottom: 50px;
+                        .list-date {
+                          color: #ff8c00;
+                          font-size: 18px;
+                          @include ff(cb);
+                          text-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
 
-                      .list-date {
-                        color: #ff8c00;
-                        font-size: 18px;
-                        @include ff(cb);
-                        text-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
-
-                        span {
-                          font-size: 22px;
+                          span {
+                            font-size: 22px;
+                          }
                         }
-                      }
 
-                      .list-tit {
-                        font-size: 30px;
-                        @include ff(cb);
-                        text-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
-                        margin-top: 15px;
-                        border-bottom: 1px solid #fff;
+                        .list-tit {
+                          font-size: 30px;
+                          @include ff(cb);
+                          text-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+                          margin-top: 15px;
+                          border-bottom: 1px solid #fff;
+                        }
                       }
                     }
                   }
@@ -526,6 +528,8 @@ html.fp-enabled,
                     color: #fff;
                     font-size: 12px;
                     text-shadow: 2px 2px 2px rgba(0, 0, 0, .45);
+                    -webkit-transition: font-size 0.1s, -webkit-transform 0.3s;
+                    transition: font-size 0.1s, transform 0.3s;
 
                     span {
                       font-size: 14px;
@@ -538,6 +542,8 @@ html.fp-enabled,
                     color: #fff;
                     text-shadow: 2px 2px 2px rgba(0, 0, 0, .45);
                     margin-top: 12px;
+                    -webkit-transition: font-size 0.1s, -webkit-transform 0.3s;
+                    transition: font-size 0.1s, transform 0.3s;
                   }
                 }
               }

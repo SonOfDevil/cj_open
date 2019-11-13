@@ -627,3 +627,47 @@ $breakpoints: ("mo": 767px);
 //   @include tooltip(5px, right, rgba(0, 0, 0, .8));
 //   width: 400px
 // }
+
+@mixin list-dot($color, $size) {
+  display: inline-block;
+  content: '';
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  height: $size;
+  width: $size;
+  position: absolute;
+  top: 50%;
+  left: -($size * 5);
+  transform: translate(0, -50%);
+  background-color: $color;
+}
+
+// close button(X)
+
+@mixin btn-close($size) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: $size;
+  height: $size;
+  transform: translate(-50%, -50%);
+
+  &:before,
+  &:after {
+    position: absolute;
+    top:0;
+    left: $size/2;
+    content: ' ';
+    height: $size;
+    width: 1px;
+    background-color: #676767;
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+  }
+}

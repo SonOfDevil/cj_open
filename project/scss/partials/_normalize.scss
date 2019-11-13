@@ -184,3 +184,146 @@ strong{
   float: right
 }
 
+
+// check box
+.cj-chk {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  @include ff(cm);
+  vertical-align: middle;
+  line-height: 24px;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:checked~.checkmark {
+      background-color: #ff8c00;
+      border-color: transparent;
+      &:after {
+        display: block;
+      }
+    }
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    border: 1px solid #ccc;
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 10px;
+      top: 5px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+}
+
+// input & textarea
+input[type="text"],
+input[type="password"],
+input[type="url"],
+input[type="tel"],
+input[type="search"],
+input[type="number"],
+input[type="datetime"],
+input[type="email"],
+textarea {
+  border-radius: 0; //mc
+  background-clip: inherit; //background:none 쓰면 아이폰에서 그림자 나타남.
+  border: 1px solid #ccc; // $color-default-form
+  padding: 12px;
+  @include ff();
+  @include clear-font-size($txt-size-default-m);
+
+  // @include mq('mo', min) {
+  //   @include clear-font-size($txt-size-default);
+  // }
+
+  @include input-placeholder {
+    color: $color-none-strong-info;
+  }
+
+  &:disabled {
+    background-color: $color-bg-default;
+    color: $color-none-strong;
+    opacity: 1; //mc
+  }
+
+  &::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
+
+//input height
+input:not([type='checkbox']):not([type='radio']) {
+  height: 46px;
+
+  // @include mq('mo', min) {
+  //   height: $height-default-form;
+  // }
+}
+
+.cj-tabl{
+  border-collapse:separate;
+  border-spacing: 0;
+  width: 100%;
+  border-top: 2px solid #333;
+  border-bottom: 1px solid #666;
+  @include ff(cr);
+  font-size: 16px;
+  tr{
+    &:not(:first-child) td{
+      border-top: 1px solid #ddd;
+
+    }
+    td{
+      padding: 20px 20px;
+      max-height: 86px;
+      &:not(:first-child){
+        border-left: 1px solid #ddd;
+      }
+      input{
+        width: 100%;
+        max-width: 358px;
+      }
+    }
+  }
+  .tit{
+    padding: 30px;
+    @include ff(cm);
+    font-size: 18px;
+    color: #333;
+    background: #f5f5f5;
+  }
+  .txt-input{
+    max-height: 230px;
+    width: 100%;
+  }
+
+}

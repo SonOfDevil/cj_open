@@ -59,3 +59,48 @@
     }
   }
 }
+
+// 첨부파일
+.file-input label {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  width: 120px;
+  height: 48px;
+  background: #707580;
+  color: #fff;
+  text-align: center;
+  line-height: 48px;
+
+  input[type=file] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+  input[type=text] {
+    vertical-align: middle;
+    display: inline-block;
+    width: 360px;
+    height: 48px;
+    font-size: 14px;
+    padding: 20px;
+    border: 0;
+    border: 1px solid #ccc;
+  }
+  .attach-name {
+    margin-left: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    @include ellipsis(300px);
+
+  }
+}
+
+
+
+
+
+

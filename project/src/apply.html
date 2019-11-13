@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="O'PEN(오펜) - 작가 응시" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Subpage</title>
+
+  <link rel="stylesheet" type="text/css" href="./css/customs.css">
+  <script async type="text/javascript" src="./js/common.js"></script>
+
+</head>
+
+<body class="sub">
+  <header>
+    <div class="gnb-sub-wrap">
+      @@include('./sub/header.html')
+      <h1>지원하기</h1>
+      <div class="gnb-sub">
+        <ul class="gnb-sub-list">
+          <li><a class="active" href="#">드라마</a></li>
+          <li><a href="#">영화</a></li>
+          <li><a href="#">시트콤</a></li>
+          <li><a href="#">뮤직</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <div class="content">
+    <div class="cont-header">
+      <h2>공모전 지원하기(드라마)</h2>
+      <div class="date-wrap">
+        <p>접수기간 : <span>2020.01.01 ~ 01.31.18시</span> 까지</p>
+      </div>
+    </div>
+    <section>
+      <h3>01. 참가지원 동의</h3>
+      <div class="col2-wrap">
+        <div class="col2">
+          <p class="tit">개인정보수집 및 이용에 대한 동의</p>
+          <div class="info-wrap">
+            <p>
+              1. 개인정보의 수집/이용목적<br>
+              &lt;오펜 스토리텔러 지원사업&gt;참가자의 참가신청 및 지원자의 합격통보
+            </p>
+            <p>
+              2. 수집하려는 개인정보항목<br>
+              이름, 생년월일, 휴대전화번호, 비상연락망, 이메일주소, 경력사항
+            </p>
+            <p>
+              3. 개인정보의 보유기간<br>
+              &lt;오펜 스토리텔러 지원사업&gt;종료 6개월 이후 일체의 정보를 파기조치 합니다.<br>
+              단, 관계법령의 규정에 의하여 보전할 필요가 있는 경우, 일정기간 동안 개인정보를 보관할 수
+            </p>
+          </div>
+
+          <label class="cj-chk">동의
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+      </div>
+      <div class="col2">
+        <p class="tit">참가지원 동의</p>
+        <div class="info-wrap">
+          <p>
+            본인은&lt;오펜드라마 스토리텔러지원사업&gt;의 홈페이지에 공시된&lt;모집요강&gt;
+            (의무사항, 기타사항을 포함한 요강젂문)을 준수합니다.
+          </p>
+          <p>
+            본인은&lt;참가지원에 대한동의&gt;와&lt;개인정보이용및수집&gt;의 내용에관해동의합니다.
+          </p>
+        </div>
+
+        <label class="cj-chk">동의
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+    </section>
+
+    <section>
+      <h3>02. 참가지원서 작성</h3>
+      <span class="notice">모든 항목 필수입력</span>
+      <table class="cj-tabl apply">
+        <tbody>
+          <tr>
+            <td class="tit">이름</td>
+            <td colspan="3"><input type="text" placeholder="이름을 입력해주세요."></td>
+          </tr>
+          <tr>
+            <td class="tit">생년월일</td>
+            <td><input type="text" placeholder="'-'없이 입력해주세요."></td>
+            <td class="tit">휴대전화</td>
+            <td><input type="tel" placeholder="'-'없이 입력해주세요."></td>
+          </tr>
+          <tr>
+            <td class="tit">비상연락망</td>
+            <td><input type="tel" placeholder="'-'없이 입력해주세요."></td>
+            <td class="tit">이메일주소</td>
+            <td><input type="email" placeholder="'-'없이 입력해주세요."></td>
+          </tr>
+          <tr>
+            <td class="tit">경력사항</td>
+            <td colspan="3">
+              <textarea name="" id="" cols="30" rows="10" class="txt-input"
+                placeholder="작품 수상내역, 보조작가 이력, 공모전 최종심 오른 경력, 여타 출간된 소설, 웹툰, 웹소설 이력도 좋습니다."></textarea>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h3>03. 작품파일 첨부</h3>
+      <div class="attach-wrap">
+        <img class="attach-img" src="./images/bg_apply_02.png" alt="파일첨부 이모티콘">
+        <ul class="attach-list">
+          <li>파일을 첨부하시면, 자동으로 작품명이 입력됩니다. (파일명을 정확히 입력해주세요)</li>
+          <li><span>[드라마]</span> 최대 <span>5</span>개까지 작품지원(첨부) 가능합니다.</li>
+          <li>hwp, doc 이외의 작품파일은 실격처리 될 수 있습니다.</li>
+        </ul>
+      </div>
+
+      <div class="tit-sub-wrap">
+        <h4>첨부파일</h4>
+        <button class="add-div">추가</button>
+      </div>
+      <table class="cj-tabl attach">
+        <tbody>
+          <tr>
+            <td class="tit">1</td>
+            <td class="tit ">제출작품</td>
+            <td>
+              <div class="file-input">
+                <input type="text" readonly="readonly" title="File Route" id="file_route"><label>
+                  찾아보기
+                  <input type="file" onchange="javascript:document.getElementById('file_route').value=this.value"></label>
+                  <!-- 첨부파일 이름 -->
+                  <span class="attach-name"></span>
+                </div>
+              </td>
+              <!-- .close에 .active 추가시 close button 보임 -->
+              <td><button class="close active"></button></td>
+            </tr>
+            <tr>
+              <td class="tit">2</td>
+              <td class="tit ">제출작품</td>
+              <td>
+                <div class="file-input">
+                  <input type="text" readonly="readonly" title="File Route" id="file_route"><label>
+                    찾아보기
+                    <input type="file" onchange="javascript:document.getElementById('file_route').value=this.value"></label>
+                    <!-- 첨부파일 이름 -->
+                    <span class="attach-name"></span>
+              </div>
+            </td>
+            <!-- .close에 .active 추가시 close button 보임 -->
+            <td><button class="close active"></button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="txt-wrap">
+        <a href="#" class="btn-r">저장 및 지원하기</a>
+        <p class="txt-notice">(*마감시간까지 마이페이지> 나의 지원내역에서 지원내용을 수정할 수 있습니다.)</p>
+      </div>
+
+
+    </section>
+
+
+    <button onclick="topFunction()" id="topBtn" class="top-btn" title="Go to top">TOP</button>
+  </div>
+
+  @@include('./sub/footer.html')
+</body>
+
+</html>
