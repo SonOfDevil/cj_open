@@ -640,7 +640,8 @@ html.fp-enabled,
       bottom: 50%;
       left: 50%;
       width: 1200px;
-      transform: translate(calc(-50% + 70px), calc(-50% + 180px));
+      transform: translate(calc(-50%), calc(-50% + 180px));
+      padding-left: 70px;
       @media all and (max-width: 1200px){
         left: 590px;
       }
