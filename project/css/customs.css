@@ -2250,6 +2250,10 @@ html.fp-enabled,
   margin-top: 20px;
 }
 
+.content .cont-header .sub-desc + h2 {
+  margin-top: 20px;
+}
+
 .content .txt-wrap {
   position: relative;
   margin-top: 60px;
@@ -2850,6 +2854,174 @@ html.fp-enabled,
   _width: 1em;
   _height: 1em;
   _margin-top: 0.2em;
+}
+
+.content section.open-space .open-space-tab {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content section.open-space .open-space-tab li {
+  text-align: center;
+  width: 100%;
+  font-family: 'cr','MalgunGothic';
+  font-size: 18px;
+  color: #333;
+  padding: 26px 0;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+.content section.open-space .open-space-tab li:not(:first-child) {
+  border-left: 0;
+}
+
+.content section.open-space .open-space-tab li.active, .content section.open-space .open-space-tab li:hover {
+  color: #fff;
+  font-family: 'cb','MalgunGothic';
+  font-weight: bold;
+  background: #ff8c00;
+  border: 1px solid #ff8c00;
+}
+
+.content section.open-space .open-introdution-wrap {
+  display: none;
+}
+
+.content section.open-space .open-introdution-wrap.active {
+  display: block;
+}
+
+.content section.open-space .open-introdution-wrap .space-info {
+  display: flex;
+  padding: 50px;
+}
+
+.content section.open-space .open-introdution-wrap .space-info .desc {
+  padding: 20px 40px 20px 110px;
+}
+
+.content section.open-space .open-introdution-wrap .space-info .desc .tit {
+  font-family: 'cm','MalgunGothic';
+  font-size: 20px;
+  color: #f04b00;
+}
+
+.content section.open-space .open-introdution-wrap .space-info .desc .txt {
+  margin-top: 30px;
+  font-family: 'cr','MalgunGothic';
+  font-size: 16px;
+  color: #666;
+  line-height: 2.25;
+}
+
+.content section.open-space .open-introdution-wrap .space-info .desc .txt span {
+  font-family: 'cm','MalgunGothic';
+  color: #333;
+  border-bottom: 1px solid #b8b8b8;
+}
+
+.content section.open-space .open-introdution-wrap .space-info .desc .txt span.tit {
+  font-family: 'cm','MalgunGothic';
+  font-size: 20px;
+  color: #f04b00;
+  border: 0;
+}
+
+.content section.open-space .open-introdution-wrap .open-view-wrap {
+  background: #f5f5f5;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content section.open-space .open-introdution-wrap .open-view-wrap .room-list {
+  margin-left: 20px;
+  width: 100%;
+}
+
+.content section.open-space .open-introdution-wrap .open-view-wrap .room-list li {
+  font-family: 'cr','MalgunGothic';
+  font-size: 16px;
+  color: #666;
+  line-height: 24px;
+  cursor: pointer;
+  padding: 20px 0;
+}
+
+.content section.open-space .open-introdution-wrap .open-view-wrap .room-list li:hover, .content section.open-space .open-introdution-wrap .open-view-wrap .room-list li.active {
+  font-family: 'cb','MalgunGothic';
+  font-weight: bold;
+  font-size: 24px;
+  color: #f04b00;
+  position: relative;
+}
+
+.content section.open-space .open-introdution-wrap .open-view-wrap .room-list li:hover::before, .content section.open-space .open-introdution-wrap .open-view-wrap .room-list li.active::before {
+  display: inline-block;
+  content: '';
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  transform: translate(0, -50%);
+  background-color: #f04b00;
+}
+
+.content section.open-space .open-introdution-wrap .location h3 {
+  font-family: 'cb','MalgunGothic';
+  font-weight: bold;
+  font-size: 34px;
+  color: #000;
+  margin: 100px auto 40px;
+  text-align: center;
+}
+
+.content section.open-space .open-introdution-wrap .location .map {
+  height: 620px;
+  border: 1px solid #ddd;
+}
+
+.content section.open-space .open-introdution-wrap .location .location-txt {
+  margin: 40px 20px;
+}
+
+.content section.open-space .open-introdution-wrap .location .location-txt .tit {
+  font-family: 'cm','MalgunGothic';
+  font-size: 18px;
+  color: #333;
+}
+
+.content section.open-space .open-introdution-wrap .location .location-txt .tit:not(:first-child) {
+  margin-top: 40px;
+}
+
+.content section.open-space .open-introdution-wrap .location .location-txt .desc {
+  font-family: 'cr','MalgunGothic';
+  font-size: 14px;
+  color: #666;
+  margin-top: 20px;
+  margin-left: 10px;
+  display: block;
+  position: relative;
+}
+
+.content section.open-space .open-introdution-wrap .location .location-txt .desc::before {
+  display: inline-block;
+  content: '';
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  height: 2px;
+  width: 2px;
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  transform: translate(0, -50%);
+  background-color: #666;
 }
 
 .content .add-div-c {
