@@ -378,9 +378,11 @@
         -webkit-overflow-scrolling: touch;
         -ms-overflow-style: -ms-autohiding-scrollbar;
         outline: none;
+
         &::-webkit-scrollbar {
           display: none;
         }
+
         .nav-item {
           margin: 0;
           padding: 20px 0;
@@ -405,21 +407,26 @@
           }
         }
       }
-      .stage-cont{
+
+      .stage-cont {
         margin-top: 40px;
-        .intro-wrap{
+
+        .intro-wrap {
           display: flex;
           background: #f5f5f5;
-          .intro-img{
-          }
-          .intro-txt{
+
+          .intro-img {}
+
+          .intro-txt {
             padding: 30px 40px;
-            .tit{
+
+            .tit {
               @include ff(cm);
               font-size: 20px;
               color: #333;
             }
-            .txt{
+
+            .txt {
               @include ff(cr);
               font-size: 14px;
               color: #666;
@@ -427,7 +434,8 @@
               line-height: 24px;
               max-width: 80%;
             }
-            .writer{
+
+            .writer {
               @include ff(cm);
               font-size: 16px;
               color: #f04b00;
@@ -435,32 +443,72 @@
             }
           }
 
+          &.replay-wrap {
+            background: #fff;
+
+            .intro-txt {
+              padding: 10px 40px;
+
+              .director,
+              .broadcast-date,
+              .producer {
+                @include ff(cr);
+                font-size: 14px;
+                color: #666;
+
+                &:not(:first-child) {
+                  margin-top: 15px;
+                }
+
+                span {
+                  @include ff(cm);
+                  color: #333;
+                  width: 45px;
+                  display: inline-block;
+                }
+              }
+            }
+          }
+
         }
-        h4{
+
+        h4 {
           margin-top: 100px;
           padding-bottom: 30px;
           border-bottom: 1px solid #ccc;
           @include ff(cb);
           font-size: 28px;
           color: #333;
-          &:not(:first-child){
+
+          &:not(:first-child) {
             margin-top: 80px;
           }
         }
-        .actor-wrap{
+
+        h5 {
+          font-size: 18px;
+          color: #333;
+          @include ff(cb);
+          margin: 40px 0 20px;
+        }
+
+        .actor-wrap {
           padding-top: 30px;
           display: flex;
-          ul{
+
+          ul {
             max-width: 592px;
             display: flex;
             text-align: center;
-            li{
+
+            li {
               display: inline-block;
 
-              &:not(:first-child){
+              &:not(:first-child) {
                 margin-left: 20px;
               }
-              span{
+
+              span {
                 color: #333;
                 @include ff(cm);
                 font-size: 16px;
@@ -469,22 +517,93 @@
               }
             }
           }
-          .desc-wrap{
+
+          .desc-wrap {
             padding: 10px 40px;
-            p{
+
+            p {
               @include ff(cr);
               font-size: 14px;
               color: #666;
               line-height: 24px;
-              &:not(:first-child){
+
+              &:not(:first-child) {
                 margin-top: 30px;
               }
-              span{
+
+              span {
                 @include ff(cm);
                 color: #333;
               }
             }
           }
+        }
+
+        .tit-wrap {
+          position: relative;
+
+          .sort {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(0px, -50%);
+
+            span {
+              color: #999;
+              font-size: 14px;
+              @include ff(cm);
+              padding: 0 10px;
+              cursor: pointer;
+
+              &:not(:first-child) {
+                border-left: 1px solid #ccc;
+              }
+
+              &.active {
+                color: #333;
+
+              }
+            }
+          }
+
+        }
+
+        .vod-wrap {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          flex-wrap: wrap;
+
+          li {
+            flex-basis: 224px;
+          }
+
+          a {
+            display: block;
+
+            .thumb {
+              position: relative;
+
+              .vod-time {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                color: #fff;
+                background: #000;
+                padding: 6px;
+                @include ff(cr);
+                font-size: 10px;
+              }
+            }
+
+            .caption {
+              @include ff(cr);
+              color: #666;
+              margin: 12px 0 40px;
+              @include truncate(14px, 1.6, 2)
+            }
+          }
+
         }
 
       }
@@ -518,4 +637,3 @@
     }
   }
 }
-
