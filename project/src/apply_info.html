@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="O'PEN(오펜) - 작가 응시" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>모집요강</title>
+
+  <link rel="stylesheet" type="text/css" href="./css/customs.css">
+  <script type="text/javascript" src="./js/jquery-2.2.0.js"></script>
+  <script async type="text/javascript" src="./js/common.js"></script>
+  <script src="./js/slick.js" type="text/javascript" charset="utf-8"></script>
+  <script async type="text/javascript" src="./js/scroll.js"></script>
+
+</head>
+
+<body class="sub">
+  <header>
+    <div class="gnb-sub-wrap competition">
+      @@include('./sub/header.html')
+      <h1>모집요강</h1>
+    </div>
+  </header>
+  <div class="content">
+    <div class="cont-header">
+      <h2>2020 오펜 공모전 모집요강</h2>
+    </div>
+    <section class="apply-info">
+      <!-- li에 .on을 추가하면 '접수중' tab 생김 -->
+      <ul class="apply-info-tab  open-tab">
+        <li class="active">드라마</li>
+        <li class="on">시트콤</li>
+        <li>영화</li>
+        <li>뮤직</li>
+      </ul>
+      <ul class="open-tab-list-wrap">
+        <li class="active">
+          <p class="count-date-wrap">D-<span class="date">111</span>일 <span class="time">02:11:02</span></p>
+          <img src="./images/apply/img_drama.jpg" alt="드라마 모집요강 정보">
+        </li>
+        <li>
+          <p class="count-date-wrap">D-<span class="date">222</span>일 <span class="time">02:11:02</span></p>
+          <img src="./images/apply/img_sitcom.jpg" alt="시트콤 모집요강 정보">
+        </li>
+        <li>
+          <p class="count-date-wrap">D-<span class="date">333</span>일 <span class="time">02:11:02</span></p>
+            <img src="./images/apply/img_cinema.jpg" alt="영화 모집요강 정보">
+        </li>
+        <li>
+          <p class="count-date-wrap">D-<span class="date">444</span>일 <span class="time">02:11:02</span></p>
+          <img src="./images/apply/img_drama.jpg" alt="뮤직 모집요강 정보">
+        </li>
+      </ul>
+    </section>
+
+    <button onclick="topFunction()" id="topBtn" class="top-btn" title="Go to top">TOP</button>
+  </div>
+
+  @@include('./sub/footer.html')
+</body>
+
+</html>

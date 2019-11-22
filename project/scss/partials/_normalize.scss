@@ -282,7 +282,7 @@ textarea {
 
 //input height
 input:not([type='checkbox']):not([type='radio']) {
-  height: 46px;
+  height: 48px;
 
   // @include mq('mo', min) {
   //   height: $height-default-form;
@@ -310,16 +310,22 @@ input:not([type='checkbox']):not([type='radio']) {
       }
       input{
         width: 100%;
-        max-width: 358px;
       }
     }
   }
   .tit{
-    padding: 30px;
+    // padding: 30px;
     @include ff(cm);
     font-size: 18px;
     color: #333;
     background: #f5f5f5;
+    &.num{
+      text-align: center;
+      width: 60px;
+    }
+    &.sub{
+      width: 250px;
+    }
   }
   .txt-input{
     max-height: 230px;

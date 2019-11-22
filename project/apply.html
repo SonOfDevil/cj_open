@@ -6,10 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="O'PEN(오펜) - 작가 응시" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Subpage</title>
+  <title>지원하기</title>
 
   <link rel="stylesheet" type="text/css" href="./css/customs.css">
+  <script type="text/javascript" src="./js/jquery-2.2.0.js"></script>
   <script async type="text/javascript" src="./js/common.js"></script>
+  <script src="./js/slick.js" type="text/javascript" charset="utf-8"></script>
+  <script async type="text/javascript" src="./js/scroll.js"></script>
+
 
 </head>
 
@@ -98,39 +102,11 @@
     </div>
     <section>
       <h3>01. 참가지원 동의</h3>
-      <div class="col2-wrap">
-        <div class="col2">
-          <p class="tit">개인정보수집 및 이용에 대한 동의</p>
-          <div class="info-wrap">
-            <p>
-              1. 개인정보의 수집/이용목적<br>
-              &lt;오펜 스토리텔러 지원사업&gt;참가자의 참가신청 및 지원자의 합격통보
-            </p>
-            <p>
-              2. 수집하려는 개인정보항목<br>
-              이름, 생년월일, 휴대전화번호, 비상연락망, 이메일주소, 경력사항
-            </p>
-            <p>
-              3. 개인정보의 보유기간<br>
-              &lt;오펜 스토리텔러 지원사업&gt;종료 6개월 이후 일체의 정보를 파기조치 합니다.<br>
-              단, 관계법령의 규정에 의하여 보전할 필요가 있는 경우, 일정기간 동안 개인정보를 보관할 수
-            </p>
-          </div>
-
-          <label class="cj-chk">동의
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-      </div>
-      <div class="col2">
-        <p class="tit">참가지원 동의</p>
+      <div class="agree-wrap">
         <div class="info-wrap">
           <p>
             본인은&lt;오펜드라마 스토리텔러지원사업&gt;의 홈페이지에 공시된&lt;모집요강&gt;
-            (의무사항, 기타사항을 포함한 요강젂문)을 준수합니다.
-          </p>
-          <p>
-            본인은&lt;참가지원에 대한동의&gt;와&lt;개인정보이용및수집&gt;의 내용에관해동의합니다.
+            (의무사항, 기타사항을 포함한 요강전문)을 준수합니다.
           </p>
         </div>
 
@@ -147,26 +123,26 @@
       <table class="cj-tabl apply">
         <tbody>
           <tr>
-            <td class="tit">이름</td>
-            <td colspan="3"><input type="text" placeholder="이름을 입력해주세요."></td>
+            <td class="tit necessary">이름</td>
+            <td colspan="3"><span class="form-txt">홍길동</span></td>
           </tr>
           <tr>
-            <td class="tit">생년월일</td>
-            <td><input type="text" placeholder="'-'없이 입력해주세요."></td>
-            <td class="tit">휴대전화</td>
+            <td class="tit necessary">생년월일</td>
+            <td><span class="form-txt">1980.12.31</span></td>
+            <td class="tit necessary">휴대전화</td>
             <td><input type="tel" placeholder="'-'없이 입력해주세요."></td>
           </tr>
           <tr>
-            <td class="tit">비상연락망</td>
+            <td class="tit necessary">비상연락망</td>
             <td><input type="tel" placeholder="'-'없이 입력해주세요."></td>
-            <td class="tit">이메일주소</td>
-            <td><input type="email" placeholder="'-'없이 입력해주세요."></td>
+            <td class="tit necessary">이메일주소</td>
+            <td><input type="email" placeholder="e-mail을 입력해주세요."></td>
           </tr>
           <tr>
-            <td class="tit">경력사항</td>
+            <td class="tit necessary">경력사항</td>
             <td colspan="3">
               <textarea name="" id="" cols="30" rows="10" class="txt-input"
-                placeholder="작품 수상내역, 보조작가 이력, 공모전 최종심 오른 경력, 여타 출간된 소설, 웹툰, 웹소설 이력도 좋습니다."></textarea>
+                placeholder="작품 수상내역, 보조작가 이력, 공모전 최종심 오른 경력, 여타 출간된 소설, 웹툰, 웹소설 이력도 좋습니다.(최대 2천자 이내로 입력)"></textarea>
             </td>
           </tr>
         </tbody>
@@ -191,8 +167,8 @@
       <table class="cj-tabl attach">
         <tbody>
           <tr>
-            <td class="tit">1</td>
-            <td class="tit ">제출작품</td>
+            <td class="tit num">1</td>
+            <td class="tit sub">제출작품</td>
             <td>
               <div class="file-input">
                 <input type="text" readonly="readonly" title="File Route" id="file_route"><label>
@@ -203,11 +179,11 @@
                 </div>
               </td>
               <!-- .close에 .active 추가시 close button 보임 -->
-              <td><button class="close active"></button></td>
+              <td class="cloase-wrap"><button class="close active"></button></td>
             </tr>
             <tr>
-              <td class="tit">2</td>
-              <td class="tit ">제출작품</td>
+              <td class="tit num">2</td>
+              <td class="tit sub">제출작품</td>
               <td>
                 <div class="file-input">
                   <input type="text" readonly="readonly" title="File Route" id="file_route"><label>
@@ -218,13 +194,13 @@
               </div>
             </td>
             <!-- .close에 .active 추가시 close button 보임 -->
-            <td><button class="close active"></button></td>
+            <td class="cloase-wrap"><button class="close active"></button></td>
           </tr>
         </tbody>
       </table>
       <div class="txt-wrap">
         <a href="#" class="btn-r">저장 및 지원하기</a>
-        <p class="txt-notice">(*마감시간까지 마이페이지> 나의 지원내역에서 지원내용을 수정할 수 있습니다.)</p>
+        <p class="txt-notice">*마감시간까지 <span>마이페이지> 나의 지원내역에서 지원내용을 수정</span>할 수 있습니다.</p>
       </div>
 
 
@@ -269,7 +245,7 @@
             <span>대표메일 <a href="mailto:tving@cj.net">tving@cj.net</a></span>
           </p>
           <p class="copyright">
-            <span>Copyright &#169; POSCO,All Rights Reserved.</span>
+            <span>Copyright &#169; CJ ENM All Rights Reserved.</span>
           </p>
         </div>
     </div>

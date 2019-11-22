@@ -23,6 +23,11 @@
     background-size: cover;
     background-position: center center;
   }
+  &.myboard {
+    background: url('../images/gnb-sub-bg-05.png') no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
 
 
   h1{
@@ -61,10 +66,10 @@
           &::before {
             position: absolute;
             left: 0;
-            bottom: 67px;
+            bottom: 71px;
             width: 100%;
             content: ' ';
-            border: 3px solid #fff;
+            border-top: 3px solid #fff;
             transform: scaleX(0);
             transition: transform 250ms ease-in-out;
             // transform-origin: 0% 50%;

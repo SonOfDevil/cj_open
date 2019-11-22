@@ -651,6 +651,7 @@ $breakpoints: ("mo": 767px);
   width: $size;
   height: $size;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 
   &:before,
   &:after {
@@ -671,3 +672,4 @@ $breakpoints: ("mo": 767px);
     transform: rotate(-45deg);
   }
 }
+

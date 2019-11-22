@@ -41,11 +41,16 @@ function topFunction() {
   });
 
   // tab toggle
-  var tab = $('.open-space-tab li');
+  var tab = $('.open-tab li');
   tab.on('click', function () {
+    var currentNum = $(this).index();
+    var test = $('.open-tab-list-wrap li');
     $(this).siblings().removeClass('active');
     $(this).toggleClass('active');
-    $('.open-introdution-wrap').toggleClass('active');
+    test.siblings().removeClass('active');
+    // test.toggleClass('active');
+    $('.open-tab-list-wrap > li').eq(currentNum).toggleClass('active');
+
   })
 
 
@@ -100,18 +105,19 @@ function topFunction() {
     //    }
     // }]
   });
-  $('.slider').on('afterChange', function (event, slick, currentSlide, nextSlide) {
+  $('.slider-story').on('afterChange', function (event, slick, currentSlide, nextSlide) {
     var count = currentSlide / 2;
-
-    // var count = slickNext + 1;
-    // count === 0 ? count = 5 : count = count / 2;
-
-    console.log(count);
     $('.story-tab li').siblings('li').removeClass('active');
     $('.story-tab li').eq(count).toggleClass('active');
-    // count++;
-
-
+    $('.sub-head.story li').removeClass('active');
+    $('.sub-head.story li').eq(count).toggleClass('active');
+  });
+  $('.slider-music').on('afterChange', function (event, slick, currentSlide, nextSlide) {
+    var count = currentSlide / 2;
+    $('.music-tab li').siblings('li').removeClass('active');
+    $('.music-tab li').eq(count).toggleClass('active');
+    $('.sub-head.music li').removeClass('active');
+    $('.sub-head.music li').eq(count).toggleClass('active');
   });
 
 
@@ -169,6 +175,16 @@ function topFunction() {
     $(this).parents().siblings('.sub-head').children('li').eq($(this).index()).toggleClass('active');
 
   });
+
+  // FAQ arcodion Action
+  var btnMore = $('.faq-list .question .more');
+  btnMore.on('click', function(){
+    $(this).toggleClass('action');
+    $(this).parent().next().eq(0).toggleClass('action');
+  })
+
+
+
 
 
 

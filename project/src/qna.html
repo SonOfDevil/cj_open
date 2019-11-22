@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="O'PEN(오펜) - 작가 응시" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Q&A</title>
+
+  <link rel="stylesheet" type="text/css" href="./css/customs.css">
+  <script type="text/javascript" src="./js/jquery-2.2.0.js"></script>
+  <script async type="text/javascript" src="./js/common.js"></script>
+  <script src="./js/slick.js" type="text/javascript" charset="utf-8"></script>
+  <script async type="text/javascript" src="./js/scroll.js"></script>
+
+
+</head>
+
+<body class="sub">
+  <header>
+    <div class="gnb-sub-wrap board">
+      @@include('./sub/header.html')
+      <h1>Q&A</h1>
+    </div>
+  </header>
+  <div class="content">
+    <div class="cont-header">
+      <h2>Q&A</h2>
+    </div>
+
+    <section class="myqna">
+      <ul class="btn-wrap location-right">
+        <li><button class="btn ">문의하기</button></li>
+      </ul>
+
+      <table class="cj-tabl board">
+        <thead>
+          <tr>
+            <td class="num">번호</td>
+            <td class="title">제목</td>
+            <td>작성자</td>
+            <td>등록일</td>
+            <td>조회수</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="num"><span>1</span></td>
+            <td class="title">
+              <a href="#">
+                <!-- 제목은 26자 제한 걸어주세요. -->
+                <span class="reply-tit lock">문의드립니다.</span>
+                <span class="reply">[<span class="reply-count">1</span>]</span>
+              </a>
+            </td>
+            <td><span>홍길동</span></td>
+            <td><span>2019-06-20</span></td>
+            <td><span>1</span></td>
+          </tr>
+          <tr>
+            <td class="num"></td>
+            <td class="title"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="num"></td>
+            <td class="title"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="num"></td>
+            <td class="title"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="num"></td>
+            <td class="title"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="num"></td>
+            <td class="title"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="num"></td>
+            <td class="title"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <ul class="pager">
+        <li><a class="prev" href="#">prev</a></li>
+        <li><a class="active" href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a class="next" href="#">next</a></li>
+      </ul>
+
+    </section>
+
+
+
+    <button onclick="topFunction()" id="topBtn" class="top-btn" title="Go to top">TOP</button>
+  </div>
+
+  @@include('./sub/footer.html')
+</body>
+
+</html>
