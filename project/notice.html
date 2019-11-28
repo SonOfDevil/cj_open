@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no initial-scale=1">
+  <meta name="description" content="O'PEN(오펜) - 작가 응시" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>공지사항</title>
+
+  <link rel="stylesheet" type="text/css" href="./css/customs.css">
+  <script type="text/javascript" src="./js/jquery-2.2.0.js"></script>
+  <script async type="text/javascript" src="./js/common.js"></script>
+  <script src="./js/slick.js" type="text/javascript" charset="utf-8"></script>
+  <script async type="text/javascript" src="./js/scroll.js"></script>
+
+
+</head>
+
+<body class="sub">
+  <header>
+
+  <div class="gnb-mob">
+    <a class="logo" href="#"><img src="./images/logo_open.png" alt="o'pen logo"></a>
+    <div class="gnb-menu-mob">
+
+    </div>
+  </div>
+  <div class="main-gnb">
+    <button class="gnb-close">close</button>
+    <div class="gnb-wrap">
+      <div class="header_open_logo" title="O'pen logo">
+        <a href="http://www.cjenm.com">
+        </a>
+      </div>
+      <nav class="main-menu">
+        <ul class="menu">
+          <li><a href="#" class="menu-list">오펜</a>
+            <ul class="row">
+              <li><a href="">O'PEN</a></li>
+              <li><a href="">창작지원</a></li>
+              <li><a href="">오펜공간</a></li>
+            </ul>
+          </li>
+          <li class="active"><a href="http://www.naver.com" class="menu-list">공모전</a>
+            <ul class="row">
+              <li><a href="">모집요강</a></li>
+              <li><a href="">지원하기</a>
+                <ul class="row-sub">
+                  <li><a href="">드라마</a></li>
+                  <li><a href="">시트콤</a></li>
+                  <li><a href="">영화</a></li>
+                  <li><a href="">뮤직</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#" class="menu-list">오펜폴리오</a>
+            <ul class="row">
+              <li><a href="">오펜성과</a></li>
+              <li><a href="">작가소개</a></li>
+              <li><a href="">드라마스테이지</a>
+                <ul class="row-sub">
+                  <li><a href="">2019</a></li>
+                  <li><a href="">2018</a></li>
+                </ul>
+              </li>
+              <li><a href="">보도자료</a></li>
+            </ul>
+          </li>
+          <li><a href="#" class="menu-list">게시판</a>
+            <ul class="row">
+              <li><a href="">공지사항</a></li>
+              <li><a href="">Q&amp;A</a></li>
+              <li><a href="">FAQ</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="dropdown">
+          <!-- <div class="dropdown-content"> -->
+            <ul class="row">
+              <li><a href="">O'PEN</a></li>
+              <li><a href="">창작지원</a></li>
+              <li><a href="">오펜공간</a></li>
+            </ul>
+            <ul class="row">
+              <li><a href="">모집요강</a></li>
+              <li><a href="">지원하기</a>
+                <ul>
+                  <li><a href="">드라마</a></li>
+                  <li><a href="">영화</a></li>
+                  <li><a href="">시트콤</a></li>
+                  <li><a href="">뮤직</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="row">
+              <li><a href="">오펜성과</a></li>
+              <li><a href="">작가소개</a></li>
+              <li><a href="">드라마스테이지</a>
+                <ul>
+                  <li><a href="">2019</a></li>
+                  <li><a href="">2018</a></li>
+                </ul>
+              </li>
+              <li><a href="">보도자료</a></li>
+            </ul>
+            <ul class="row">
+              <li><a href="">공지사항</a></li>
+              <li><a href="">Q&amp;A</a></li>
+              <li><a href="">FAQ</a></li>
+            </ul>
+          <!-- </div> -->
+        </div>
+        <div class="header_nav_bg"></div>
+
+      </nav>
+      <ul class="login-wrap">
+        <li class="login-check"><a href="#">로그아웃</a></li>
+        <li><a href="#"><span class="user">홍길동</span> 님</a>
+        <ul class="user-sub">
+          <li><a href="#">나의 지원내역</a></li>
+          <li><a href="#">나의 문의내역</a></li>
+        </ul></li>
+      </ul>
+    </div>
+  </div>
+</header>
+  <div class="gnb-sub-wrap board">
+    <h1>공지사항</h1>
+  </div>
+  <div class="content">
+    <div class="cont-header">
+      <h2>공지사항</h2>
+    </div>
+
+    <section class="notice">
+      <div class="notice-nav-wrap">
+        <ul class="notice-nav">
+          <li><a href="#" class="active">전체</a></li>
+          <li><a href="#">드라마</a></li>
+          <li><a href="#">영화</a></li>
+          <li><a href="#">음악</a></li>
+          <li><a href="#">오펜소식</a></li>
+        </ul>
+        <div class="search-input">
+          <input type="search" placeholder="제목 또는 내용으로 검색"><label>
+            <input type="submit" value="검색">검색</label>
+        </div>
+
+      </div>
+
+      <table class="cj-tabl board">
+        <thead>
+          <tr>
+            <td class="num">구분</td>
+            <td class="title">제목</td>
+            <td>등록일</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="num"><span>드라마</span></td>
+            <td class="title">
+              <a href="#">
+                <!-- 제목은 26자 제한 걸어주세요. -->
+                <span class="reply-tit">CJ ENM '오펜' 3기 출범...신인 작가 30명 (글 김윤지)</span>
+              </a>
+            </td>
+            <td><span>2019-06-20</span></td>
+          </tr>
+          <tr>
+            <td class="num"><span>오펜소식</span></td>
+            <td class="title">
+              <a href="#">
+                <!-- 제목은 26자 제한 걸어주세요. -->
+                <span class="reply-tit">'개같다 거지같다 아름답다’ 작가 “다른 두 남자 속 희망찾기” (글 홍세영)</span>
+              </a>
+            </td>
+            <td><span>2019-06-20</span></td>
+          </tr>
+          <tr>
+            <td class="num"><span>드라마</span></td>
+            <td class="title">
+              <a href="#">
+                <!-- 제목은 26자 제한 걸어주세요. -->
+                <span class="reply-tit attech">2018 오펜 드라마 작품집 상권</span>
+              </a>
+            </td>
+            <td><span>2019-06-20</span></td>
+          </tr>
+          <tr>
+            <td class="num"><span></span></td>
+            <td class="title">
+              <a href="#">
+                <!-- 제목은 26자 제한 걸어주세요. -->
+                <span class="reply-tit"></span>
+              </a>
+            </td>
+            <td><span></span></td>
+          </tr>
+          <tr>
+            <td class="num"><span></span></td>
+            <td class="title">
+              <a href="#">
+                <!-- 제목은 26자 제한 걸어주세요. -->
+                <span class="reply-tit"></span>
+              </a>
+            </td>
+            <td><span></span></td>
+          </tr>
+          <tr>
+            <td class="num"><span></span></td>
+            <td class="title">
+              <a href="#">
+                <!-- 제목은 26자 제한 걸어주세요. -->
+                <span class="reply-tit"></span>
+              </a>
+            </td>
+            <td><span></span></td>
+          </tr>
+          <tr>
+            <td class="num"><span></span></td>
+            <td class="title">
+              <a href="#">
+                <!-- 제목은 26자 제한 걸어주세요. -->
+                <span class="reply-tit"></span>
+              </a>
+            </td>
+            <td><span></span></td>
+          </tr>
+
+        </tbody>
+      </table>
+      <ul class="pager">
+        <li><a class="first" href="#">first</a></li>
+        <li><a class="prev" href="#">prev</a></li>
+        <li><a class="active" href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+        <li><a href="#">7</a></li>
+        <li><a href="#">8</a></li>
+        <li><a href="#">9</a></li>
+        <li><a href="#">10</a></li>
+        <li><a class="next" href="#">next</a></li>
+        <li><a class="last" href="#">last</a></li>
+      </ul>
+
+    </section>
+
+
+
+    <button onclick="topFunction()" id="topBtn" class="top-btn" title="Go to top">TOP</button>
+  </div>
+
+  <div id="footer" class="footer">
+  <div class="footer_wrap">
+    <div class="footer_inner">
+      <div class="footer_menu">
+        <ul>
+          <li><a target="_blank" href="http://www.cjenm.com">회사소개</a></li>
+          <li><a href="#">광고/제휴문의</a></li>
+          <li><a target="_blank" href="http://www.tving.com/info/tvingterms.do">이용약관</a></li>
+          <li><a target="_blank" href="http://www.tving.com/info/privacy.do" class="btn_fo_menu_privacy">개인정보
+              처리방침</a></li>
+          <li><a target="_blank" href="http://www.tving.com/info/youthpolicy.do">청소년보호정책</a></li>
+          <li><a target="_blank" href="http://www.tving.com/info/disclaimer.do">법적고지</a></li>
+          <li><a target="_blank" href="http://www.tving.com/info/collectionpolicy.do">이메일무단수집거부</a></li>
+          <li><a target="_blank" href="http://www.tving.com/faq/main.do">고객센터</a></li>
+        </ul>
+      </div>
+      <div class="footer-info-wrap">
+        <div class="footer_enm_logo"><a href="http://www.cjenm.com">CJ ENM</a></div>
+        <div class="footer_address">
+          <p>
+            <span>대표이사 : 허민회, 허민호 | <a href="#">사업자정보확인</a></span>
+            <span>개인정보관리 책임자 : 고창남</span>
+            <span>사업자등록번호 : 106-81-51510</span>
+            <span>통신판매신고번호 : 서초 제 000015호</span>
+          </p>
+          <p>
+            <span>본점:서울특별시 서초구 과천대로 870-13 (방배동)</span>
+            <span>사업장:서울특별시 마포구 상암산로 66 (상암동)</span><br>
+          </p>
+          <p>
+            <span>고객센터:1670-1525(평일 09시~18시)</span>
+            <span>ENM 시청자상담실(방송편성문의):080-080-0780</span>
+            <span>대표메일 <a href="mailto:tving@cj.net">tving@cj.net</a></span>
+          </p>
+          <p class="copyright">
+            <span>Copyright &#169; CJ ENM All Rights Reserved.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Popup layer -->
+<!--  popup 열기 위해서는 .dimmer에 .active 추가 -->
+<div class="dimmer">
+  <div class="close-wrap">
+    <a href="#" class="btn-popup-close">close</a>
+  </div>
+  <div class="popup-inner-wrap">
+    <!-- content -->
+
+  </div>
+</div>
+
+</body>
+
+</html>

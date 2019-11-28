@@ -1,5 +1,5 @@
 //  Mixins
-$breakpoints: ("mo": 767px);
+$breakpoints: ("mo": 1199px);
 
 @mixin mq($width, $type: max) {
   @if map_has_key($breakpoints, $width) {

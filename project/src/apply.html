@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no initial-scale=1">
   <meta name="description" content="O'PEN(오펜) - 작가 응시" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>지원하기</title>
@@ -18,21 +19,20 @@
 </head>
 
 <body class="sub">
-  <header>
-    <div class="gnb-sub-wrap competition">
-      @@include('./sub/header.html')
-      <h1>지원하기</h1>
-      <div class="gnb-sub">
-        <ul class="gnb-sub-list">
-          <li><a class="active" href="#">드라마</a></li>
-          <li><a href="#">영화</a></li>
-          <li><a href="#">시트콤</a></li>
-          <li><a href="#">뮤직</a></li>
-        </ul>
-      </div>
+  @@include('./sub/header.html')
+  <div class="gnb-sub-wrap competition">
+    <h1>지원하기</h1>
+    <div class="gnb-sub">
+      <ul class="gnb-sub-list">
+        <li><a class="active" href="#">드라마</a></li>
+        <li><a href="#">영화</a></li>
+        <li><a href="#">시트콤</a></li>
+        <li><a href="#">뮤직</a></li>
+      </ul>
     </div>
-  </header>
+  </div>
   <div class="content">
+
     <div class="cont-header">
       <h2>공모전 지원하기(드라마)</h2>
       <div class="date-wrap">
@@ -106,40 +106,60 @@
       <table class="cj-tabl attach">
         <tbody>
           <tr>
-            <td class="tit num">1</td>
+            <td class="tit num" rowspan="2">1</td>
             <td class="tit sub">제출작품</td>
             <td>
               <div class="file-input">
-                <input type="text" readonly="readonly" title="File Route" id="file_route"><label>
+                <input type="text" readonly="readonly" title="File Route" id="file_route1"><label>
                   찾아보기
-                  <input type="file" onchange="javascript:document.getElementById('file_route').value=this.value"></label>
-                  <!-- 첨부파일 이름 -->
-                  <span class="attach-name"></span>
-                </div>
-              </td>
-              <!-- .close에 .active 추가시 close button 보임 -->
-              <td class="cloase-wrap"><button class="close active"></button></td>
-            </tr>
-            <tr>
-              <td class="tit num">2</td>
-              <td class="tit sub">제출작품</td>
-              <td>
-                <div class="file-input">
-                  <input type="text" readonly="readonly" title="File Route" id="file_route"><label>
-                    찾아보기
-                    <input type="file" onchange="javascript:document.getElementById('file_route').value=this.value"></label>
-                    <!-- 첨부파일 이름 -->
-                    <span class="attach-name"></span>
+                <input type="file" onchange="javascript:document.getElementById('file_route').value=this.value"></label>
+                <!-- 첨부파일 이름 -->
+                <span class="attach-name"></span>
               </div>
             </td>
             <!-- .close에 .active 추가시 close button 보임 -->
-            <td class="cloase-wrap"><button class="close active"></button></td>
+            <td class="cloase-wrap border-on" rowspan="2"><button class="close active"></button></td>
+          </tr>
+          <tr>
+            <!-- <td class="tit num">2</td> -->
+            <td class="tit sub sub-col">로그라인</td>
+            <td>
+              <div class="txt-input">
+                <input type="text" maxlength="100" placeholder="100자 이내로 입력해주세요.">
+            </div>
+            </td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td class="tit num" rowspan="2">2</td>
+            <td class="tit sub">제출작품</td>
+            <td>
+              <div class="file-input">
+                <input type="text" readonly="readonly" title="File Route" id="file_route1"><label>
+                  찾아보기
+                <input type="file" onchange="javascript:document.getElementById('file_route').value=this.value"></label>
+                <!-- 첨부파일 이름 -->
+                <span class="attach-name"></span>
+              </div>
+            </td>
+            <!-- .close에 .active 추가시 close button 보임 -->
+            <td class="cloase-wrap border-on" rowspan="2"><button class="close active"></button></td>
+          </tr>
+          <tr>
+            <!-- <td class="tit num">2</td> -->
+            <td class="tit sub sub-col">로그라인</td>
+            <td>
+              <div class="txt-input">
+                <input type="text" maxlength="100" placeholder="100자 이내로 입력해주세요.">
+            </div>
+            </td>
           </tr>
         </tbody>
       </table>
       <div class="txt-wrap">
         <a href="#" class="btn-r">저장 및 지원하기</a>
-        <p class="txt-notice">*마감시간까지 <span>마이페이지> 나의 지원내역에서 지원내용을 수정</span>할 수 있습니다.</p>
+        <p class="txt-notice">*마감시간까지 <span>마이페이지&gt; 나의 지원내역에서 지원내용을 수정</span>할 수 있습니다.</p>
       </div>
 
 

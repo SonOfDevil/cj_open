@@ -5,11 +5,10 @@
     width: 100%;
     min-width: 980px;
     font-family: 'cr', 'MalgunGothic';
-    ;
     z-index: 21;
     background: #ffffff;
-    * {
-        font-family: 'cr', 'MalgunGothic';
+    @include mq('mo'){
+        min-width: inherit;
     }
     .footer_notice_wrap {
         border-top: 1px solid #eeeeee;
@@ -182,13 +181,26 @@
         padding: 0;
         background: $color-bg-default;
         height: 45px;
+        @include mq('mo'){
+            height: inherit;
+            padding: 14px 15px;
+        }
         ul {
             width: 1200px;
             margin: 0 auto;
+            @include mq('mo'){
+                width: inherit;
+            }
             li {
                 padding: 10px 12px;
                 display: inline-block;
                 position: relative;
+                @include mq('mo'){
+                    padding: 6px 12px;
+                    &:first-child{
+                        padding-left: 0;
+                    }
+                }
                 &::before{
                     content: '';
                     background: $color-txt-dark;
@@ -198,6 +210,11 @@
                     position: absolute;
                     top: 18px;
                     left: -3px;
+                    @include mq('mo'){
+                        width: 1px;
+                        height: 10px;
+                        top: 10px;
+                    }
 
                 }
                 &:first-child::before{
@@ -209,6 +226,9 @@
                     text-decoration: none;
                     line-height: 20px;
                     font-family: 'cm', 'MalgunGothic';
+                    @include mq('mo'){
+                        font-size: 12px;
+                    }
                     &.btn_fo_menu_privacy {
                         // color: $color-white;
                         font-weight: bold;
@@ -222,8 +242,18 @@
         display: flex;
         width: 1200px;
         margin: 24px auto 0;
+        @include mq('mo'){
+            margin: 20px auto 0;
+
+        }
+        @include mq('mo'){
+            width: 100%;
+        }
         .footer_enm_logo {
             margin-right: 30px;
+            @include mq('mo'){
+                display: none;
+            }
             a {
                 position: relative;
                 margin: 0 auto;
@@ -237,9 +267,15 @@
             }
         }
         .footer_address {
+            @include mq('mo'){
+                padding: 0 15px;
+            }
             p{
                 font-size: 13px;
                 line-height: 20px;
+                @include mq('mo'){
+                    font-size: 12px;
+                }
                 &.copyright{
                     margin-top: 4px;
                 }
@@ -249,6 +285,13 @@
                 margin-left: 2px;
             }
         }
+    }
+}
+
+// only fullpage
+#fullpage{
+    .footer{
+        margin-top: -160px;
     }
 }
 

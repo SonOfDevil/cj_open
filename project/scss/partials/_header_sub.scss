@@ -85,7 +85,8 @@
 }
 
 // 첨부파일
-.file-input label {
+.file-input label,
+.search-input label {
   position: relative;
   cursor: pointer;
   display: inline-block;

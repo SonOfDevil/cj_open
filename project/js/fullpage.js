@@ -4189,7 +4189,7 @@ if(window.jQuery && window.fullpage){
 var myFullpage = new fullpage('#fullpage', {
 
   // //스크롤
-  anchors: ['slide-main', 'slide-sub', 'open-story', 'about-open', 'footer'],
+  anchors: ['slide-main', 'slide-sub', 'open-story', 'about-open'],
   css3: true,
   scrollingSpeed: 500,
   autoScrolling: true,
@@ -4263,3 +4263,14 @@ var myFullpage = new fullpage('#fullpage', {
     }
   }
 });
+
+
+;(function () {
+    var noticeList = $('.slide-txt-wrap .txt-list li');
+    noticeList.hover(function(){
+        $(this).siblings().removeClass('active');
+        $(this).toggleClass('active');
+    })
+
+
+})();

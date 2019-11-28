@@ -191,7 +191,6 @@ strong{
   position: relative;
   padding-left: 35px;
   @include ff(cm);
-  vertical-align: middle;
   line-height: 24px;
   color: #333;
   font-size: 16px;
@@ -200,6 +199,12 @@ strong{
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  &.radio{
+    display: inline-block;
+    &:not(:first-child){
+      margin-left: 30px;
+    }
+  }
 
   input {
     position: absolute;
@@ -213,6 +218,20 @@ strong{
       border-color: transparent;
       &:after {
         display: block;
+      }
+    }
+    &[type='radio']{
+      &+.checkmark,
+      &:checked+.checkmark {
+        border-radius: 1rem;
+        background: transparent;
+        border: 1px solid #ccc;
+        &:after{
+          left: 5px;
+          top: 5px;
+          border: 6px solid #ff8c00;
+          border-radius: 1rem;
+        }
       }
     }
   }
@@ -251,6 +270,7 @@ input[type="search"],
 input[type="number"],
 input[type="datetime"],
 input[type="email"],
+input[type="submit"],
 textarea {
   border-radius: 0; //mc
   background-clip: inherit; //background:none 쓰면 아이폰에서 그림자 나타남.
@@ -280,13 +300,13 @@ textarea {
   }
 }
 
-//input height
-input:not([type='checkbox']):not([type='radio']) {
-  height: 48px;
 
-  // @include mq('mo', min) {
-  //   height: $height-default-form;
-  // }
+input[type='submit'] {
+  border: 0;
+  font-size: 0;
+  width: 0;
+  height: 0;
+  padding: 0;
 }
 
 .cj-tabl{
@@ -325,6 +345,9 @@ input:not([type='checkbox']):not([type='radio']) {
     }
     &.sub{
       width: 250px;
+      &.sub-col{
+        border-left: 1px solid #ddd;
+      }
     }
   }
   .txt-input{

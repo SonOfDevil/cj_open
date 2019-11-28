@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no initial-scale=1">
   <meta name="description" content="O'PEN(오펜) - 작가 응시" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Q&A</title>
@@ -18,12 +19,10 @@
 </head>
 
 <body class="sub">
-  <header>
-    <div class="gnb-sub-wrap board">
-      @@include('./sub/header.html')
-      <h1>Q&A</h1>
-    </div>
-  </header>
+  @@include('./sub/header.html')
+  <div class="gnb-sub-wrap board">
+    <h1>Q&A</h1>
+  </div>
   <div class="content">
     <div class="cont-header">
       <h2>Q&A</h2>
@@ -103,12 +102,20 @@
         </tbody>
       </table>
       <ul class="pager">
+        <li><a class="first" href="#">first</a></li>
         <li><a class="prev" href="#">prev</a></li>
         <li><a class="active" href="#">1</a></li>
         <li><a href="#">2</a></li>
         <li><a href="#">3</a></li>
         <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+        <li><a href="#">7</a></li>
+        <li><a href="#">8</a></li>
+        <li><a href="#">9</a></li>
+        <li><a href="#">10</a></li>
         <li><a class="next" href="#">next</a></li>
+        <li><a class="last" href="#">last</a></li>
       </ul>
 
     </section>

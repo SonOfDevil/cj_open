@@ -23,13 +23,13 @@ function topFunction() {
 
 
 
-;
-(function () {
+;(function () {
 
   // Image change
   var roomList = $('.room-list');
   var lists = roomList.children('li');
   var imgPath = './images/space/';
+
 
   lists.hover(function () {
     var imgGroup = $(this).data('index');
@@ -105,6 +105,7 @@ function topFunction() {
     //    }
     // }]
   });
+
   $('.slider-story').on('afterChange', function (event, slick, currentSlide, nextSlide) {
     var count = currentSlide / 2;
     $('.story-tab li').siblings('li').removeClass('active');
@@ -181,12 +182,79 @@ function topFunction() {
   btnMore.on('click', function(){
     $(this).toggleClass('action');
     $(this).parent().next().eq(0).toggleClass('action');
+  });
+
+  // radio button checked
+  var radio = $('.cj-chk.radio');
+  radio.on('click', function(){
+    // $(this).children().prop('checked', true);
+    var ischecked = $(this).children();
+    var other = $(this).parent().siblings().children();
+
+    $(this).siblings().children().removeAttr('checked');
+    $(this).children().attr('checked','checked');
+  });
+
+
+  // 대댓글 open & close
+  var reply = $('.reply-list li .user-info .btn-reply');
+
+  reply.on('click', function(e){
+    e.preventDefault();
+    $(this).parent().parent().next().toggleClass('active');
+  });
+
+  var submitClose = $('.reply-list li.re-reply-input .submit');
+  submitClose.on('click', function(){
+    $(this).parent().parent().parent().toggleClass('active');
+  });
+
+  // Dimmer(popup) 닫기
+  var popupclose = $('.dimmer .btn-popup-close');
+  popupclose.on('click', function(e){
+    e.preventDefault();
+    $(this).parent().parent().toggleClass('active');
+    console.log($(this).parent().parent());
+
+  });
+
+  // Mobile GNB hamberger
+  var hamberger = $('.gnb-menu-mob');
+  var gnbClose = $('.gnb-close');
+
+  hamberger.on('click', function(){
+    $('.main-gnb').toggleClass('active');
+  });
+  gnbClose.on('click', function(e){
+    e.preventDefault();
+    $('.main-gnb').removeClass('active');
+    return false;
+  });
+
+  var gnbList = $('.main-menu .menu .menu-list');
+  gnbList.on('click', function(e){
+    // e.preventDefault();
+    $(this).parent().siblings().removeClass('active');
+    $(this).parent().toggleClass('active');
+
+  });
+
+  // 드라마 스테이지 scroll slide button controll
+  var scrollPrev = $('.scroll-btn-wrap .prev');
+  var scrollNext = $('.scroll-btn-wrap .next');
+
+  scrollPrev.on('click', function(){
+    var leftPos = $('.scroll-tab').scrollLeft();
+    $('.scroll-tab').animate({
+      scrollLeft: leftPos - 800
+    }, 800);
   })
-
-
-
-
-
+  scrollNext.on('click', function(){
+    var leftPos = $('.scroll-tab').scrollLeft();
+    $('.scroll-tab').animate({
+      scrollLeft: leftPos + 800
+    }, 400);
+  })
 
 
 

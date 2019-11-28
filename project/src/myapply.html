@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no initial-scale=1">
   <meta name="description" content="O'PEN(오펜) - 작가 응시" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>나의 지원내역</title>
@@ -18,12 +18,10 @@
 </head>
 
 <body class="sub">
-  <header>
-    <div class="gnb-sub-wrap myboard">
-      @@include('./sub/header.html')
-      <h1>나의 지원내역</h1>
-    </div>
-  </header>
+  @@include('./sub/header.html')
+  <div class="gnb-sub-wrap myboard">
+    <h1>나의 지원내역</h1>
+  </div>
   <div class="content">
     <div class="cont-header">
       <h2>나의 지원내역</h2>
@@ -72,15 +70,15 @@
         </tbody>
       </table>
       <div class="history">
-        <div class="history-tit"><span>지원현황</span></div>
+        <div class="history-tit"><span>지원현황<br> D-<span>15</span></span></div>
         <ul class="history-list">
-          <li>내 연적의 모든것</li>
-          <li>물비늘</li>
+          <li>
+            <p>내 연적의 모든것 - <span>나만 사랑하겠다던 그놈이 떠났다. 평생 한명의 남자만 만나온 오선영의 철 실연 극복기</span></p>
+            </li>
+          <li>
+            <p>물비늘 - <span>서로를 향한 감정이 사랑인지 미움인지 알지 못하는 두 남녀의 며칠간의 이야기 </span></p>
+            </li>
         </ul>
-        <div class="date-wrap">
-          <p>D - <span>12</span></p>
-        </div>
-
       </div>
     </section>
 
@@ -102,28 +100,56 @@
       <table class="cj-tabl attach">
         <tbody>
           <tr>
-            <td class="tit num">1</td>
+            <td class="tit num" rowspan="2">1</td>
             <td class="tit sub">제출작품</td>
             <td>
               <div class="file-input">
-                  <!-- 첨부파일 이름 -->
-                  <span class="attach-name">내 연적의 모든것.doc</span>
-                </div>
-              </td>
-              <!-- .close에 .active 추가시 close button 보임 -->
-              <td class="cloase-wrap"><button class="close active"></button></td>
-            </tr>
-            <tr>
-              <td class="tit num">2</td>
-              <td class="tit sub">제출작품</td>
-              <td>
-                <div class="file-input">
-                    <!-- 첨부파일 이름 -->
-                    <span class="attach-name">물비늘.doc</span>
+                <input type="text" readonly="readonly" title="File Route" id="file_route1"><label>
+                  찾아보기
+                  <input type="file"
+                    onchange="javascript:document.getElementById('file_route').value=this.value"></label>
+                <!-- 첨부파일 이름 -->
+                <span class="attach-name"></span>
               </div>
             </td>
             <!-- .close에 .active 추가시 close button 보임 -->
-            <td class="cloase-wrap"><button class="close active"></button></td>
+            <td class="cloase-wrap border-on" rowspan="2"><button class="close active"></button></td>
+          </tr>
+          <tr>
+            <!-- <td class="tit num">2</td> -->
+            <td class="tit sub sub-col">로그라인</td>
+            <td>
+              <div class="txt-input">
+                <input type="text" maxlength="100" placeholder="100자 이내로 입력해주세요.">
+              </div>
+            </td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td class="tit num" rowspan="2">2</td>
+            <td class="tit sub">제출작품</td>
+            <td>
+              <div class="file-input">
+                <input type="text" readonly="readonly" title="File Route" id="file_route1"><label>
+                  찾아보기
+                  <input type="file"
+                    onchange="javascript:document.getElementById('file_route').value=this.value"></label>
+                <!-- 첨부파일 이름 -->
+                <span class="attach-name"></span>
+              </div>
+            </td>
+            <!-- .close에 .active 추가시 close button 보임 -->
+            <td class="cloase-wrap border-on" rowspan="2"><button class="close active"></button></td>
+          </tr>
+          <tr>
+            <!-- <td class="tit num">2</td> -->
+            <td class="tit sub sub-col">로그라인</td>
+            <td>
+              <div class="txt-input">
+                <input type="text" maxlength="100" placeholder="100자 이내로 입력해주세요.">
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>

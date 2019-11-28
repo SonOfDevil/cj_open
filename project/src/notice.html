@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no initial-scale=1">
+  <meta name="description" content="O'PEN(오펜) - 작가 응시" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>공지사항</title>
+
+  <link rel="stylesheet" type="text/css" href="./css/customs.css">
+  <script type="text/javascript" src="./js/jquery-2.2.0.js"></script>
+  <script async type="text/javascript" src="./js/common.js"></script>
+  <script src="./js/slick.js" type="text/javascript" charset="utf-8"></script>
+  <script async type="text/javascript" src="./js/scroll.js"></script>
+
+
+</head>
+
+<body class="sub">
+  @@include('./sub/header.html')
+  <div class="gnb-sub-wrap board">
+    <h1>공지사항</h1>
+  </div>
+  <div class="content">
+    <div class="cont-header">
+      <h2>공지사항</h2>
+    </div>
+
+    <section class="notice">
+      <div class="notice-nav-wrap">
+        <ul class="notice-nav">
+          <li><a href="#" class="active">전체</a></li>
+          <li><a href="#">드라마</a></li>
+          <li><a href="#">영화</a></li>
+          <li><a href="#">음악</a></li>
+          <li><a href="#">오펜소식</a></li>
+        </ul>
+        <div class="search-input">
+          <input type="search" placeholder="제목 또는 내용으로 검색"><label>
+            <input type="submit" value="검색">검색</label>
+        </div>
+
+      </div>
+
+      <table class="cj-tabl board">
+        <thead>
+          <tr>
+            <td class="num">구분</td>
+            <td class="title">제목</td>
+            <td>등록일</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="num"><span>드라마</span></td>
+            <td class="title">
+              <a href="#">
+                <!-- 제목은 26자 제한 걸어주세요. -->
+                <span class="reply-tit">CJ ENM '오펜' 3기 출범...신인 작가 30명 (글 김윤지)</span>
+              </a>
+            </td>
+            <td><span>2019-06-20</span></td>
+          </tr>
+          <tr>
+            <td class="num"><span>오펜소식</span></td>
+            <td class="title">
+              <a href="#">
+                <!-- 제목은 26자 제한 걸어주세요. -->
+                <span class="reply-tit">'개같다 거지같다 아름답다’ 작가 “다른 두 남자 속 희망찾기” (글 홍세영)</span>
+              </a>
+            </td>
+            <td><span>2019-06-20</span></td>
+          </tr>
+          <tr>
+            <td class="num"><span>드라마</span></td>
+            <td class="title">
+              <a href="#">
+                <!-- 제목은 26자 제한 걸어주세요. -->
+                <span class="reply-tit attech">2018 오펜 드라마 작품집 상권</span>
+              </a>
+            </td>
+            <td><span>2019-06-20</span></td>
+          </tr>
+          <tr>
+            <td class="num"><span></span></td>
+            <td class="title">
+              <a href="#">
+                <!-- 제목은 26자 제한 걸어주세요. -->
+                <span class="reply-tit"></span>
+              </a>
+            </td>
+            <td><span></span></td>
+          </tr>
+          <tr>
+            <td class="num"><span></span></td>
+            <td class="title">
+              <a href="#">
+                <!-- 제목은 26자 제한 걸어주세요. -->
+                <span class="reply-tit"></span>
+              </a>
+            </td>
+            <td><span></span></td>
+          </tr>
+          <tr>
+            <td class="num"><span></span></td>
+            <td class="title">
+              <a href="#">
+                <!-- 제목은 26자 제한 걸어주세요. -->
+                <span class="reply-tit"></span>
+              </a>
+            </td>
+            <td><span></span></td>
+          </tr>
+          <tr>
+            <td class="num"><span></span></td>
+            <td class="title">
+              <a href="#">
+                <!-- 제목은 26자 제한 걸어주세요. -->
+                <span class="reply-tit"></span>
+              </a>
+            </td>
+            <td><span></span></td>
+          </tr>
+
+        </tbody>
+      </table>
+      <ul class="pager">
+        <li><a class="first" href="#">first</a></li>
+        <li><a class="prev" href="#">prev</a></li>
+        <li><a class="active" href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+        <li><a href="#">7</a></li>
+        <li><a href="#">8</a></li>
+        <li><a href="#">9</a></li>
+        <li><a href="#">10</a></li>
+        <li><a class="next" href="#">next</a></li>
+        <li><a class="last" href="#">last</a></li>
+      </ul>
+
+    </section>
+
+
+
+    <button onclick="topFunction()" id="topBtn" class="top-btn" title="Go to top">TOP</button>
+  </div>
+
+  @@include('./sub/footer.html')
+</body>
+
+</html>

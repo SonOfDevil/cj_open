@@ -1,24 +1,151 @@
-<header>
-  <div class="gnb-wrap">
-    <div class="header_open_logo"><a href="http://www.cjenm.com"><img src="./images/logo_open.png" alt="O'pen logo"></a></div>
-    <nav class="main-menu">
-      <ul class="menu">
-        <li><a href="#">오펜</a></li>
-        <li><a href="#">공모전</a></li>
-        <li><a href="#">오펜폴리오</a></li>
-        <li><a href="#">게시판</a></li>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no initial-scale=1">
+  <meta name="description" content="O'PEN(오펜) - 작가 응시" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>나의 지원내역</title>
+
+  <link rel="stylesheet" type="text/css" href="./css/customs.css">
+  <script type="text/javascript" src="./js/jquery-2.2.0.js"></script>
+  <script async type="text/javascript" src="./js/common.js"></script>
+  <script src="./js/slick.js" type="text/javascript" charset="utf-8"></script>
+  <script async type="text/javascript" src="./js/scroll.js"></script>
+
+
+</head>
+
+<body class="sub">
+  <header>
+
+  <div class="gnb-mob">
+    <a class="logo" href="#"><img src="./images/logo_open.png" alt="o'pen logo"></a>
+    <div class="gnb-menu-mob">
+
+    </div>
+  </div>
+  <div class="main-gnb">
+    <button class="gnb-close">close</button>
+    <div class="gnb-wrap">
+      <div class="header_open_logo" title="O'pen logo">
+        <a href="http://www.cjenm.com">
+        </a>
+      </div>
+      <nav class="main-menu">
+        <ul class="menu">
+          <li><a href="#" class="menu-list">오펜</a>
+            <ul class="row">
+              <li><a href="">O'PEN</a></li>
+              <li><a href="">창작지원</a></li>
+              <li><a href="">오펜공간</a></li>
+            </ul>
+          </li>
+          <li class="active"><a href="http://www.naver.com" class="menu-list">공모전</a>
+            <ul class="row">
+              <li><a href="">모집요강</a></li>
+              <li><a href="">지원하기</a>
+                <ul class="row-sub">
+                  <li><a href="">드라마</a></li>
+                  <li><a href="">시트콤</a></li>
+                  <li><a href="">영화</a></li>
+                  <li><a href="">뮤직</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#" class="menu-list">오펜폴리오</a>
+            <ul class="row">
+              <li><a href="">오펜성과</a></li>
+              <li><a href="">작가소개</a></li>
+              <li><a href="">드라마스테이지</a>
+                <ul class="row-sub">
+                  <li><a href="">2019</a></li>
+                  <li><a href="">2018</a></li>
+                </ul>
+              </li>
+              <li><a href="">보도자료</a></li>
+            </ul>
+          </li>
+          <li><a href="#" class="menu-list">게시판</a>
+            <ul class="row">
+              <li><a href="">공지사항</a></li>
+              <li><a href="">Q&amp;A</a></li>
+              <li><a href="">FAQ</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="dropdown">
+          <!-- <div class="dropdown-content"> -->
+            <ul class="row">
+              <li><a href="">O'PEN</a></li>
+              <li><a href="">창작지원</a></li>
+              <li><a href="">오펜공간</a></li>
+            </ul>
+            <ul class="row">
+              <li><a href="">모집요강</a></li>
+              <li><a href="">지원하기</a>
+                <ul>
+                  <li><a href="">드라마</a></li>
+                  <li><a href="">영화</a></li>
+                  <li><a href="">시트콤</a></li>
+                  <li><a href="">뮤직</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="row">
+              <li><a href="">오펜성과</a></li>
+              <li><a href="">작가소개</a></li>
+              <li><a href="">드라마스테이지</a>
+                <ul>
+                  <li><a href="">2019</a></li>
+                  <li><a href="">2018</a></li>
+                </ul>
+              </li>
+              <li><a href="">보도자료</a></li>
+            </ul>
+            <ul class="row">
+              <li><a href="">공지사항</a></li>
+              <li><a href="">Q&amp;A</a></li>
+              <li><a href="">FAQ</a></li>
+            </ul>
+          <!-- </div> -->
+        </div>
+        <div class="header_nav_bg"></div>
+
+      </nav>
+      <ul class="login-wrap">
+        <li class="login-check"><a href="#">로그아웃</a></li>
+        <li><a href="#"><span class="user">홍길동</span> 님</a>
+        <ul class="user-sub">
+          <li><a href="#">나의 지원내역</a></li>
+          <li><a href="#">나의 문의내역</a></li>
+        </ul></li>
       </ul>
-      <div class="dropdown">
-        <!-- <div class="dropdown-content"> -->
+    </div>
+  </div>
+</header>
+  <!-- <div class="main-gnb">
+    <div class="gnb-wrap">
+      <div class="header_open_logo" title="O'pen logo">
+        <a href="http://www.cjenm.com">
+        </a>
+      </div>
+      <nav class="main-menu">
+        <ul class="menu">
+          <li><a href="#">오펜</a></li>
+          <li><a href="#">공모전</a></li>
+          <li><a href="#">오펜폴리오</a></li>
+          <li><a href="#">게시판</a></li>
+        </ul>
+        <div class="dropdown">
+
           <ul class="row">
             <li><a href="">O'PEN</a></li>
             <li><a href="">창작지원</a></li>
-            <li><a href="">오펜공간</a>
-              <ul>
-                <li><a href="">오펜센터</a></li>
-                <li><a href="">뮤지스땅스</a></li>
-              </ul>
-            </li>
+            <li><a href="">오펜공간</a></li>
           </ul>
           <ul class="row">
             <li><a href="">모집요강</a></li>
@@ -30,10 +157,9 @@
                 <li><a href="">뮤직</a></li>
               </ul>
             </li>
-            <li><a href="">FAQ</a></li>
           </ul>
           <ul class="row">
-            <li><a href="">작품소개</a></li>
+            <li><a href="">오펜성과</a></li>
             <li><a href="">작가소개</a></li>
             <li><a href="">드라마스테이지</a>
               <ul>
@@ -46,15 +172,25 @@
           <ul class="row">
             <li><a href="">공지사항</a></li>
             <li><a href="">Q&amp;A</a></li>
+            <li><a href="">FAQ</a></li>
           </ul>
-        <!-- </div> -->
-      </div>
-      <div class="header_nav_bg"></div>
 
-    </nav>
-    <ul class="gnb-txt">
-      <li><a href="#">로그인</a></li>
-      <li><a href="#"><span>홍길동</span> 님</a></li>
-    </ul>
-  </div>
-</header>
+        </div>
+        <div class="header_nav_bg"></div>
+
+      </nav>
+      <ul class="gnb-txt">
+        <li><a href="#">로그아웃</a></li>
+        <li><a href="#"><span class="user">홍길동</span> 님</a>
+          <ul class="user-sub">
+            <li><a href="#">나의 지원내역</a></li>
+            <li><a href="#">나의 문의내역</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div> -->
+  
+</body>
+
+</html>

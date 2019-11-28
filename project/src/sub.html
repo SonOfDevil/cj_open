@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no initial-scale=1">
   <meta name="description" content="O'PEN(오펜) - 작가 응시" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Subpage</title>
@@ -17,20 +18,18 @@
 </head>
 
 <body class="sub">
-  <header>
-    <div class="gnb-sub-wrap">
-      @@include('./sub/header.html')
-      <h1>지원하기</h1>
-      <div class="gnb-sub">
-        <ul class="gnb-sub-list">
-          <li><a class="active" href="#">드라마</a></li>
-          <li><a href="#">영화</a></li>
-          <li><a href="#">시트콤</a></li>
-          <li><a href="#">뮤직</a></li>
-        </ul>
-      </div>
+  @@include('./sub/header.html')
+  <div class="gnb-sub-wrap">
+    <h1>지원하기</h1>
+    <div class="gnb-sub">
+      <ul class="gnb-sub-list">
+        <li><a class="active" href="#">드라마</a></li>
+        <li><a href="#">영화</a></li>
+        <li><a href="#">시트콤</a></li>
+        <li><a href="#">뮤직</a></li>
+      </ul>
     </div>
-  </header>
+  </div>
   <div class="content">
 
     <button onclick="topFunction()" id="topBtn" class="top-btn" title="Go to top">TOP</button>
