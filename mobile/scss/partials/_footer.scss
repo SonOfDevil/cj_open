@@ -1,0 +1,260 @@
+/* Footer */
+
+.footer {
+    position: relative;
+    width: 100%;
+    min-width: inherit;
+    font-family: 'cr', 'MalgunGothic';
+    z-index: 21;
+    background: #ffffff;
+    .footer_notice_wrap {
+        border-top: 1px solid #eeeeee;
+    }
+
+    .footer_notice_inner {
+        position: relative;
+        margin: 0 auto;
+        width: 980px;
+        height: 50px;
+    }
+
+    .footer_notice_list {
+        padding: 0 320px 0 70px;
+        height: 50px;
+        dl {
+            position: relative;
+            height: 50px;
+            display: block;
+        }
+
+        dt {
+            position: absolute;
+            left: -70px;
+            top: 8px;
+            font-size: 14px;
+            color: #3e3e3e;
+            line-height: 30px;
+        }
+
+        dd {
+            position: relative;
+            padding: 8px 0 14px 0;
+            height: 30px;
+            .footer_notice_list_inner {
+                width: 100%;
+                height: 30px;
+                overflow: hidden;
+                ul {
+                    position: relative;
+                    left: 0;
+                    top: 0;
+                    li {
+                        position: absolute;
+                        width: 100%;
+                        height: 30px;
+                        a {
+                            height: 30px;
+                            font-size: 13px;
+                            color: #9f9f9f;
+                            text-decoration: none;
+                            line-height: 30px;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    .footer_pullmenu {
+        position: absolute;
+        right: 0;
+        top: 8px;
+        width: 152px;
+        height: 34px;
+        display: block;
+        .footer_pullmenu_inner {
+            position: relative;
+            width: 152px;
+            height: 34px;
+            display: block;
+        }
+
+        .footer_pullmenu_link {
+            padding: 0 28px 0 11px;
+            text-decoration: none;
+            border: 1px solid #dedede;
+            cursor: pointer;
+            background: url(../images/header/bg_foo_pullmenu.png) no-repeat right top;
+            display: block;
+            span {
+                height: 32px;
+                font-size: 12px;
+                color: #4c4c4c;
+                line-height: 32px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                display: block;
+            }
+        }
+
+        .footer_pullmenu_list {
+            position: absolute;
+            left: 0;
+            bottom: 33px;
+            width: 152px;
+            display: none;
+            .scrollArea {
+                position: relative;
+                max-height: 299px;
+                background: #ffffff;
+                border: 1px solid #dedede;
+                overflow: hidden;
+                ul {
+                    padding: 10px;
+                    border: 0 none;
+                    background: none;
+                    li {
+                        a {
+                            padding: 0 8px;
+                            height: 20px;
+                            font-size: 12px;
+                            color: #4c4c4c;
+                            text-decoration: none;
+                            line-height: 20px;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            display: block;
+                        }
+                        p {
+                            font-weight: bold;
+                        }
+                        ul {
+                            padding: 5px 10px 10px 10px;
+                            li a,
+                            li a span {
+                                padding: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.footer_pullmenu_brand {
+            right: 206px;
+        }
+
+        &.footer_pullmenu_family {
+            width: 198px;
+        }
+
+        .footer_pullmenu_inner,
+        .footer_pullmenu_list {
+            width: 100%;
+        }
+
+        &.selected .footer_pullmenu_list {
+            display: block;
+        }
+    }
+
+
+    .footer_wrap {
+        padding: 0 0 83px 0;
+        .footer_inner {
+            position: relative;
+            margin: 0 auto;
+        }
+    }
+
+
+    .footer_menu {
+        background: $color-bg-default;
+        height: inherit;
+        padding: 14px 15px;
+        ul {
+            margin: 0 auto;
+
+            li {
+                display: inline-block;
+                position: relative;
+                padding: 2px 12px;
+                &:first-child{
+                    padding-left: 0;
+                }
+                &::before{
+                    content: '';
+                    background: $color-txt-dark;
+                    display: inline-block;
+                    position: absolute;
+                    top: 6px;
+                    left: -3px;
+                    width: 1px;
+                    height: 10px;
+                }
+                &:first-child::before{
+                    display: none;
+                }
+                a {
+                    font-size: 12px;
+                    color: $color-txt-dark;
+                    text-decoration: none;
+                    line-height: 20px;
+                    font-family: 'cm', 'MalgunGothic';
+
+                    &.btn_fo_menu_privacy {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-info-wrap{
+        display: flex;
+        width: 100%;
+        margin: 20px auto 0;
+        .footer_enm_logo {
+            display: none;
+            a {
+                position: relative;
+                margin: 0 auto;
+                width: 96px;
+                height: 49px;
+                font-size: 0;
+                line-height: 0;
+                text-indent: -99999px;
+                background: url(../images/bg_footer_enm_logo.png) no-repeat center center;
+                display: block;
+            }
+        }
+        .footer_address {
+            padding: 0 15px;
+            p{
+                font-size: 12px;
+                line-height: 20px;
+                &.copyright{
+                    margin-top: 4px;
+                }
+
+            }
+            span {
+                margin-left: 2px;
+            }
+        }
+    }
+}
+
+// only fullpage
+#fullpage{
+    .footer{
+        margin-top: 50px;
+    }
+}
+

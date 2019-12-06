@@ -1,0 +1,131 @@
+.gnb-sub-wrap {
+  position: relative;
+  height: 230px;
+  width: 100%;
+  &.introduction {
+    background: url('../images/gnb-sub-bg-01.png') no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  &.competition {
+    background: url('../images/gnb-sub-bg-02.png') no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  &.openfolio {
+    background: url('../images/gnb-sub-bg-03.png') no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  &.board {
+    background: url('../images/gnb-sub-bg-04.png') no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  &.myboard {
+    background: url('../images/gnb-sub-bg-05.png') no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+
+  h1{
+    position: absolute;
+    top: calc(50% - 10px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include ff(cb);
+    font-size: 27px;
+    color: #fff;
+  }
+  .gnb-sub{
+    border-top: 1px solid #838f99;
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    // transform: translate(-50%, 0);
+    width: 100%;
+
+    .gnb-sub-list{
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      li{
+        margin: 0 30px;
+        a{
+          padding: 25px 95px;
+          display: block;
+          @include ff(cr);
+          font-size: 18px;
+          color: #fff;
+          // border-top: 3px solid transparent;
+          position: relative;
+          &::before {
+            position: absolute;
+            left: 0;
+            bottom: 71px;
+            width: 100%;
+            content: ' ';
+            border-top: 3px solid #fff;
+            transform: scaleX(0);
+            transition: transform 250ms ease-in-out;
+            // transform-origin: 0% 50%;
+          }
+          &:hover::before,
+          &.active::before {
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
+  }
+}
+
+// 첨부파일
+.file-input label,
+.search-input label {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  width: 120px;
+  height: 48px;
+  background: #707580;
+  color: #fff;
+  text-align: center;
+  line-height: 48px;
+
+  input[type=file] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+  input[type=text] {
+    vertical-align: middle;
+    display: inline-block;
+    width: 360px;
+    height: 48px;
+    font-size: 14px;
+    padding: 20px;
+    border: 0;
+    border: 1px solid #ccc;
+  }
+  .attach-name {
+    margin-left: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    @include ellipsis(300px);
+
+  }
+}
+
+
+
+
+
+

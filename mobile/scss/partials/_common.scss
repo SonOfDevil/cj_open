@@ -1,0 +1,563 @@
+.info-txt {
+  color: $color-none-strong-info;
+
+  strong {
+    color: $color-strong;
+    @include ff();
+  }
+}
+
+.comment-txt {
+  color: $color-txt-default;
+}
+
+.mgT-default {
+  display: block;
+  margin-top: 20px;
+
+  @include mq('mo', min) {
+    margin-top: 24px;
+  }
+}
+
+/* location */
+.breadcrumbs {
+  margin: 48px auto 16px;
+  padding-right: 0;
+  padding-left: 0;
+
+  .items {
+    font-size: 0;
+    // white-space: nowrap; //mc enter space
+  }
+
+  .item {
+    font-size: $txt-size-s;
+    @include ff(bold);
+  }
+
+  a {
+    color: $color-price;
+    text-decoration: none;
+
+    &:visited {
+      color: $color-price;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-price;
+    }
+  }
+
+  strong {
+    color: $color-price;
+    @include ff(bold);
+  }
+
+  .item:not(:last-child) {
+    &:after {
+      margin: 0 $gutter-txt/2;
+      font-size: $txt-size-xs;
+      color: $color-price;
+      vertical-align: middle;
+    }
+  }
+
+  @include mq('mo') {
+    display: block;
+    margin: 25px 0 9px;
+    padding: 0 20px;
+
+    .item {
+      font-size: $txt-size-default-m;
+
+      &:not(:last-child) {
+        &::after {
+          margin: 0 4px;
+        }
+      }
+    }
+  }
+}
+
+// dot style ul, ol
+.list-type-dot {
+  >li {
+    @include relative;
+    text-align: left;
+    padding-left: 10px;
+
+    &::before {
+      @include absolute(top 7px left 0);
+      content: ' ';
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: $color-strong;
+      @include mq('mo', min){
+        top: 9px;
+      }
+    }
+
+    &:not( :first-of-type) {
+      margin-top: 6px;
+    }
+  }
+}
+
+//title header
+.header-wrap {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  @include ff(bold);
+  margin-bottom: 16px;
+
+  [class*='count'] {
+    color: $color-txt-disable;
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  .desc {
+    width: 100%;
+    @include ff();
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+
+  .txt-link {
+    margin-top: 6px;
+    color: $color-strong;
+    text-decoration: underline;
+  }
+
+  @include mq('mo', min) {
+    justify-content: flex-end;
+    min-height: 52px;
+    margin-bottom: 32px;
+
+    h2 {
+      width: 100%;
+    }
+
+    > :not(h2):not(.desc):not(.txt-link) {
+      margin-left: 40px;
+      margin-top: -50px;
+    }
+
+    .wrap-right {
+      width: initial;
+
+      > :not(:last-child) {
+        margin-right: 40px;
+      }
+    }
+
+    .desc {
+      margin-left: inherit;
+      margin-top: 16px;
+      margin-right: 250px;
+    }
+
+    .txt-link {
+      margin-top: -30px;
+      color: $color-strong;
+      text-decoration: underline;
+    }
+  }
+}
+
+
+//기본 표디자인, tbody내부 th 에 대한 정의가 애매하여 우선 type-size만 예외처리함.
+.table-default {
+  table-layout: fixed;
+  margin-top: 24px;
+  border-top: 2px solid $color-strong;
+
+  table>tbody>tr>th,
+  table>tfoot>tr>th,
+  table>tbody>tr>td,
+  table>tfoot>tr>td {
+    vertical-align: middle
+  }
+
+  th,
+  td {
+    padding: 12px 8px;
+    border-bottom: 1px solid $color-default-line;
+
+    @include mq('mo', min) {
+      padding: 14px 16px;
+    }
+  }
+
+  thead th {
+    border-bottom-color: $color-strong;
+    @include ff(bold);
+    text-align: center;
+  }
+
+  th:not(:first-child),
+  td:not(:first-child) {
+    border-left: 1px solid $color-default-line;
+  }
+
+  //사이즈 가이드표
+  &.type-size {
+
+    th,
+    td {
+      text-align: center;
+    }
+
+    tbody th {
+      @include ff(bold);
+    }
+
+    tbody th:first-child {
+      width: 81px;
+
+      @include mq('mo', min) {
+        width: 192px;
+      }
+    }
+  }
+}
+
+.actions-toolbar, .toolbar-amount{ //mc
+  display: none;
+}
+
+/* paginate */
+.toolbar {
+  margin: 40px 0 0;
+  padding: 0;
+  border-top: none;
+
+  .pages {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border-bottom: none;
+
+    .pages-items {
+      padding: 0;
+    }
+
+    .item {
+      margin: 0 4px;
+      font-size: $txt-size-m;
+    }
+
+    .pages-item-first,
+    .pages-item-previous,
+    .pages-item-next,
+    .pages-item-last{
+      margin: 0;
+    }
+
+    a {
+      font-size: $txt-size-m;
+      @include ff(bold);
+      color: $color-none-strong-info;
+
+      &:hover,
+      &:visited {
+        color: $color-none-strong-info;
+      }
+
+      &.action {
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        background-color: transparent;
+        box-shadow: none;
+
+        &::before{
+          margin-top: -3px;
+          vertical-align: middle;
+        }
+      }
+
+      &.first, &.last{
+        >span{
+          border: 0;
+          clip: rect(0, 0, 0, 0);
+          height: 1px;
+          margin: -1px;
+          overflow: hidden;
+          padding: 0;
+          position: absolute;
+          width: 1px;
+        }
+      }
+
+      &.first::before,
+      &.first:hover::before,
+      &.first:visited::before{
+        @include btn-svg(22px, 22px, arrow-44-first, 'false', 30px, 30px);
+      }
+      &.previous::before,
+      &.previous:hover::before,
+      &.previous:visited::before{
+        @include btn-svg(22px, 22px, arrow-44-prev, 'false', 30px, 30px);
+      }
+      &.next::before,
+      &.next:hover::before,
+      &.next:visited::before{
+        @include btn-svg(22px, 22px, arrow-44-next, 'false', 30px, 30px);
+      }
+      &.last::before,
+      &.last:hover::before,
+      &.last:visited::before {
+        @include btn-svg(22px, 22px, arrow-44-last, 'false', 30px, 30px);
+      }
+    }
+
+    strong.page {
+      background-color: transparent;
+      font-size: $txt-size-m;
+      font-weight: inherit;
+      color: $color-strong;
+    }
+  }
+
+  @include mq('mo') {
+    margin-top: 20px;
+
+    .pages {
+      .item {
+        margin: 0 2px;
+        font-size: $txt-size-default-m;
+        line-height: 2.2rem;
+      }
+
+      .pages-item-first,
+      .pages-item-previous,
+      .pages-item-next,
+      .pages-item-last{
+        margin: 0;
+      }
+
+      a {
+        font-size: $txt-size-default-m;
+
+        &.action {
+          &.previous, &.next {
+            margin: 0;
+          }
+        }
+      }
+
+      strong.page {
+        font-size: $txt-size-default-m;
+      }
+
+      .pages-item-previous,
+      .pages-item-next {
+        position: static;
+      }
+    }
+  }
+}
+
+.flag-brd {
+  display: inline-block;
+  border: 1px solid $color-default-form;
+  color: $color-none-strong-info;
+  @include ff(bold);
+  text-align: center;
+  padding: 2px 3px 2px; //h20
+  min-width:48px;
+  font-size: $txt-size-xxs-m;
+
+  @include mq('mo', min) {
+    padding: 3px 8px 3px; //h28
+    min-width: 56px;
+    font-size: $txt-size-s;
+  }
+}
+
+// item flag (item list)
+.item-flag {
+
+  .flag-txt,
+  .flag-org,
+  .flag-gray {
+    display: inline-block;
+    font-size: 1.1rem;
+    @include ff(bold);
+  }
+
+  .flag-txt {
+    padding: 16px 0 0 16px;
+    color: $color-strong;
+  }
+
+  .flag-org,
+  .flag-gray {
+    // height: 28px;
+    padding: 7px 10px 6px;
+    color: $color-white;
+    text-align: center;
+  }
+
+  .flag-org {
+    background-color: $color-point;
+  }
+
+  .flag-gray {
+    background-color: $color-strong;
+
+    .txt-01 {
+      margin-right: 5px;
+    }
+  }
+
+  &.item-flag-promo {
+    padding: 0 5px;
+    background-color: $color-strong;
+
+    .flag-gray {
+      padding-right: 5px;
+      padding-left: 5px;
+    }
+  }
+
+  @include mq('mo') {
+
+    .flag-org,
+    .flag-gray {
+      // height: 20px;
+      padding: 4px 5px 2px;
+    }
+
+    .flag-txt {
+      padding: 8px 0 0 9px;
+      font-size: 1rem;
+    }
+
+    &.item-flag-promo {
+      padding: 0 2px;
+
+      .flag-gray {
+        padding-right: 3px;
+        padding-left: 3px;
+      }
+    }
+  }
+}
+
+// icon wish (item list)
+.ico-wish {
+  input {
+    display: none;
+
+    &:checked+label {
+      &::before {
+        background-image: url(#{$img-root}/svg/icon-wish-selected.svg);
+      }
+    }
+  }
+
+  label {
+    &::before {
+      content: '';
+      @include btn-svg(24px, 24px, icon-wish);
+      cursor: pointer;
+    }
+  }
+
+  @include mq('mo') {
+    label {
+      &::before {
+        content: '';
+        min-width: 16px;
+        min-height: 16px;
+        background-size: 16px 16px;
+      }
+    }
+  }
+}
+
+// list-style : decimal
+.list-decimal {
+  list-style-type: decimal;
+}
+
+// list-style : deshed
+.dashed {
+  list-style-type: none;
+
+  li {
+    text-indent: -5px;
+
+    &:before {
+      content: "-";
+      text-indent: -5px;
+    }
+  }
+}
+
+// list-style : circle number
+.list-circle-number {
+  display: block;
+  padding: 0 0 0 20px;
+  list-style: none;
+  overflow: hidden;
+  counter-reset: numList;
+
+  li {
+    position: relative;
+    line-height: 1.57;
+
+    &:before {
+      counter-increment: numList;
+      content: counter(numList);
+
+      float: left;
+      position: absolute;
+      top: 3px;
+      left: -20px;
+
+      font: bold 10px sans-serif;
+      text-align: center;
+      line-height: 13px;
+      width: 16px;
+      height: 16px;
+      border: 1px solid $color-txt-default;
+      -moz-border-radius: 999px;
+      border-radius: 999px
+    }
+  }
+}
+
+// list no data
+.txt-nodata{
+  padding: 60px 20px;
+  border-top: 1px solid $color-default-line;
+  border-bottom: 1px solid $color-default-line;
+  text-align: center;
+  p{
+      @include ff(bold);
+      color: $color-none-strong-info;
+  }
+  @include mq('mo', min){
+      padding: 120px 40px;
+  }
+  &.brd{
+      border-top: 3px solid $color-strong;
+      @include mq('mo', min){
+          border-top-width: $brd-strong;
+      }
+  }
+  &.nobrd{
+      border-top: none;
+  }
+}

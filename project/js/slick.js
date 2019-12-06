@@ -3008,4 +3008,35 @@
         return _;
     };
 
+    // // Story page - Slider
+    $(".slider").slick({
+        // dots: true,
+        // infinite: true,
+        speed: 20,
+        autoplaySpeed: 2000,
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        autoplay: true,
+        draggable: false,
+        arrows: false,
+        variableWidth: true,
+        centerPadding: '20px',
+    });
+
+    $('.slider-story').on('afterChange', function (event, slick, currentSlide, nextSlide) {
+        var count = currentSlide / 2;
+        $('.story-tab li').siblings('li').removeClass('active');
+        $('.story-tab li').eq(count).toggleClass('active');
+        $('.sub-head.story li').removeClass('active');
+        $('.sub-head.story li').eq(count).toggleClass('active');
+    });
+    $('.slider-music').on('afterChange', function (event, slick, currentSlide, nextSlide) {
+        var count = currentSlide / 2;
+        $('.music-tab li').siblings('li').removeClass('active');
+        $('.music-tab li').eq(count).toggleClass('active');
+        $('.sub-head.music li').removeClass('active');
+        $('.sub-head.music li').eq(count).toggleClass('active');
+    });
+
 }));
+

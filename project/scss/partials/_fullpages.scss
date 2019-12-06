@@ -317,7 +317,7 @@ html.fp-enabled,
   &.fp-section,
   .fp-slide,
   .fp-tableCell {
-    height: auto !important;
+    height: auto;
   }
 }
 
@@ -426,7 +426,7 @@ html.fp-enabled,
             .slide-wrap-01 {
               &::before {
                 content: '';
-                background: url('../images/slide-img-03.png') no-repeat;
+                background: url('../images/main/slide-img-03.png') no-repeat;
                 height: 228px;
                 width: 26px;
                 display: block;
@@ -494,7 +494,7 @@ html.fp-enabled,
                         position: relative;
                         &::after {
                           content: '';
-                          background: url('../images/slide-img-04.png') no-repeat;
+                          background: url('../images/main/slide-img-04.png') no-repeat;
                           height: 122px;
                           width: 127px;
                           display: block;
@@ -561,13 +561,13 @@ html.fp-enabled,
     }
 
     #slide1-1 {
-      background: url('../images/s1_1.png') no-repeat;
+      background: url('../images/main/s1_1.png') no-repeat;
       background-size: cover;
       background-position: center 80%;
     }
 
     #slide1-2 {
-      background: url('../images/s1_2.png') no-repeat;
+      background: url('../images/main/s1_2.png') no-repeat;
       background-size: cover;
       background-position: center 80%;
     }
@@ -682,7 +682,7 @@ html.fp-enabled,
 
         &::before {
           content: '';
-          background: url('../images/slide02-tit-01.png') no-repeat;
+          background: url('../images/main/slide02-tit-01.png') no-repeat;
           width: 90px;
           height: 55px;
           display: block;
@@ -702,18 +702,18 @@ html.fp-enabled,
       }
 
       .desc-tit {
-        @include ff(nm);
-        font-size: 18px;
+        @include ff(cm);
+        font-size: 20px;
         font-weight: bold;
-        color: #555;
-        margin-top: 40px;
+        color: #333;
+        margin-top: 35px;
 
       }
 
       .desc-txt {
-        @include ff(nm);
-        font-size: 16px;
-        color: #8f8f8f;
+        @include ff(cr);
+        font-size: 18px;
+        color: #555;
         margin-top: 25px;
       }
 
@@ -770,7 +770,7 @@ html.fp-enabled,
 
           &::after {
             content: '';
-            background: url('../images/slide02-bg-01.png') no-repeat;
+            background: url('../images/main/slide02-bg-01.png') no-repeat;
             width: 485px;
             height: 170px;
             display: block;
@@ -812,7 +812,7 @@ html.fp-enabled,
         &.group01 {
           &::after {
             content: '';
-            background: url('../images/slide02-bg-02.png') no-repeat;
+            background: url('../images/main/slide02-bg-02.png') no-repeat;
             width: 485px;
             height: 170px;
             display: block;
@@ -872,14 +872,14 @@ html.fp-enabled,
   position: relative;
   height: 100vh;
   min-width: 1200px;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(-22deg, #fa4669 30%, #e6e09b 40%, #4F8CA3 50%, #468097 60%, #f6365b 80%);
   background-size: 400% 400%;
-  -webkit-animation: gradientBG 5s ease infinite;
-  animation: gradientBG 5s ease infinite;
+  -webkit-animation: gradientBG 4s ease infinite;
+  animation: gradientBG 4s ease infinite;
 
   // overflow: hidden;
   .bg-layer {
-    background: url('../images/section02-bg-01.png') no-repeat;
+    background: url('../images/main/section02-bg-01.png') no-repeat;
     background-size: cover;
     background-position: center center;
     height: 100vh;
@@ -896,7 +896,7 @@ html.fp-enabled,
     clear: both;
 
     .view-wrap {
-      background: url('../images/section03-01.png') no-repeat;
+      background: url('../images/main/section03-01.png') no-repeat;
       width: 563px;
       height: 655px;
       padding: 275px 0 0 45px;
@@ -941,7 +941,7 @@ html.fp-enabled,
 
         &::before {
           content: '';
-          background: url('../images/slide02-tit-02.png') no-repeat;
+          background: url('../images/main/slide02-tit-02.png') no-repeat;
           width: 90px;
           height: 55px;
           display: block;
@@ -1021,28 +1021,36 @@ html.fp-enabled,
 
 #section3 {
   position: relative;
+  // height: calc(100vh - 300px) !important;
+  // .fp-tableCell{
+  //   height: calc(100vh - 300px) !important;
+  // }
 
   .content-wrap {
 
     position: relative;
     overflow: hidden;
-    width: 1200px;
+    // width: 1200px;
     height: 100vh;
     margin: 0 auto;
 
     .about-wrap {
-      position: absolute;
-      top: calc(50% - 30%);
-      left: 50%;
-      transform: translate(-50%, 0px);
-      width: 100%;
+      // position: absolute;
+      // top: calc(50% - 30%);
+      // left: 50%;
+      // transform: translate(-50%, 0px);
+      display: flex;
+      flex-direction: column;
+      width: 1200px;
+      margin: 0 auto;
 
       .desc-wrap {
         min-width: 240px;
-        position: absolute;
-        top: calc(50% - 60%);
-        left: 50%;
-        transform: translate(-50%, 0px);
+        margin: 5% auto 0;
+        // position: absolute;
+        // top: calc(50% - 60%);
+        // left: 50%;
+        // transform: translate(-50%, 0px);
 
 
         .tit {
@@ -1054,7 +1062,7 @@ html.fp-enabled,
 
           &::before {
             content: '';
-            background: url('../images/slide02-tit-03.png') no-repeat;
+            background: url('../images/main/slide02-tit-03.png') no-repeat;
             width: 90px;
             height: 55px;
             display: block;
@@ -1161,7 +1169,7 @@ html.fp-enabled,
       }
 
       .notice-wrap {
-        margin-top: 70px;
+        margin-top: 40px;
         width: 100%;
 
         .notice {
@@ -1191,10 +1199,10 @@ html.fp-enabled,
 
             .notice-txt {
               margin: 0 30px 0 70px;
-              max-width: 600px;
+              // max-width: 600px;
               display: inline-block;
-              @include ellipsis();
-              width: 600px;
+              // @include ellipsis();
+              // width: 600px;
             }
           }
 
@@ -1263,4 +1271,18 @@ html.fp-enabled,
     background-position: 0% 50%;
   }
 }
+
+.ticker {
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+  margin: 0;
+  list-style: none;
+  padding: 5px 0;
+  span {
+    padding: 5px;
+  }
+}
+
+
 

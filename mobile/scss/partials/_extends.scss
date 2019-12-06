@@ -1,0 +1,136 @@
+// @extend %는 컴파일시 보이지 않음. .은 보임
+
+%default-form {
+    border: 1px solid $color-default-form;
+    padding: 12px;
+    height:$height-default-form;
+}
+
+%evt-hover-form {
+    background-color: white;
+    border-style:solid;
+    border-color: $color-strong;
+    z-index: 10;
+}
+// 기본 마우스 오버 이벤트 속성 선언하여 공통 사용
+// &:hover {
+//     @extend %evt-hover-form;
+// }
+
+
+
+%evt-hover-strong {
+    @extend %evt-hover-form;
+    border-width:3px;
+    color:$color-strong;
+    @include mq('mo', min){
+        border-width:$brd-strong;
+    }
+
+}
+// 마우스 오버 시 border 강조되는 이벤트 사용
+// &:hover {
+//     @extend %evt-hover-strong;
+// }
+
+%clear-display-position{
+    position:relative;
+    width:auto;
+    height:auto;
+    margin:0;
+}
+
+
+// @extend %full-action-btn;
+
+%arrow {
+    position: absolute;
+    top: 50px;
+    width: 28px;
+    height: 2px;
+    background-color: #fff;
+    // box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+    // animation: arrow 700ms linear infinite;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 40%;
+        height: 2px;
+        top: -3px;
+        right: -3px;
+        background-color: #fff;
+        transform: rotate(45deg);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 40%;
+        height: 2px;
+        top: 3px;
+        right: -3px;
+        background-color: #fff;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+        transform: rotate(-45deg);
+    }
+}
+
+%tab-base{
+    display: flex;
+    justify-content: space-between;
+
+    li {
+        text-align: center;
+        width: 100%;
+        @include ff(cr);
+        font-size: 14px;
+        color: #333;
+        padding: 15px 0;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        position: relative;
+
+        &:not(:first-child) {
+            border-left: 0;
+        }
+
+        &.active,
+        &:hover {
+            color: #fff;
+            @include ff(cr);
+            background: #ff8c00;
+            border: 1px solid #ff8c00;
+        }
+        &.on{
+            &::before {
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 10px;
+                transform: translate(-50%, -50%);
+                width: 0;
+                height: 0;
+                border-left: 7px solid transparent;
+                border-right: 7px solid transparent;
+                border-top: 11px solid #f15d19;
+            }
+            &::after{
+                content: '접수중';
+                position: absolute;
+                left: 50%;
+                top: -7px;
+                transform: translate(-50%, -50%);
+                @include ff(cr);
+                font-size: 11px;
+                color: #fff;
+                font-weight: normal;
+                background: #f15d19;
+                border-radius: 5px;
+                padding: 8px 15px;
+                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            }
+
+        }
+    }
+}

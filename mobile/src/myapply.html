@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no initial-scale=1">
+  <meta name="description" content="O'PEN(오펜) - 작가 응시" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>나의 지원내역</title>
+
+  <link rel="stylesheet" type="text/css" href="./css/customs_mobile.css">
+  <script type="text/javascript" src="./js/jquery-2.2.0.js"></script>
+  <script async type="text/javascript" src="./js/common.js"></script>
+
+
+</head>
+
+<body class="sub">
+  @@include('./sub/header.html')
+  <div class="gnb-sub-wrap myboard">
+    <h1>나의 지원내역</h1>
+  </div>
+  <div class="content">
+    <div class="cont-header">
+      <h2>나의 지원내역</h2>
+    </div>
+
+    <section class="myapply">
+      <p class="only-mobile">모바일에서는 지원내역 확인만 가능하오니, <span>수정은 PC사이트</span>를 이용해주세요.</p>
+      <div class="apply-select">
+        <span>지원부문</span>
+        <div class="select-wrap">
+          <select name="ismember">
+            <option value="select">선택</option>
+            <option value="드라마">드라마</option>
+            <option value="영화">영화</option>
+            <option value="시트콤">시트콤</option>
+          </select>
+          <div class="arrow-down"></div>
+        </div>
+      </div>
+      <h3>01. 참가지원서</h3>
+      <table class="cj-tabl apply">
+        <tbody>
+          <tr>
+            <td class="tit necessary">이름</td>
+            <td><span class="form-txt">홍길동</span></td>
+          </tr>
+          <tr>
+            <td class="tit necessary">생년월일</td>
+            <td><span class="form-txt">1980.12.31</span></td>
+          </tr>
+          <tr>
+            <td class="tit necessary">휴대전화</td>
+            <td><span class="form-txt">01012341234</span></td>
+          </tr>
+          <tr>
+            <td class="tit necessary">비상연락망</td>
+            <td><span class="form-txt">01012341234</span></td>
+          </tr>
+          <tr>
+            <td class="tit necessary">이메일주소</td>
+            <td><span class="form-txt">abcd1234@cj.net</span></td>
+          </tr>
+          <tr>
+            <td class="tit necessary">경력사항</td>
+            <td><span class="form-txt textarea">경력사항 블라블라</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="history">
+        <div class="history-tit">
+          <span>지원현황</span>
+          <span>D-<span>15</span></span>
+        </div>
+        <ul class="history-list">
+          <li>
+            <p>내 연적의 모든것 - <span>나만 사랑하겠다던 그놈이 떠났다. 평생 한명의 남자만 만나온 오선영의 철 실연 극복기</span></p>
+            </li>
+          <li>
+            <p>물비늘 - <span>서로를 향한 감정이 사랑인지 미움인지 알지 못하는 두 남녀의 며칠간의 이야기 </span></p>
+            </li>
+        </ul>
+      </div>
+      <p class="myapply-txt">* PC사이트 > 마이페이지> 나의 지원내역에서 <span>상세확인 및 수정</span>할 수 있습니다. (마감시간까지 수정가능)</p>
+    </section>
+
+
+
+
+  </div>
+
+  @@include('./sub/footer.html')
+</body>
+
+</html>

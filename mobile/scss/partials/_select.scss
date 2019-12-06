@@ -1,0 +1,323 @@
+.cst-select {
+  $brd-strong:2px;
+
+  position: relative;
+  cursor: pointer;
+  clear: both;
+  border: 1px solid $color-default-form;
+
+  >.placeholder-area {
+    position: relative;
+    padding: 12px 30px 12px 16px;
+    // height:$height-default-form-mo;
+    background-color:transparent;
+    z-index: 1;
+    @include mq('mo', min){
+      padding-top:13px;
+      // height:$height-default-form;
+    }
+    &.disabled {
+      opacity: .5;
+    }
+    > img, > span{
+      float:left;
+      margin-top:-12px; //placeholder padding-top값과 동일
+    }
+  }
+
+  &-arrow {
+    @include btn-svg(24px, 24px, icon-select-arrow);
+    @include absolute(top 45% right 10px);
+    @include transition(transform 250ms ease);
+    background-color: transparent;
+    transform: translateY(-50%);
+  }
+
+  .select-list {
+    @include absolute(left -1px right -1px);
+    border: 1px solid $color-default-form;
+    border-top:none;
+    background-color: $color-white;
+    // top: $height-default-form-mo;
+    top:100%;
+    overflow-y: auto;
+    padding: 6px 0;
+    display:none;
+    max-height:160px;
+    z-index: 100;
+    // @include mq('mo', min){
+    //   top: $height-default-form;
+    // }
+
+
+    >li {
+      padding: 6px 16px;
+      @include flexbox('v', 'center');
+      // color:$color-none-strong-info;
+
+      &:not(.disabled):hover {
+        // color:$color-strong;
+        background-color: $color-bg-default;
+      }
+
+
+      &.disabled {
+        opacity: .5;
+        cursor: default;
+
+        &,
+        &:hover {
+          color: $color-txt-default;
+        }
+      }
+    }
+  }
+
+  //active
+  &.active{
+    .cst-select-arrow {
+      transform: translateY(-50%) rotateZ(180deg);
+    }
+    .select-list{
+      // display: block;
+      // overflow-y: auto;
+      // padding: 6px 0;
+      // visibility: visible;
+
+    }
+  }
+
+  &.inline {
+    display: inline-block;
+    >.placeholder-area{
+      padding-right:35px;
+    }
+  }
+
+  &.no-brd {
+    display: inline-block;
+    border-color: transparent;
+
+    >.placeholder-area {
+      // display: inline-flex;
+      height:inherit;
+      padding:inherit;
+      padding-right:25px;
+      @include mq('mo', min){
+        padding-right:30px;
+      }
+
+    }
+    .cst-select-arrow{
+      right:0;
+    }
+    .select-list {
+      top: $height-default-form - 20px;
+      left: auto;   //layer open direction
+      border-top:1px solid $color-default-form;
+      max-height: inherit;  //기획팀 요청사항으로 max-height 제거
+      li {
+        white-space: nowrap;
+        color:$color-none-strong-info;
+        &:not(.disabled):hover,
+        &:not(.disabled).selected{
+          color:$color-strong;
+        }
+      }
+    }
+    &.active{
+      .select-list{
+        border-top: 1px solid $color-default-form;
+      }
+    }
+  }
+
+  &.underline {
+    border: none;
+    border-bottom: 3px solid $color-strong;
+
+    >.placeholder-area {
+      height: inherit;
+      padding: 7px 30px 7px 0;
+    }
+    .cst-select-arrow{
+      top: 4px;
+      right: 0;
+    }
+    .select-list{
+      top: 34px;
+    }
+  }
+
+  // &.strong-brd {
+  //   &.active {
+  //     border-width: 2px;
+  //     border-color: $color-strong;
+
+  //     .select-list {
+  //       left: -2px;
+  //       right: -2px;
+  //       top: $height-default-form - 4px;
+  //       border-width: 2px;
+  //       border-color: $color-strong;
+  //     }
+  //   }
+  // }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    margin-right: 12px;
+  }
+}
+
+// Calendar style
+.calendar-wrap{
+  display: flex;
+  flex-wrap: wrap;
+  @include mq('mo', min) {
+    margin-left: 16px;
+    float: left;
+  }
+  .calendar-input-wrap{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: calc(50% - 10px);
+    margin: 6px 0;
+    @include mq('mo', min){
+      width: 160px;
+      margin: 0;
+    }
+    input[type=text]::-ms-clear {
+      display: none;
+    }
+    .ui-datepicker-trigger{
+      width: 22px;
+      height: 22px;
+      right: 10px;
+      margin: 0 0 0 -32px;
+      // position: absolute;
+      // top: 50%;
+      // transform: translate(0, -50%);
+      @include mq('mo', min){
+        right: 16px;
+      }
+    }
+    +.calendar-input-wrap{
+      margin-left: 20px;
+      @include mq('mo', min){
+        margin-left: 24px;
+      }
+      &:before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        margin-left: -13px;
+        border-bottom: 1px solid $color-default-form;
+        width: 8px;
+        height: 1px;
+        @include mq('mo', min){
+          margin-left: -15px;
+        }
+      }
+    }
+  }
+}
+.ui-datepicker{
+  display: block;
+  border: 1px solid $color-default-form;
+  background: $color-white;
+  box-shadow: none;
+  padding: 16px;
+  margin-top: 6px;
+  width: calc(100% - 40px);
+  min-width: 260px;
+  @include mq('mo', min){
+    width: 312px;
+    margin-top: 8px;
+    margin-left: 0;
+  }
+  .ui-datepicker-header{
+    padding-bottom: 24px;
+    @include ff(bold);
+    font-size: 2.0rem;
+    .ui-datepicker-title .ui-datepicker-month{
+      margin: 0 0 0 2%;
+    }
+    .ui-datepicker-prev{
+      @include btn-svg(24px, 24px, arrow-12-prev);
+      top: 10px;
+      left:10px;
+      span{
+        border:0;
+      }
+    }
+    .ui-datepicker-next{
+      @include btn-svg(24px, 24px, arrow-12-next);
+      top: 10px;
+      right:10px;
+      span{
+        border:0;
+      }
+    }
+  }
+  .ui-datepicker-calendar{
+    border: 0;
+    .ui-state-disabled{
+      background: $color-white;
+    }
+    // today color
+    .ui-datepicker-today{
+      background: $color-white;
+      @include ff(bold);
+    }
+    // selected color
+    .ui-state-active,
+    .ui-state-active.ui-state-hover {
+      background: $color-strong;
+      border-radius: 50%;
+      color: $color-white;
+      @include ff();
+    }
+    th,
+    td{
+      border: 0;
+      font-size: $txt-size-m-m;
+      @include ff();
+    }
+    th{
+      padding: 9px;
+      color: $color-none-strong-info;
+      background: $color-white;
+      text-align: center;
+      @include ff();
+      @include mq('mo', min){
+        padding: 10px;
+      }
+    }
+    td{
+      @include mq('mo', min){
+        width: 40px;
+      }
+      a{
+        margin: 2px auto;
+        width: 29px;
+        height: 29px;
+        text-align: center;
+        color: $color-strong;
+        @include mq('mo', min){
+          padding: 6px;
+          width: 36px;
+          height: 36px;
+        }
+      }
+      // hover color
+      .ui-state-hover{
+        background: $color-bg-darkgray;
+        border-radius: 50%;
+      }
+    }
+  }
+}

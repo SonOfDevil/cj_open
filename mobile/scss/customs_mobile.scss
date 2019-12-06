@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/* common */
+@import './partials/global';
+
+
+.btn{
+  color: #ef3f41;
+  @include ff(nb);
+  font-size: 12px;
+  padding: 10px 40px;
+  display: inline-block;
+  background: #fff;
+  border-radius: 5px;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+
+  &.btn-s{
+    padding: 10px 20px;
+    @include ff(cr);
+    font-size: 12px;
+    height: 36px;
+
+  }
+  &.btn-grey{
+    background: #707580;
+  }
+}
+.btn-r{
+  background: #f04b00;
+  color: #fff;
+  @include ff(cm);
+  font-size: 14px;
+  padding: 20px 40px;
+  display: inline-block;
+}
+

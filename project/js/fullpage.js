@@ -3438,12 +3438,12 @@
             }
 
             //using extensions? Wrong file!
-            extensions.forEach(function(extension){
-                //is the option set to true?
-                if(options[extension]){
-                    showError('warn', 'fullpage.js extensions require fullpage.extensions.min.js file instead of the usual fullpage.js. Requested: '+ extension);
-                }
-            });
+            // extensions.forEach(function(extension){
+            //     //is the option set to true?
+            //     if(options[extension]){
+            //         showError('warn', 'fullpage.js extensions require fullpage.extensions.min.js file instead of the usual fullpage.js. Requested: '+ extension);
+            //     }
+            // });
 
             //anchors can not have the same value as any element ID or NAME
             options.anchors.forEach(function(name){
@@ -4199,7 +4199,7 @@ var myFullpage = new fullpage('#fullpage', {
   loopHorizontal: true,
   continuousHorizontal: true,
   interlockedSlides: true,
-  dragAndMove: true,
+  dragAndMove: false,
   resetSliders: true,
   fadingEffect: true,
   touchSensitivity: 15,
@@ -4211,7 +4211,7 @@ var myFullpage = new fullpage('#fullpage', {
   // scrollHorizontally: false,
   // offsetSections: false,
   // normalScrollElements: '#element1, .element2',
-  scrollOverflow: true,
+//   scrollOverflow: true,
   scrollOverflowReset: false,
   scrollOverflowOptions: null,
   bigSectionsDestination: null,

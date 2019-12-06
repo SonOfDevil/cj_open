@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no initial-scale=1">
+  <meta name="description" content="O'PEN(오펜) - 작가 응시" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>공모전 지원하기(뮤직)</title>
+
+  <link rel="stylesheet" type="text/css" href="./css/customs_mobile.css">
+  <script type="text/javascript" src="./js/jquery-2.2.0.js"></script>
+  <script async type="text/javascript" src="./js/common.js"></script>
+
+</head>
+
+<body class="sub">
+  @@include('./sub/header.html')
+  <div class="gnb-sub-wrap competition">
+    <h1>지원하기</h1>
+    <div class="gnb-sub">
+      <ul class="gnb-sub-list">
+        <li><a href="#">드라마</a></li>
+        <li><a href="#">영화</a></li>
+        <li><a href="#">시트콤</a></li>
+        <li><a class="active" href="#">뮤직</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="content">
+    <div class="cont-header">
+      <h2>공모전 지원하기(뮤직)</h2>
+      <div class="date-wrap">
+        <p>접수기간 : <span>2020.01.01 ~ 01.31.18시</span> 까지</p>
+      </div>
+    </div>
+    <section>
+      <h3>01. 참가지원 동의</h3>
+      <div class="agree-wrap">
+        <div class="info-wrap">
+          <p>
+            본인은&lt;오펜드라마 스토리텔러지원사업&gt;의 홈페이지에 공시된&lt;모집요강&gt;
+            (의무사항, 기타사항을 포함한 요강전문)을 준수합니다.
+          </p>
+        </div>
+
+        <label class="cj-chk">동의
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+    </section>
+
+    <section>
+      <h3>02. 참가지원서 작성</h3>
+      <span class="notice">2인팀 경우 팀명을 입력해주시고, 지원자정보는 (팀)대표자의 정보로 입력해주세요. </span>
+      <table class="cj-tabl apply">
+        <tbody>
+          <tr>
+            <td class="tit necessary">이름</td>
+            <td colspan="3"><span class="form-txt">홍길동</span></td>
+          </tr>
+          <tr>
+            <td class="tit">팀명</td>
+            <td><input type="text" placeholder="2인팀 경우만 입력해주세요."></td>
+            <td class="tit necessary">생년월일</td>
+            <td><span class="form-txt">1980.12.31</span></td>
+          </tr>
+          <tr>
+            <td class="tit necessary">휴대전화</td>
+            <td><input type="tel" placeholder="'-'없이 입력해주세요."></td>
+            <td class="tit necessary">이메일주소</td>
+            <td><input type="email" placeholder="e-mail을 입력해주세요."></td>
+          </tr>
+          <tr>
+            <td class="tit necessary">주력장르<br>(자신 있는 부문)</td>
+            <td colspan="3"><input type="text" placeholder="예) EDM, 발라드, 비트메이킹, 기타, 베이스, 피아노 등"></td>
+          </tr>
+          <tr>
+            <td class="tit necessary">음악관련<br>활동사항</td>
+            <td colspan="3">
+              <textarea name="" id="" cols="30" rows="10" class="txt-input"
+                placeholder="예) 전공, 동아리, 작품경력, 문하생 등 음악과 관련된 경력을 자유 양식으로 기재"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td class="tit necessary">지원동기 및<br>향후 계획</td>
+            <td colspan="3">
+              <textarea name="" id="" cols="30" rows="10" class="txt-input"
+                placeholder="예) 오펜 뮤직 지원 동기와 선발 후 계획 여부 서술"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td class="tit necessary">협회회원여부</td>
+            <td colspan="3">
+              <select name="ismember" class="necessary" id="necessary">
+                <option value="select">선택</option>
+                <option class="member" value="한국음악저작권협회">한국음악저작권협회</option>
+                <option class="member" value="함께하는음악저작인협회">함께하는음악저작인협회</option>
+                <option value="해당사항 없음">해당사항 없음</option>
+              </select>
+              <div class="arrow-down"></div>
+              <!-- [TODO] option에 .member가 있으면 아래 .member-input에 .active 추가 -->
+              <input type="text" placeholder="회원번호를 입력해주세요." class="member-input">
+            </td>
+          </tr>
+          <tr>
+            <td class="tit necessary">저작권 보증 확인</td>
+            <td colspan="3">
+              <div class="copyright">
+                <span>
+                  지원하는 저작물은 응모자 본인의 순수 창작물로 표절 등 이의제기가 발생할 시 응모자가 모든 법적 책임을 지겠습니다.
+                </span>
+                <label class="cj-chk">동의
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h3>03. 작품파일 첨부</h3>
+      <div class="attach-wrap">
+        <img class="attach-img" src="./images/bg_apply_02.png" alt="파일첨부 이모티콘">
+        <ul class="attach-list">
+          <li>파일을 첨부하시면, 자동으로 작품명이 입력됩니다. (파일명을 정확히 입력해주세요)</li>
+          <li><span>[뮤직]</span> 반드시 <span>2</span>개의 작품을 제출하셔야 합니다.</li>
+          <li>용량은 15Mb이내, 파일은 mp3 형태로 지원해주세요.</li>
+        </ul>
+      </div>
+
+      <div class="tit-sub-wrap">
+        <h4>작품01</h4>
+        <div class="attach-file-wrap">
+          <div class="select-wrap">
+            <select name="ismember">
+              <option value="select">선택</option>
+              <option value="발라드">발라드</option>
+              <option value="댄스">댄스</option>
+              <option value="랩/힙합">랩/힙합</option>
+              <option value="R&B/Soul">R&B/Soul</option>
+              <option value="록/메탈">록/메탈</option>
+              <option value="성인가요">성인가요</option>
+              <option value="포크/블루스">포크/블루스</option>
+              <option value="기타">기타</option>
+            </select>
+            <div class="arrow-down"></div>
+          </div>
+          <div class="file-input">
+            <input type="text" readonly="readonly" title="File Route" id="file_route1"><label>찾아보기
+              <input type="file" onchange="javascript:document.getElementById('file_route').value=this.value"></label>
+            <!-- 첨부파일 이름 -->
+            <span class="attach-name"></span>
+          </div>
+          <div class="close"></div>
+        </div>
+        <table class="cj-tabl attach">
+          <tbody>
+            <tr>
+              <td class="tit">작사</td>
+              <td class="tit ">작곡</td>
+              <td class="tit ">편곡</td>
+              <td class="tit ">보컬, 세션 연주자명</td>
+              <td class="tit ">샘플(루프)사용여부</td>
+              </tr>
+              <tr>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text" placeholder="예) 피아노, 홍길동 등"></td>
+                <td><input type="text" placeholder="예) 드럼, loop 사용 등"></td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="tit-sub-wrap sub">
+        <h4>작품02</h4>
+        <div class="attach-file-wrap">
+          <div class="select-wrap">
+            <select name="ismember">
+              <option value="select">선택</option>
+              <option value="발라드">발라드</option>
+              <option value="댄스">댄스</option>
+              <option value="랩/힙합">랩/힙합</option>
+              <option value="R&B/Soul">R&B/Soul</option>
+              <option value="록/메탈">록/메탈</option>
+              <option value="성인가요">성인가요</option>
+              <option value="포크/블루스">포크/블루스</option>
+              <option value="기타">기타</option>
+            </select>
+            <div class="arrow-down"></div>
+          </div>
+          <div class="file-input">
+            <input type="text" readonly="readonly" title="File Route" id="file_route2"><label>찾아보기
+              <input type="file" onchange="javascript:document.getElementById('file_route').value=this.value"></label>
+            <!-- 첨부파일 이름 -->
+            <span class="attach-name"></span>
+          </div>
+          <div class="close"></div>
+        </div>
+        <table class="cj-tabl attach">
+          <tbody>
+            <tr>
+              <td class="tit">작사</td>
+              <td class="tit ">작곡</td>
+              <td class="tit ">편곡</td>
+              <td class="tit ">보컬, 세션 연주자명</td>
+              <td class="tit ">샘플(루프)사용여부</td>
+              </tr>
+              <tr>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text" placeholder="예) 피아노, 홍길동 등"></td>
+                <td><input type="text" placeholder="예) 드럼, loop 사용 등"></td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="txt-wrap">
+        <a href="#" class="btn-r">저장 및 지원하기</a>
+        <p class="txt-notice">*마감시간까지 <span>마이페이지&gt; 나의 지원내역에서 지원내용을 수정</span>할 수 있습니다.</p>
+      </div>
+
+
+    </section>
+
+
+    <button onclick="topFunction()" id="topBtn" class="top-btn" title="Go to top">TOP</button>
+  </div>
+
+  @@include('./sub/footer.html')
+</body>
+
+</html>

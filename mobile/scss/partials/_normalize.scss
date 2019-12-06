@@ -1,0 +1,365 @@
+html {
+  -webkit-text-size-adjust: none;
+}
+
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+table,
+th,
+td,
+form,
+fieldset,
+legend,
+textarea,
+input,
+select,
+button,
+figure,
+figcaption {
+  margin: 0;
+  padding: 0;
+}
+
+dt{
+  font-weight: inherit //mc
+}
+
+em,
+i {
+  font-style: normal;
+}
+
+img,
+form,
+fieldset,
+svg {
+  border: 0;
+  vertical-align: top;
+}
+
+input,
+button,
+select {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+button {
+  border: 0;
+  background: none;
+  box-shadow: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border: 0;
+    background: none; // ie11
+    box-shadow: none;
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &::-moz-focus-inner {
+    padding: 0;
+    margin: -1px;
+  }
+
+  &:not(.primary) {
+    box-shadow: none
+  }
+
+  //magento clear
+}
+
+ul,
+ol {
+  list-style: none;
+
+  li {
+    margin-bottom: 0; //mc
+  }
+}
+
+a {
+  color: $color-strong;
+  text-decoration: none;
+
+  &:hover,&:active {
+    color: $color-strong;
+    text-decoration: none;
+  }
+}
+
+fieldset, .fieldset{ //mc
+  margin: 0;
+  letter-spacing: 0;
+}
+
+body,
+textarea,
+input,
+select,
+button {
+  font-family: 'cr', Arial, sans-serif;
+  font-weight: normal;
+  color: $color-txt-default;
+  // line-height: $line-height-default;
+  //line break
+  word-break:keep-all;
+  word-wrap: break-word;
+  text-overflow:clip;
+
+  font-size: $txt-size-default-m;
+  // @include mq('mo', min){
+  //   font-size: $txt-size-default;
+  // }
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $color-strong;
+  font-weight: inherit;
+  line-height: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+b,
+strong{
+  @include ff(bold);
+}
+b,
+strong{
+  font-weight: inherit;
+}
+
+.header-wrap {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    display: inline-block;
+  }
+}
+
+.fl {
+  float: left
+}
+.fr {
+  float: right
+}
+
+
+// check box
+.cj-chk {
+  display: block;
+  position: relative;
+  padding-left: 22px;
+  @include ff(cm);
+  line-height: 22px;
+  color: #333;
+  font-size: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  &.radio{
+    display: inline-block;
+    &:not(:first-child){
+      margin-left: 20px;
+    }
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:checked~.checkmark {
+      background-color: #ff8c00;
+      border-color: transparent;
+      &:after {
+        display: block;
+      }
+    }
+    &[type='radio']{
+      &+.checkmark,
+      &:checked+.checkmark {
+        border-radius: 1rem;
+        background: transparent;
+        border: 1px solid #ccc;
+        &:after{
+          left: 2px;
+          top: 2px;
+          border: 6px solid #ff8c00;
+          border-radius: 1rem;
+        }
+      }
+    }
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    border: 1px solid #ccc;
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 10px;
+      top: 5px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+}
+
+// input & textarea
+input[type="text"],
+input[type="password"],
+input[type="url"],
+input[type="tel"],
+input[type="search"],
+input[type="number"],
+input[type="datetime"],
+input[type="email"],
+input[type="submit"],
+textarea {
+  border-radius: 0; //mc
+  background-clip: inherit; //background:none 쓰면 아이폰에서 그림자 나타남.
+  border: 1px solid #ccc; // $color-default-form
+  padding: 8px;
+  @include ff();
+  @include clear-font-size($txt-size-default-m);
+
+  // @include mq('mo', min) {
+  //   @include clear-font-size($txt-size-default);
+  // }
+
+  @include input-placeholder {
+    color: $color-none-strong-info;
+  }
+
+  &:disabled {
+    background-color: $color-bg-default;
+    color: $color-none-strong;
+    opacity: 1; //mc
+  }
+
+  &::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
+
+
+input[type='submit'] {
+  border: 0;
+  font-size: 0;
+  width: 0;
+  height: 0;
+  padding: 0;
+}
+
+.cj-tabl{
+  border-collapse:separate;
+  border-spacing: 0;
+  width: 100%;
+  border-top: 2px solid #333;
+  border-bottom: 1px solid #666;
+  @include ff(cr);
+  font-size: 12px;
+  tr{
+    &:not(:first-child) td{
+      border-top: 1px solid #ddd;
+
+    }
+    td{
+      padding: 10px 5px;
+      max-height: 86px;
+      &:not(:first-child){
+        border-left: 1px solid #ddd;
+      }
+      input{
+        width: 100%;
+      }
+    }
+  }
+  .tit{
+    // padding: 30px;
+    @include ff(cm);
+    font-size: 18px;
+    color: #333;
+    background: #f5f5f5;
+    &.num{
+      text-align: center;
+      width: 60px;
+    }
+    &.sub{
+      width: 250px;
+      &.sub-col{
+        border-left: 1px solid #ddd;
+      }
+    }
+  }
+  .txt-input{
+    max-height: 230px;
+    width: 100%;
+  }
+  .form-txt{
+    &.textarea{
+      max-height: 120px;
+      overflow-y: scroll;
+      display: block;
+    }
+  }
+
+}

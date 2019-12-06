@@ -169,7 +169,7 @@
 
 
     .footer_wrap {
-        padding: 0 0 83px 0;
+        padding: 0;
         .footer_inner {
             position: relative;
             margin: 0 auto;
@@ -291,7 +291,9 @@
 // only fullpage
 #fullpage{
     .footer{
-        margin-top: -160px;
+        margin-top: 100px;
+        position: absolute;
+        bottom: 0;
     }
 }
 

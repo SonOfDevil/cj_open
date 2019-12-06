@@ -1,0 +1,675 @@
+//  Mixins
+$breakpoints: ("mo": 600px);
+
+@mixin mq($width, $type: max) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+
+    @if $type==min {
+      $width: $width + 1px;
+    }
+
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+
+// Clearfix
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: ' ';
+    display: block;
+    clear: both;
+  }
+}
+
+// Padding mixin
+@mixin padding($top, $right, $bottom, $left) {
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $bottom;
+  padding-left: $left;
+}
+// Margin mixin
+@mixin margin($top, $right, $bottom, $left) {
+  margin-top: $top;
+  margin-right: $right;
+  margin-bottom: $bottom;
+  margin-left: $left;
+}
+// @include padding(1px, 2px, 3px, 4px);
+// @include margin(1px, 2px, 3px, 4px);
+
+
+// Position
+@mixin position($position, $args) {
+  @each $o in top right bottom left {
+    $i: index($args, $o);
+
+    @if $i and $i+1 <=length($args) and type-of(nth($args, $i + 1))==number {
+      #{$o}: nth($args, $i + 1);
+    }
+  }
+  position: $position;
+}
+// Positioning helpers
+@mixin absolute($args: '') {
+  @include position(absolute, $args);
+}
+@mixin fixed($args: '') {
+  @include position(fixed, $args);
+}
+@mixin relative($args: '') {
+  @include position(relative, $args);
+}
+@mixin sticky($args: '') {
+  @include position(sticky, $args);
+}
+// @include relative;
+// @include absolute(top 100% left 0);
+// @include fixed(top 10px left 0);
+
+
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+  #{$property}: $value;
+}
+
+
+@mixin center-vertically($position:absolute) {
+  position: $position;
+  top: 50%;
+  left: 50%;
+  @include prefix(transform, translate(-50%, -50%), 'webkit''ms');
+}
+// @include center-vertically;
+// @include center-vertically(fixed);
+
+
+@mixin input-placeholder {
+  &.placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+    opacity: 1;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+// input,
+// textarea {
+//     @include input-placeholder {
+//         color: $grey;
+//     }
+// }
+
+
+@mixin select-strong{
+  $brd-strong:2px;
+  .cst-select.active{
+    &:not(.no-brd){
+      border-width: $brd-strong;
+      border-color: $color-strong;
+      // border-bottom:none;
+      >.select-list{
+        left:-#{$brd-strong};
+        right:-#{$brd-strong};
+        border-width: $brd-strong;
+        border-color: $color-strong;
+        // border-top-color:transparent;
+        border-top:none;
+      }
+    }
+  }
+  //selected
+  .cst-select.selected {
+    &:not(.no-brd){
+      border-width: $brd-strong;
+      border-color: $color-strong;
+
+      .select-list{
+        left: -2px;
+        right: -2px;
+        border-width: $brd-strong;
+        border-color: $color-strong;
+        // max-height:0;
+        // visibility: hidden;
+        // li{
+        //   display: none;
+        // }
+      }
+    }
+  }
+}
+// custom select 두껍게 나오게
+// @include select-strong;
+
+@mixin select-direction-up($style:'normal') {
+  @if $style == 'strong'{
+    .cst-select:not(.no-brd) {
+      &.active, &.selected{
+        border-width: 2px;
+        border-color: $color-strong;
+        .select-list{
+          border-bottom: none;
+          border-width: 2px;
+          border-top: 2px solid $color-strong;
+        }
+      }
+      .select-list {
+        left: -2px;
+        right: -2px;
+        top: inherit;
+        bottom:100%;
+        // bottom: $height-default-form-mo;
+        // @include mq('mo', min){
+        //   bottom: $height-default-form;
+        // }
+      }
+    }
+  } @else if $style == 'normal'{
+    .cst-select {
+      &.active{
+        .select-list{
+          border-bottom: none;
+
+        }
+      }
+      .select-list {
+        top: inherit;
+        bottom: $height-default-form-mo;
+        border-top: 1px solid $color-default-form;
+        @include mq('mo', min){
+          bottom: $height-default-form;
+        }
+      }
+    }
+  }
+}
+//custom select 방향 바꾸기
+// @include select-direction-up('normal');
+// 두꺼운 선 있게 방향 전환 필요한 경우
+// @include select-direction-up('strong');
+
+
+// 멀티라인 말줄임
+@mixin truncate($font-size, $line-height, $lines-to-show) {
+  display: block; // Fallback for non-webkit
+  display: -webkit-box;
+  max-width: 100%;
+  max-height: $font-size*$line-height*$lines-to-show; // Fallback for non-webkit
+  font-size: $font-size;
+  line-height: $line-height;
+  -webkit-line-clamp: $lines-to-show;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+
+  &:before {
+    _content: '...';
+    _position: absolute;
+    _right: 0;
+    _bottom: 0;
+  }
+  &:after {
+    _content: '';
+    _position: absolute;
+    _right: 0;
+    _width: 1em;
+    _height: 1em;
+    _margin-top: 0.2em;
+    // background: $bgColor;
+  }
+}
+// @include truncate($txt-size-default, $line-height-default, 2);
+
+//한줄 말줄임
+@mixin ellipsis($w:100%) {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  width: $w;
+  overflow: hidden;
+}
+
+
+// transition
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+// @include transition(color .3s ease);
+
+
+// 시각적으로 숨기기
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+// .visually-hidden {
+//     @extend %visuallyhidden;
+// }
+
+
+//background
+@mixin bg($w, $h, $file-name, $w-pc:$w, $h-pc:$h) {
+  background: url($img-root + $file-name) center center no-repeat;
+  background-size: $w $h;
+  object-fit: contain;
+  content: "";
+  display: inline-block;
+  min-width: $w;
+  min-height: $h;
+  font-size: 0;
+
+  @include mq('mo', min) {
+    min-width: $w-pc;
+    min-height: $h-pc;
+    background-size: $w-pc $h-pc;
+  }
+}
+// .btn-md-brand-prev{
+//     @include bg(20px, 20px, '/svg/img.png', 30px, 30px)
+//   }
+
+@mixin btn-svg($w, $h, $file-name, $evt-hover:'false', $evt-active:'false', $w-pc:$w, $h-pc:$w-pc) {
+  background: url($img-root + '/svg/'+ $file-name + '.svg') center center no-repeat;
+  background-size: $w $h;
+  object-fit: contain;
+  content: "";
+  display: inline-block;
+  min-width: $w;
+  min-height: $h;
+  font-size: 0;
+
+  @include mq('mo', min) {
+    min-width: $w-pc;
+    min-height: $h-pc;
+    background-size: $w-pc $h-pc;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-image: url($img-root + '/svg/'+ $file-name + '.svg');
+    background-size: $w $h;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    @include mq('mo', min) {
+      background-size: $w-pc $h-pc;
+    }
+  }
+  @if $evt-active=='true' {
+    &.active {
+      background-image: url($img-root + '/svg/'+ $file-name + '-selected.svg');
+    }
+  }
+
+  @if $evt-hover=='true' {
+    &:hover{
+      background-image: url($img-root + '/svg/'+ $file-name + '-selected.svg');
+    }
+  }
+}
+// svg 파일명을 icon-wish.svg / icon-wish-selected.svg 로 사용
+// default (width, height, file name , 이벤트 사용 여부, pc일때 width, height)
+// @include btn-svg(24px, 24px, btn-view-collect);
+//
+//hover, active 사용시
+//@include btn-svg(24px, 24px, btn-view-collect, 'true');
+//
+// 모바일에서는 24px 24px로, pc에서는 30px 30px로 설정
+//@include btn-svg(24px, 24px, btn-view-collect, 'false', 30px, 30px);
+
+
+@mixin btn-icon-box($w:24px, $h:$w, $w-pc:$w, $h-pc:$w-pc, $brd-style:'normal',$evt-hover:'false', $bgcolor:'transparent', $box-style:'normal') {
+  width: $w;
+  height: $h;
+  text-align: center;
+  display: inline-block;
+  background-color: $bgcolor;
+  @include mq('mo', min) {
+    width: $w-pc;
+    height: $h-pc;
+  }
+
+  @if ($box-style == 'circle') {
+    border-radius: 50%;
+  }
+  @if ($brd-style == 'normal') {
+    border: 1px solid $color-default-line;
+  }
+  @else if($brd-style == 'none'){
+    border:none;
+  }
+  @if ($evt-hover == 'true'){
+    &:hover,
+    &:active,
+    &.active{
+      // @extend %evt-hover-strong;
+      border:4px solid $color-strong;
+    }
+  }
+}
+// 회색 테두리를 갖는 아이콘 버튼에 사용합니다.
+// 정사각 아이콘인 경우            @include btn-icon-box(48px);
+// 가로세로 사이즈 다른 경우       @include btn-icon-box(48px,20px);
+
+
+// font
+@mixin ff($font-family: cr) {
+  @if $font-family == cr {
+    font-family: 'cr','MalgunGothic';
+  }
+  @else if $font-family == cb {
+    font-family: 'cb','MalgunGothic';
+    font-weight: bold;
+  }
+  @else if $font-family == cl {
+    font-family: 'cl','MalgunGothic';
+  }
+  @else if $font-family == cm {
+    font-family: 'cm','MalgunGothic';
+  }
+  @else if $font-family == fr {
+    font-family: 'fr','MalgunGothic';
+  }
+  @else if $font-family == nr {
+    font-family: 'nr','MalgunGothic';
+  }
+  @else if $font-family == nm {
+    font-family: 'nm','MalgunGothic';
+  }
+  @else if $font-family == nl {
+    font-family: 'nl','MalgunGothic';
+  }
+  @else if $font-family == nb {
+    font-family: 'nb','MalgunGothic';
+    font-weight: bold;
+  }
+  @else if $font-family == nl {
+    font-family: 'nl','MalgunGothic';
+  }
+}
+
+@mixin clear-font-size($font-size:$txt-size-default) {
+  font-size: $font-size;
+  line-height: $line-height-default;
+}
+
+//마젠토에 텍스트 사이즈가 박혀 있는 경우 reset을 위해 선언
+//@include clear-font-size();
+//@include clear-font-size(12px);
+
+
+// @mixin btn-overlay($bgcolor:black, $alpha:0.3, $w:24px, $h:$w, $w-pc:$w, $h-pc:$h) {
+//   width: $w;
+//   height: $h;
+//   line-height: $h;
+//   background-color: rgba($bgcolor, $alpha);
+//   z-index: 2;
+//   color: white;
+//   font-size: $txt-size-xl-m;
+//   text-align: center;
+//   display: inline-block;
+
+//   @include mq('mo', min) {
+//     width: $w-pc;
+//     height: $h-pc;
+//     line-height: $h-pc;
+//     font-size: $txt-size-xxl;
+//   }
+// }
+
+// a.btn-overlay{
+//     @include btn-overlay(black, 0.3, $_photo-size , $_photo-size , $_photo-size-pc , $_photo-size-pc);
+// }
+
+
+// @mixin btn($bg:$color-strong, $color: $color-white) {
+//   background: $bg;
+//   color: $color;
+//   padding: 5px;
+//   font-weight: bold;
+//  }
+
+
+@mixin effect-underline($brd-gutter: 4px, $brd-width: 4px, $brd-color: $color-strong){
+  position: relative;
+  display: inline-block;
+
+  &:before {
+      position: absolute;
+      left: 0;
+      bottom: -$brd-gutter;
+      width: 100%;
+      content: ' ';
+      border-bottom: solid $brd-width $brd-color;
+      transform: scaleX(0);
+      transition: transform 250ms ease-in-out;
+      transform-origin: 0% 50%;
+  }
+
+  &:hover:before {
+      transform: scaleX(1);
+  }
+}
+
+// .site-header {
+//     padding: 2rem;
+//     font-size: 1.8rem;
+
+//     @include mq('tablet-wide') {
+//         padding-top: 4rem;
+//         font-size: 2.4rem;
+//     }
+// }
+
+
+// icon Mixin
+@mixin icon($file-name, $w, $h){
+  &::before {
+    content:'';
+    background: url($img-root + '/icon/'+ $file-name + '.png') center center no-repeat;
+    display: inline-block;
+    font-size: 0;
+    min-width: $w;
+    min-height: $h;
+    background-size: $w $h;
+    vertical-align: middle;
+  }
+}
+// 예시
+// .icon-visa {
+//   @include icon(visa, 28px, 18px);
+// }
+
+
+//페이지 상하 여백
+@mixin layout-padding($top:'true', $bottom:'true'){
+  @if ($top == 'true'){
+    padding-top:$column-main-top;
+    @include mq('mo', min){
+      padding-top:$column-main-top-pc;
+    }
+  }
+
+  @if ($bottom == 'true'){
+    padding-bottom:$column-main-bottom;
+    @include mq('mo', min){
+      padding-bottom:$column-main-bottom-pc;
+    }
+  }
+}
+// 한 블럭=섹션에 padding 다 주는 경우
+// @include layout-padding();
+// @include layout-padding('true','true');
+
+// 상, 하단 따로주는 경우
+// @include layout-padding('true','false'); //only top
+// @include layout-padding('false','true'); //only bottom
+
+
+@mixin evt-zoomin($duration:0.5s, $target:'img'){
+  &{
+    #{$target}{
+      // transform: scale(1.2);
+      animation: zoom-out $duration ease-out forwards;
+      // animation-fill-mode: forwards;
+    }
+  }
+  &:hover{
+    & #{$target}{
+      animation: zoom-in $duration ease-in forwards;
+      // animation-fill-mode: forwards;
+    }
+  }
+}
+// mouse hover 시 zoom in/out 돼는 이미지
+// @include evt-zoomin();                           //기본사용
+// @include evt-zoomin($target:'.style-img img');   //타겟 지정사용
+
+
+@mixin hidden-scrolling(){
+  -webkit-overflow-scrolling:touch;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
+      background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+      display: none !important;
+  }
+}
+// 모바일에서 스크롤 보이지 않으면서 동작되야 할 때
+// @include hidden-scrolling();
+
+
+// Tooltip
+@mixin lib-tooltip($size: 5px, $dir: left, $bgcolor: #000) {
+  background: $bgcolor;
+  position: relative;
+
+  &:before {
+    border-style: solid;
+    content: "";
+    display: block;
+    position: absolute;
+
+    @if (($dir==top) or ($dir==bottom)) {
+      border-color: $bgcolor transparent;
+      left: 50%;
+      margin-left: -$size;
+    }
+
+    @else {
+      border-color: transparent $bgcolor;
+      margin-top: -$size;
+      top: 50%;
+    }
+
+    @if ($dir==top) {
+      border-width: 0 $size $size $size;
+      top: -$size;
+    }
+
+    @if ($dir==right) {
+      border-width: $size 0 $size $size;
+      right: -$size;
+    }
+
+    @if ($dir==bottom) {
+      border-width: $size $size 0 $size;
+      bottom: -$size;
+    }
+
+    @if ($dir==left) {
+      border-width: $size $size $size 0;
+      left: -$size;
+    }
+  }
+}
+// Usage
+// ul {
+//   @include tooltip(5px, right, rgba(0, 0, 0, .8));
+//   width: 400px
+// }
+
+@mixin list-dot($color, $size) {
+  display: inline-block;
+  content: '';
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  height: $size;
+  width: $size;
+  position: absolute;
+  top: 50%;
+  left: -($size * 5);
+  transform: translate(0, -50%);
+  background-color: $color;
+}
+
+// close button(X)
+
+@mixin btn-close($size) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: $size;
+  height: $size;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+
+  &:before,
+  &:after {
+    position: absolute;
+    top:0;
+    left: $size/2;
+    content: ' ';
+    height: $size;
+    width: 1px;
+    background-color: #676767;
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+  }
+}
+

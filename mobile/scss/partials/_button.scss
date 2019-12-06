@@ -1,0 +1,339 @@
+button{
+  // button size 3 type : .action , .action-l , .action-m
+  // button style 4 type : default(4px border button) , .thin , .thin-strong , .primary
+  &.action,
+  &.action-s,
+  &.action-m,
+  &.action-l {
+    // @include btn($color-white, $color-strong);
+    background: $color-white;
+    color: $color-strong;
+    padding: 0 $gutter-txt;
+    line-height: 1.3em;
+    border: $brd-strong solid $color-strong;
+    height: $btn-default;
+    @include ff(bold);
+    @include mq('mo', min){
+      height: $btn-default-pc;
+    }
+
+    &.thin{
+      border: 1px solid $color-default-line;
+      @include ff();
+    }
+
+    &.thin-strong{
+      border: 1px solid $color-strong;
+    }
+
+    &.primary {
+      &,
+      &:hover,
+      &:visited,
+      &:focus,
+      &:active{
+        color:$color-white;
+        background: $color-strong;
+        border: 1px solid $color-strong;
+        @include ff(bold);         //mc
+        padding: 0 $gutter-txt;    //mc
+        &.out-of-stock,
+        &:disabled{
+          background-color: $color-none-strong-info;
+          border-color:$color-none-strong-info;
+          color:white;
+          opacity:1;            //mc
+        }
+      }
+    }
+
+    &:disabled{
+      opacity: 1;              //mc
+      background-color:$color-bg-default;
+      border-color:$color-disable-form;
+      color:$color-none-strong;
+      // @include ff();
+    }
+
+    // 선택 전, 후 버튼(checkout page에서 신용카드)
+    &.sel{
+      border: 1px solid $color-default-line;
+      color: $color-none-strong-info;
+      font-size:$txt-size-default-m;
+      @include mq('mo', min){
+        font-size:$txt-size-default;
+      }
+
+
+      &:hover,
+      &.active{
+        color: $color-strong-little;
+        border-color:$color-strong;
+      }
+      &.active{
+        border-width:$brd-strong ;
+      }
+    }
+  }
+
+  //submit 및 전체 페이지 제어시 사용
+  &.action-l {
+    height: $btn-l;
+    @include mq('mo'){
+      font-size: $txt-size-m-m;
+    }
+
+    @include mq('mo', min){
+
+//////////////////////////
+// 메세지형 팝업 예외처리
+//////////////////////////
+.popup{
+  &:not(.type-msg){
+    .popup-bottom{
+      .action{
+        height:$btn-l;
+        font-size:$txt-size-default;
+      }
+    }
+  }
+}
+
+a:link,
+a:visited {
+  &.action {
+    color: $color-strong;
+    text-decoration: underline;
+  }
+
+  &.btn-txt {
+    text-decoration: underline;
+    color: $color-none-strong-info;
+    font-size: $txt-size-s; //1$brd-strong
+    @include ff(bold);
+
+    &:not(:first-of-type) {
+      margin-left: $gutter-txt;
+    }
+  }
+}
+button,
+a:link,
+a:visited {
+  &.btn-with-icon{
+    @include flexbox('v', 'center');
+    display: inline-flex;
+    > span{
+      line-height: 1em;
+    }
+  }
+}
+
+// .btn {
+//   &-brd {
+//     @include btn-icon-box($btn-default-pc,$brd-style:'normal',$evt-hover:'true');
+//   }
+//   // &-fix-size{
+//   //   @include btn-icon-box(70px,$brd-style:'none');
+//   // }
+
+//   &-view-normal {
+//     @include btn-svg(19px, 19px, btn-view-normal, 'true', 'true');
+//   }
+
+//   &-view-collect {
+//     @include btn-svg(19px, 19px, btn-view-collect, 'true', 'true');
+//   }
+
+//   &-wish {
+//     @include btn-svg(28px, 28px, icon-wish, 'false', 'true', $btn-m, $btn-m);
+//   }
+
+//   &-tooltip {
+//     @include btn-svg(28px, 28px, icon-tooltip, 'false', 'true', $btn-m, $btn-m);
+//   }
+
+//   &-share-black {
+//     @include btn-svg(28px, 28px, icon-share-black, 'false', 'false', $btn-m, $btn-m);
+//   }
+//   &-reload {
+//     @include btn-svg(22px, 22px, icon-reload, 'false', 'false', 24px, 24px);
+//   }
+//   &-volume {
+//     @include btn-svg(22px, 22px, icon-volume, 'false', 'false', 24px, 24px);
+//   }
+//   &-add-attach {
+//     @include btn-svg(24px, 24px, icon-img-add-s, 'false', 'false');
+//     @include btn-icon-box(64px, 64px,50px,50px, $brd-style:'none', $bgcolor:$color-bg-default);
+//   }
+//   &-search{
+//     @include btn-svg(24px, 24px, icon-search, 'false', 'false', 40px, 40px);
+//   }
+
+  // &-overlay {
+  //   @include btn-overlay(black, 0.3);
+  // }
+  // &-sns-facebook{
+  //   @include btn-svg(35px, 35px, sns/icon-facebook, 'false', 'false');
+  // }
+  // &-sns-youtube{
+  //   @include btn-svg(35px, 35px, sns/icon-youtube, 'false', 'false');
+  // }
+
+  //arrow button
+  &-arrow-left-xs,
+  &-arrow-right-xs{
+    @include btn-svg(14px, 14px, arrow-xs,'true','true');
+  }
+  // right arrow
+  &-arrow-right-xs{
+    transform: rotateY(180deg);
+  }
+
+  &-arrow-left-overlay,
+  &-arrow-right-overlay{
+    @include btn-svg(22px, 22px, arrow-24-prev-wh,'false','false',20px, 20px);
+    background-color: rgba(0, 0, 0, 0.25);
+    background-position: 50% center;
+    width:$btn-m-pc;
+    height:$btn-m-pc;
+    &:active,
+    &:focus,
+    &:visited{
+      background-color: rgba(0, 0, 0, 0.25);
+      background-position: 50% center;
+    }
+    &:hover{
+      background-color: rgba(0, 0, 0, 0.5);
+      background-position: 50% center;
+    }
+  }
+
+  // right arrow
+  &-arrow-right-overlay{
+    &, &:hover, &:active, &:focus{
+      background-image:url("../images/svg/arrow-24-next-wh.svg");
+    }
+  }
+  //top arrow
+  &-top{
+    @include btn-svg(36px, 36px, btn-top, 'false', 'false', 48px, 48px);
+    display: block;
+  }
+
+  // x Button
+  &-close-layer {
+    @include btn-svg(28px, 28px, icon-close-l, 'false','false', 24px, 24px);
+    @include absolute(top $gutter-side-mobile right $gutter-side-mobile);
+
+    @include mq('mo', min) {
+      @include absolute(top 36px right $gutter-popup-pc);
+    }
+  }
+
+  &-close-white {
+    @include btn-svg(20px, 20px, icon-close-wh, 'false','false', 16px, 16px);
+  }
+  &-del-ssx {
+    @include btn-svg(20px, 20px, icon-delete-20);
+  }
+  &-del-sx {
+    @include btn-svg(24px, 24px, icon-close-sx);
+  }
+
+  &-del-x {
+    @include btn-svg(20px, 20px, icon-close-x, 'false','false', 28px, 28px);
+  }
+  &-del-circle-gray{
+    @include btn-svg(24px, 24px, icon-delete-circle-gray, 'false', 'false');
+    // background-color: red;
+  }
+  &-remove-item{
+    @include btn-svg(14px, 14px, icon-close-sx, 'false', 'false', 18px, 18px);
+  }
+  &-clear-input{
+    @include btn-svg(24px, 24px, icon-clear, 'false', 'false');
+    @include absolute(top 10px right 10px);
+    @include mq('mo', min){
+      top:12px;
+    }
+    display:none;
+    cursor:pointer;
+    z-index:3;  //magento input에 z-index 2 있음
+  }
+}
+
+// + , - button & input style
+.quantity {
+  @include flexbox('t', 'center');
+  justify-content: space-between;
+  flex-wrap: nowrap;  //ie bug 보정용
+
+  &.inline {
+    display: inline-flex;
+  }
+
+  button {
+    height: $height-default-form/2;
+  }
+
+  input:not([type='checkbox']):not([type='radio']) {
+    // border-color: transparent;
+    // flex-basis: 1em;
+    // flex-grow: 1;
+    margin: 0 -1px;
+    text-align: center;
+    background-color: transparent;
+    padding: 0;
+    height: inherit; //mc
+    width: inherit; //mc
+    max-width:40px;
+    font-size: $txt-size-default;
+    @include ff();
+    border: none;
+  }
+
+  >button {
+    width: $height-default-form/2;
+    @include flexbox('h', 'center');
+
+    &:not(.primary) {
+      box-shadow: none; //clear
+    }
+
+    &.minus-qty {
+      @include btn-svg(24px, 24px, icon-minus-bk);
+    }
+
+    &.plus-qty {
+      @include btn-svg(24px, 24px, icon-plus-bk);
+    }
+
+    // &:hover,
+    // &.active {
+    //   background-color: darken(white, 10%)
+    // }
+  }
+}
+
+.wrap-btn{
+  text-align: right;
+  a{
+    text-decoration: underline;
+    color:$color-none-strong;
+    @include ff(bold);
+    &:not(:first-of-type){
+      margin-left:12px;
+      @include mq('mo', min){
+        margin-left:16px;
+      }
+
+    }
+  }
+}
+
+// mobile/pc 모두 화면 분할해서 버튼들어가는 경우 사용
+// ex : 로그인/ 회원가입
+.wrap-btn-split{
+  @extend %full-action-btn;
+}

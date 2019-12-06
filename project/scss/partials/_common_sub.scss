@@ -36,6 +36,7 @@
     bottom: 276px;
     width: 40px;
     height: 40px;
+    background: #fff;
     display: none;
 
     &::after {
@@ -64,6 +65,8 @@
 
   .cont-header {
     position: relative;
+    margin: 0 auto;
+    width: 1200px;
 
     h2 {
       @include ff(cb);
@@ -147,6 +150,18 @@
       span{
         color: #f04b00;
 
+      }
+    }
+  }
+
+  // 오펜성과
+  .accomplishment-nav-wrap{
+    .btn-wrap{
+      justify-content: flex-end;
+      width: 1200px;
+      margin: 60px auto 30px;
+      li{
+        flex-basis: 120px;
       }
     }
   }
@@ -638,6 +653,22 @@
       display: flex;
       justify-content: center;
       margin-top: 40px;
+      li{
+        &.active a{
+          color: #f04b00;
+          position: relative;
+
+          &:after {
+            content: '';
+            position: absolute;
+            bottom: 3px;
+            left: 50%;
+            width: 50%;
+            transform: translate(-50%, 0px);
+            border-bottom: 1px solid #f04b00;
+          }
+        }
+      }
 
       .prev,
       .next,
@@ -660,6 +691,11 @@
           border-bottom: 2px solid #000;
           border-left: 2px solid #000;
           transform: rotate(45deg);
+        }
+        a {
+          font-size: 0;
+          width: 20px;
+          height: 26px;
         }
       }
       .next{
@@ -825,17 +861,20 @@
     .press-wrap {
       border-top: 1px solid #999;
       display: flex;
-      justify-content: space-between;
       flex-wrap: wrap;
 
       .item-wrap {
         max-width: 285px;
         margin-top: 40px;
+        &:not(:nth-child(4n+1)){
+          margin-left: 20px;
+        }
 
         .item {
           position: relative;
           border: 1px solid #ddd;
           display: block;
+          min-height: 344px;
           &:hover{
             overflow: hidden;
             p,
@@ -845,6 +884,9 @@
             .item-active-wrap{
               display: flex;
             }
+          }
+          img {
+            max-height: 210px;
           }
 
           .item-active-wrap{
@@ -906,11 +948,12 @@
             margin: 30px 20px 0;
             // @include truncate(16px, 16px, 2);
             @include truncate(16px, 1.4, 2);
+            min-height: 44px;
           }
 
           .date {
             @include ff(cr);
-            font-size: 1rpx;
+            font-size: 14px;
             color: #666;
             margin: 20px 30px;
           }
@@ -1199,11 +1242,13 @@
         .vod-wrap {
           display: flex;
           flex-direction: row;
-          justify-content: space-between;
           flex-wrap: wrap;
 
           li {
             flex-basis: 224px;
+            &:not(:nth-child(5n+1)){
+              margin-left: 20px;
+            }
           }
 
           a {
@@ -1486,8 +1531,6 @@
         color: #666;
         margin: 20px 30px 0;
       }
-
-
     }
 
     // 나의 지원내역 패스워드
@@ -1917,6 +1960,578 @@
           }
         }
       }
+      // .accomplishment-wrap{
+      //   border-top: 2px solid #333;
+      //   >li{
+      //     position: relative;
+      //     &:not(:first-child){
+      //       border-top: 1px solid #ccc;
+      //       padding-top: 70px;
+      //       margin-top: 80px;
+      //       .num-list{
+      //         top: 40px;
+      //       }
+      //     }
+      //     .num-list{
+      //       position: absolute;
+      //       top: -30px;
+      //       left: 0;
+      //       background:#ff8c00;
+      //       padding: 34px;
+      //       @include ff(cb);
+      //       font-size: 30px;
+      //       color: #fff;
+      //       text-shadow: 2px 2px 2px rgba(0, 0, 0, .25);
+      //       box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25)
+      //     }
+      //     .intro-wrap{
+      //       display: flex;
+      //       justify-content: space-between;
+      //       border: 30px solid #f5f5f5;
+      //       margin: 60px 0 0 30px;
+      //       padding: 40px 75px;
+
+      //       img{
+      //         margin-left: 60px;
+      //       }
+      //     }
+      //     .tit {
+      //       @include ff(cm);
+      //       font-size: 20px;
+      //       color: #333;
+      //       span {
+      //         color: #ff8c00;
+      //         font-size: 30px;
+      //       }
+      //       &.mar-l{
+      //         margin-left: 135px;
+      //       }
+      //     }
+      //     .intro-txt {
+      //       @include ff(cr);
+      //       font-size: 14px;
+      //       color: #666;
+      //       line-height: 1.857143;
+      //       margin-top: 30px;
+      //       &.mar-l {
+      //         margin-left: 135px;
+      //       }
+      //     }
+      //     .img-list-wrap{
+      //       display: flex;
+      //       margin: 36px 0 0 30px;
+      //       li{
+      //         &:not(:first-child){
+      //           margin-left: 18px;
+      //         }
+      //       }
+      //       &.mar-l{
+      //         margin-left: 135px;
+      //       }
+      //     }
+      //     .writer-list{
+      //       margin-top: 90px;
+
+      //       .grade{
+      //         @include ff(cm);
+      //         font-size: 20px;
+      //         color: #333;
+      //         border-top: 2px solid #333;
+      //         width: 100px;
+      //         text-align: center;
+      //         vertical-align: top;
+      //         padding-top: 30px;
+      //       }
+      //       .writer-info{
+      //         margin-left: 30px;
+      //         li{
+      //           &:not(:first-child){
+      //             margin-top: 30px;
+      //           }
+      //           &:last-child{
+      //             margin-bottom: 60px;
+      //           }
+      //         }
+      //         .name{
+      //           @include ff(cm);
+      //           font-size: 16px;
+      //           color: #333;
+      //         }
+      //         .comment{
+      //           @include ff(cr);
+      //           font-size: 14px;
+      //           color: #666;
+      //           margin-left: 50px;
+      //         }
+      //         .btn-more{
+      //           @include ff(nb);
+      //           font-size: 12px;
+      //           color: #ef3f41;
+      //           display: inline-block;
+      //           margin-left: 20px;
+      //           position: relative;
+
+      //           .arrow {
+      //             position: absolute;
+      //             top: 10px;
+      //             left: 80px;
+      //             width: 15px;
+      //             height: 1px;
+      //             background-color: #ef3f41;
+
+      //             &::after {
+      //               content: '';
+      //               position: absolute;
+      //               width: 40%;
+      //               height: 1px;
+      //               top: -2px;
+      //               right: -2px;
+      //               background-color: #ef3f41;
+      //               transform: rotate(45deg);
+      //             }
+
+      //             &::before {
+      //               content: '';
+      //               position: absolute;
+      //               width: 40%;
+      //               height: 1px;
+      //               top: 2px;
+      //               right: -2px;
+      //               background-color: #ef3f41;
+      //               box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+      //               transform: rotate(-45deg);
+      //             }
+      //           }
+
+      //         }
+      //       }
+      //     }
+      //   }
+      // }
+    }
+    // 오펜성과 - Deail page
+    &.accomplishment-detail-wrap{
+      margin-top: 0;
+      .layout-p{
+        width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        &.layout-desc{
+          display: flex;
+          flex-wrap: wrap;
+        }
+        &.drama-bg01,
+        &.drama-bg02,
+        &.drama-bg03{
+          position: relative;
+          &::before{
+            content: '';
+            background: #fff0bd;
+            height: 460px;
+            width: 200%;
+            top: 239px;
+            left: -156.5%;
+            position: absolute;
+          }
+        }
+        &.drama-bg01{
+          margin-top: 210px;
+          &::after{
+            position: absolute;
+            top: 0;
+            left: calc(-100% - 24px);
+            content:'';
+            background: url('../images/accomplishment/img-drama-bg01.png') no-repeat;
+            background-position: right;
+            width: 100%;
+            height: 120px;
+            border-bottom: 1px solid #999;
+          }
+        }
+        &.drama-bg02{
+          margin-top: 210px;
+          &::before{
+            position: absolute;
+            background: #9ac8e9;
+            width: 200%;
+            height: 245px;
+            left: inherit;
+            right: -158%;
+            bottom: -26.2%;
+            top: inherit;
+          }
+          &::after{
+            position: absolute;
+            top: 0;
+            right: calc(-100% - 16px);
+            content:'';
+            background: url('../images/accomplishment/img-drama-bg02.png') no-repeat;
+            width: 100%;
+            height: 120px;
+            border-bottom: 1px solid #999;
+          }
+        }
+        &.drama-bg03{
+          margin-top: 335px;
+          &::before{
+            background: #dde3e4;
+            height: 850px;
+            width: 200%;
+            top: -100px;
+            left: calc(-164%);
+          }
+          .desc-txt{
+            flex: 0 1 380px;
+            padding: 0px 0 0 0px;
+            z-index: 1;
+          }
+        }
+        &.cinema-bg01,
+        &.cinema-bg02,
+        &.cinema-bg03{
+          position: relative;
+        }
+        &.cinema-bg01 {
+          margin-top: 0px;
+          &::before {
+            content: '';
+            background: #bde0ff;
+            height: 460px;
+            width: 200%;
+            bottom: -60px;
+            left: -156.5%;
+            position: absolute;
+          }
+          &::after {
+            position: absolute;
+            top: 0;
+            left: calc(-100% - 24px);
+            content: '';
+            background: url('../images/accomplishment/img-cinema-bg01.png') no-repeat;
+            background-position: right;
+            width: 100%;
+            height: 120px;
+            border-bottom: 1px solid #999;
+          }
+        }
+        &.cinema-bg02 {
+          margin-top: 160px;
+
+          &::before {
+            content: '';
+            position: absolute;
+            background: #f8eecc;
+            width: 200%;
+            height: 245px;
+            left: inherit;
+            right: -135%;
+            bottom: -55px;
+          }
+
+          &::after {
+            position: absolute;
+            top: 0;
+            right: calc(-100% - 16px);
+            content: '';
+            background: url('../images/accomplishment/img-cinema-bg02.png') no-repeat;
+            width: 100%;
+            height: 120px;
+            border-bottom: 1px solid #999;
+          }
+          .desc-txt03{
+            position: relative;
+            &::before {
+              content: '';
+              position: absolute;
+              background: rgba(210, 233, 246, .6);
+              width: 80px;
+              height: 80px;
+              left: 80%;
+              bottom: 25%
+            }
+          }
+        }
+        &.cinema-bg03 {
+          margin-top: 255px;
+
+          &::before {
+            position: absolute;
+            content: '';
+            background: #d9e6ea;
+            height: 850px;
+            width: 200%;
+            top: -100px;
+            left: calc(-164%);
+          }
+
+          .desc-txt {
+            flex: 0 1 380px;
+            padding: 0px 0 0 0px;
+            z-index: 1;
+          }
+        }
+      }
+      .intro{
+        background: #e5e5e5;
+        margin-bottom: 100px;
+        .intro-txt-wrap{
+          padding: 70px 40px;
+          position: relative;
+          &::before{
+            position: absolute;
+            bottom: 0;
+            left: -210px;
+            content:'';
+            background: url('../images/accomplishment/img-bg-spot.png') no-repeat;
+            width: 77px;
+            height: 59px;
+          }
+        }
+        >.layout-p{
+          display: flex;
+        }
+        h2{
+          @include ff(cb);
+          font-size: 30px;
+          color: #000;
+          font-style: italic;
+        }
+        .tit-sub{
+          @include ff(cb);
+          font-size: 20px;
+          color: #333;
+          font-style: italic;
+          margin-top: 30px;
+          span{
+            color: #f04b00;
+            font-style: italic;
+          }
+        }
+        .desc{
+          @include ff(cr);
+          font-size: 14px;
+          color: #333;
+          font-style: italic;
+          margin-top: 20px;
+          line-height: 1.714286;
+        }
+      }
+      .img-list{
+        display: flex;
+        flex-wrap: wrap;
+        z-index: 1;
+        &.img-list-drama01{
+          width: 786px;
+        }
+        &.img-list-drama02{
+          width: 681px;
+
+          .list02-01,
+          .list02-02 {
+            width: 681px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            z-index: 1;
+          }
+
+          .list02-01 {
+            align-items: baseline;
+
+            img {
+              &:nth-child(1) {
+                margin-left: 99px;
+              }
+            }
+          }
+        }
+        &.img-list-drama01,
+        &.img-list-drama02{
+          img{
+            &:nth-child(3n+1) {
+              margin-left: 0;
+            }
+          }
+        }
+        &.img-list-cinema01 {
+          width: 707px;
+          img{
+            &:nth-child(1),
+            &:nth-child(3),
+            &:nth-child(5) {
+              margin-left: 0;
+            }
+            &:nth-child(7) {
+              margin-left: 5px;
+            }
+          }
+        }
+        &.img-list-cinema02 {
+          width: 696px;
+          justify-content: flex-end;
+          margin-left: 24px;
+          .list02-01,
+          .list02-02{
+            img {
+              margin-left: 0px;
+              &:nth-child(2) {
+                margin-left: 2px;
+              }
+            }
+          }
+        }
+
+
+        img{
+          margin: 0 0 6px 6px;
+        }
+      }
+      .desc-txt{
+        flex:0 1 410px;
+        -webkit-flex: 0 1 410px;
+        -moz-flex: 0 1 410px;
+        -ms-flex: 0 1 360px;
+
+        padding: 20px 0 0 50px;
+        z-index: 1;
+        &.desc-txt02{
+          flex:0 1 519px;
+          -webkit-flex: 0 1 519px;
+          -moz-flex: 0 1 519px;
+          -ms-flex: 0 1 459px;
+          padding: 20px 60px 0 0;
+        }
+        &.desc-txt03{
+          flex:0 1 480px;
+          -webkit-flex: 0 1 480px;
+          -moz-flex: 0 1 480px;
+          -ms-flex: 0 1 420px;
+          padding: 20px 20px 0 0;
+        }
+        .num{
+          @include ff(cb);
+          font-size: 40px;
+          color: #000;
+          font-style: italic;
+        }
+        .tit{
+          @include ff(cb);
+          font-size: 24px;
+          color: #333;
+          font-style: italic;
+          margin-top: 20px;
+        }
+        .txt{
+          @include ff(cr);
+          font-size: 14px;
+          color: #666;
+          font-style: italic;
+          margin-top: 25px;
+          line-height: 1.857143;
+          span{
+            @include ff(cb);
+            color: #333;
+          }
+        }
+        img{
+          margin-top: 40px;
+        }
+      }
+      .writer-list{
+        margin: 0 0 0 100px;
+        width: 720px;
+
+
+        .grade{
+          @include ff(cm);
+          font-size: 20px;
+          color: #333;
+          // width: 60px;
+          vertical-align: top;
+          padding-top: 20px;
+          position: relative;
+          &::before{
+            content:'';
+            position: absolute;
+            top: 0;
+            background: #333;
+            height: 2px;
+            width: 60px;
+
+          }
+        }
+        .writer-info{
+          margin-top: 40px;
+          li{
+            &:not(:first-child){
+              margin-top: 30px;
+            }
+            &:last-child{
+              margin-bottom: 60px;
+            }
+          }
+          .name{
+            @include ff(cm);
+            font-size: 16px;
+            color: #333;
+            &.name-down{
+              display: block;
+              +.comment{
+                margin: 15px 0 0 0;
+                display: inline-block;
+
+              }
+            }
+          }
+          .comment{
+            @include ff(cr);
+            font-size: 14px;
+            color: #666;
+            margin-left: 30px;
+          }
+          .btn-more{
+            @include ff(nb);
+            font-size: 12px;
+            color: #ef3f41;
+            display: inline-block;
+            margin-left: 20px;
+            position: relative;
+
+            .arrow {
+              position: absolute;
+              top: 10px;
+              left: 80px;
+              width: 15px;
+              height: 1px;
+              background-color: #ef3f41;
+
+              &::after {
+                content: '';
+                position: absolute;
+                width: 40%;
+                height: 1px;
+                top: -2px;
+                right: -2px;
+                background-color: #ef3f41;
+                transform: rotate(45deg);
+              }
+
+              &::before {
+                content: '';
+                position: absolute;
+                width: 40%;
+                height: 1px;
+                top: 2px;
+                right: -2px;
+                background-color: #ef3f41;
+                box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+                transform: rotate(-45deg);
+              }
+            }
+
+          }
+        }
+      }
     }
   }
   // O'PEN IS
@@ -2126,6 +2741,10 @@
     }
     .slider {
       margin-top: 40px;
+      display: none;
+      &.slick-initialized{
+        display: block;
+      }
       .slick-slide{
 
         &:nth-child(2n) > div > div{

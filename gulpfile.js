@@ -18,6 +18,11 @@ var config = {
   // dest_app: './app/design/frontend/cj/default/web/css/',
   dest: './project/css/'
 };
+var configMobile = {
+  src: './mobile/scss/**/*.scss',
+  // dest_app: './app/design/frontend/cj/default/web/css/',
+  dest: './mobile/css/'
+};
 
 // Error message
 var onError = function (err) {
@@ -70,10 +75,19 @@ gulp.task('sass', function () {
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest([config.dest]));
 });
+gulp.task('sassmobile', function () {
+  return gulp.src([configMobile.src])
+    .pipe(sourcemaps.init())
+    .pipe(plumber({
+      errorHandler: onError
+    }))
+    .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest([configMobile.dest]));
+});
 
 // file include
 gulp.task('fileinclude', function (done) {
-  // gulp.src(['./project/src/sub/index.html', './project/src/sub/*.html'], {
   gulp.src(['./project/src/index.html', './project/src/*.html'])
     .pipe(fileinclude({
       filters: {
@@ -83,8 +97,17 @@ gulp.task('fileinclude', function (done) {
     .pipe(gulp.dest('./project/'));
     done();
 });
+gulp.task('fileincludemobile', function (done) {
+  gulp.src(['./mobile/src/index.html', './mobile/src/*.html'])
+    .pipe(fileinclude({
+      filters: {
+        markdown: markdown.parse
+      }
+    }))
+    .pipe(gulp.dest('./mobile/'));
+    done();
+});
 
 gulp.task('watch', function () {
-  // gulp.watch('./app/design/frontend/Emthemes/laparis/web/css/sass/**/*.scss', gulp.series('sass'));
-  gulp.watch([config.src, './project/src/*.html', './project/src/sub/*.html'], gulp.series('sass', 'fileinclude'));
+  gulp.watch([config.src, './project/src/*.html', './project/src/sub/*.html', configMobile.src, './mobile/src/*.html', './mobile/src/sub/*.html'], gulp.series('sass', 'fileinclude', 'sassmobile', 'fileincludemobile'));
 });
