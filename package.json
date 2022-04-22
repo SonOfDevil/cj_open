@@ -4,7 +4,7 @@
   "description": "cjproject",
   "main": "gulpfile.js",
   "dependencies": {
-    "fullpage.js": "^3.0.7",
+    "fullpage.js": "^4.0.5",
     "gulp-file-include": "^2.1.0",
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.1",
